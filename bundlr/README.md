@@ -23,8 +23,11 @@ wget -O lukmanbundlr.sh https://raw.githubusercontent.com/lukmanc405/testnet/mai
 Buka situs Arweave dan buat wallet: https://faucet.arweave.net/
 
 Saat Anda membuka situs, layar akan muncul seperti pada gambar, centang kotak dan klik tombol `continue`.
+
 ![image](https://user-images.githubusercontent.com/48665887/178900055-40467956-462f-4236-a9bf-8b5ba395125d.png)
-Pada layar kedua, tandai kotak centang lagi dan klik tombol `download wallet`.
+
+Pada new window, tandai kotak centang lagi dan klik tombol `download wallet`.
+
 ![image](https://user-images.githubusercontent.com/48665887/178900246-fb4db0a3-5a72-485a-932b-fa53ec4dff04.png)
 
 Klik tombol Buka `Tweet Pop-up` di layar berikutnya, sebuah window akan terbuka untuk tweet, alamat dompet Anda akan tertulis di sana. Salin alamat wallet anda.
@@ -44,6 +47,7 @@ Perbarui nama file ini ke` wallet.json`. **DAN HARUS BACKUP**
 
 Kemudian pindah file wallet ini ke folder `validator-rust` di server .(dalam proses ini bisa pakai SFTP)
 contoh :
+
 ![image](https://user-images.githubusercontent.com/48665887/178907113-f89d9396-787d-43ee-a0c0-e9539edca4ee.png)
 
 
@@ -57,7 +61,9 @@ GW_ARWEAVE="https://arweave.testnet1.bundlr.network"
 EOF
 ```
 ### Mulai Docker:
+
 Instalasi memakan waktu sekitar 10 menit. Oleh karena itu, disarankan untuk membuat layar terlebih dahulu untuk mencegah gangguan koneksi.
+
 **Buat New Screen**
 ```
 screen -R "bundlr
@@ -91,6 +97,8 @@ testnet-cli join RkinCLBlY4L5GZFv8gCFcrygTyd5Xm91CzKlR6qxhKA -w wallet.json -u "
 ```
 
 nanti akan terlihat seperti ini 
+
+
 ![image](https://user-images.githubusercontent.com/48665887/178915313-518e4595-c39a-4e49-930d-88fa59eef964.png)
 
 Cadangkan key Anda...
