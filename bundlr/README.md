@@ -45,7 +45,7 @@ Yang perlu kita lakukan sekarang adalah mengedit nama dompet yang kita download.
 
 - File yang Anda unduh terlihat seperti ini: `arweave-key-QeKJ_TTBe....................ejQ.json`
 
-Perbarui nama file ini ke` wallet.json`. **DAN HARUS BACKUP**
+Perbarui nama file ini jadi ` wallet.json`. **DAN HARUS BACKUP**
 
 Kemudian pindah file wallet ini ke folder `validator-rust` di server .(dalam proses ini bisa pakai SFTP)
 contoh :
