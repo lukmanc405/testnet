@@ -41,6 +41,9 @@ Yang perlu kita lakukan sekarang adalah mengedit nama dompet yang kita download.
 Perbarui nama file ini ke` wallet.json`. **DAN HARUS BACKUP**
 
 Kemudian pindah file wallet ini ke folder `validator-rust` di server .(dalam proses ini bisa pakai SFTP)
+contoh :
+![image](https://user-images.githubusercontent.com/48665887/178906811-6683e390-e41a-4aaf-a4d2-5a51cbaffb83.png)
+
 
 ### Buat file service
 ```
