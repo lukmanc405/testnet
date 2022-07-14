@@ -42,7 +42,7 @@ Perbarui nama file ini ke` wallet.json`. **DAN HARUS BACKUP**
 
 Kemudian pindah file wallet ini ke folder `validator-rust` di server .(dalam proses ini bisa pakai SFTP)
 contoh :
-![image](https://user-images.githubusercontent.com/48665887/178906811-6683e390-e41a-4aaf-a4d2-5a51cbaffb83.png)
+![image](https://user-images.githubusercontent.com/48665887/178907113-f89d9396-787d-43ee-a0c0-e9539edca4ee.png)
 
 
 ### Buat file service
