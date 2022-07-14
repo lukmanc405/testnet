@@ -15,7 +15,7 @@
 ### Langkah-langkah instalasi:
 Anda dapat setting Bundlr Node Anda dalam hitungan menit menggunakan skrip otomatis di bawah ini.
 
-wget -O lukmanbundlr.sh https://raw.githubusercontent.com/lukmanc405/testnet/main/bundlr/lukmanbundlr.sh && chmod +x lukmanbundlr.sh && ./lukmanbundlr.sh
+`wget -O lukmanbundlr.sh https://raw.githubusercontent.com/lukmanc405/testnet/main/bundlr/lukmanbundlr.sh && chmod +x lukmanbundlr.sh && ./lukmanbundlr.sh`
 
 ### Langkah-langkah setelah Instalasi
 Buka situs Arweave dan buat wallet: https://faucet.arweave.net/
@@ -40,7 +40,7 @@ Yang perlu kita lakukan sekarang adalah mengedit nama dompet yang kita download.
 
 Perbarui nama file ini ke` wallet.json`. **DAN HARUS BACKUP**
 
-Kemudian menempatkan wallet ini di folder `validator-rust` di server .
+Kemudian pindah file wallet ini ke folder `validator-rust` di server .(dalam proses ini bisa pakai SFTP)
 
 ### Buat file service
 ```
