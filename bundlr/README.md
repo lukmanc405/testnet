@@ -55,7 +55,10 @@ Instalasi memakan waktu sekitar 10 menit. Oleh karena itu, disarankan untuk memb
 **Buat New Screen**
 `screen -R "bundlr"`
 **Jalankan docker**
+
 `cd ~/validator-rust && docker compose up -d`
+
+
 Periksa Log:
 `cd ~/validator-rust && docker-compose logs --tail=100 -f`
 
