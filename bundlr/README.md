@@ -78,7 +78,7 @@ Periksa Log:
 Tambahkan validator anda ke jaringan. Edit alamat ipkowe Anda:
 ipkowe=IP VPS
 
-testnet-cli join RkinCLBlY4L5GZFv8gCFcrygTyd5Xm91CzKlR6qxhKA -w wallet.json -u "http://ipkowe:80" -s 25000000000000
+`testnet-cli join RkinCLBlY4L5GZFv8gCFcrygTyd5Xm91CzKlR6qxhKA -w wallet.json -u "http://ipkowe:80" -s 25000000000000`
 
 
 
