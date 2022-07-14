@@ -59,20 +59,20 @@ Instalasi memakan waktu sekitar 10 menit. Oleh karena itu, disarankan untuk memb
 **Buat New Screen**
 
 
-`screen -R "bundlr"`
+```screen -R "bundlr```
 **Jalankan docker**
 
-`cd ~/validator-rust && docker compose up -d`
+```cd ~/validator-rust && docker compose up -d```
 
 
 Periksa Log:
 
-`cd ~/validator-rust && docker compose logs --tail=100 -f`
+```cd ~/validator-rust && docker compose logs --tail=100 -f```
 
 ![image](https://user-images.githubusercontent.com/48665887/178907619-43bc8495-1450-4943-82b4-063d2507fa84.png)
 
 **Inisialisasi Pemverifikasi:**
-`npm i -g @bundlr-network/testnet-cli`
+```npm i -g @bundlr-network/testnet-cli```
 
 
 
