@@ -59,28 +59,36 @@ EOF
 ### Mulai Docker:
 Instalasi memakan waktu sekitar 10 menit. Oleh karena itu, disarankan untuk membuat layar terlebih dahulu untuk mencegah gangguan koneksi.
 **Buat New Screen**
-
-
-```screen -R "bundlr```
+```
+screen -R "bundlr
+```
 **Jalankan docker**
 
-```cd ~/validator-rust && docker compose up -d```
+```
+cd ~/validator-rust && docker compose up -d
+```
 
 
 Periksa Log:
 
-```cd ~/validator-rust && docker compose logs --tail=100 -f```
+```
+cd ~/validator-rust && docker compose logs --tail=100 -f
+```
 
 ![image](https://user-images.githubusercontent.com/48665887/178907619-43bc8495-1450-4943-82b4-063d2507fa84.png)
 
 **Inisialisasi Pemverifikasi:**
 
-```npm i -g @bundlr-network/testnet-cli```
+```
+npm i -g @bundlr-network/testnet-cli
+```
 
 Tambahkan validator anda ke jaringan. Edit alamat ipkowe Anda:
 ipkowe=IP VPS
 
-`testnet-cli join RkinCLBlY4L5GZFv8gCFcrygTyd5Xm91CzKlR6qxhKA -w wallet.json -u "http://ipkowe:80" -s 25000000000000`
+```
+testnet-cli join RkinCLBlY4L5GZFv8gCFcrygTyd5Xm91CzKlR6qxhKA -w wallet.json -u "http://ipkowe:80" -s 25000000000000 
+```
 
 nanti akan terlihat seperti ini 
 ![image](https://user-images.githubusercontent.com/48665887/178915313-518e4595-c39a-4e49-930d-88fa59eef964.png)
