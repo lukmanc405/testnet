@@ -42,7 +42,9 @@ libopencl-clang-dev libgomp1 -y
 sleep 1
 
 # install npm
-apt install npm
+apt install npm -y
+
+sleep 1
 
 # NVM
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
