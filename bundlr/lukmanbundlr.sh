@@ -41,6 +41,9 @@ libopencl-clang-dev libgomp1 -y
 
 sleep 1
 
+# install npm
+apt install npm
+
 # NVM
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
