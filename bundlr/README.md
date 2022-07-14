@@ -92,10 +92,10 @@ npm i -g @bundlr-network/testnet-cli
 ```
 
 Tambahkan validator anda ke jaringan. Edit alamat ipkowe Anda:
-ipkowe=IP VPS
+>ipkowe=IP VPS
 
 ```
-testnet-cli join RkinCLBlY4L5GZFv8gCFcrygTyd5Xm91CzKlR6qxhKA -w wallet.json -u "http://ipkowe:80" -s 25000000000000 
+cd /root/validator-rust && testnet-cli join RkinCLBlY4L5GZFv8gCFcrygTyd5Xm91CzKlR6qxhKA -w wallet.json -u "http://ipkowe:80" -s 25000000000000 
 ```
 
 nanti akan terlihat seperti ini 
