@@ -7,7 +7,7 @@ https://t.me/detective_gems
 > explorer :
 > https://bundlr.network/explorer
 
-### Persyaratan Perangkat Keras
+### Persyaratan Hardware
 
 - Memory: 8 GB RAM
 - CPU: 4 Core
