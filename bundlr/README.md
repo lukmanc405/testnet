@@ -14,7 +14,8 @@
 
 ### Langkah-langkah instalasi:
 Anda dapat setting Bundlr Node Anda dalam hitungan menit menggunakan skrip otomatis di bawah ini.
-`wget -O lukmanbundlr.sh https://raw.githubusercontent.com/lukmanc405/testnet/main/bundlr/lukmanbundlr.sh && chmod +x lukmanbundlr.sh && ./lukmanbundlr.sh`
+
+wget -O lukmanbundlr.sh https://raw.githubusercontent.com/lukmanc405/testnet/main/bundlr/lukmanbundlr.sh && chmod +x lukmanbundlr.sh && ./lukmanbundlr.sh
 
 ### Langkah-langkah setelah Instalasi
 Buka situs Arweave dan buat wallet: https://faucet.arweave.net/
