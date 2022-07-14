@@ -72,8 +72,13 @@ Periksa Log:
 ![image](https://user-images.githubusercontent.com/48665887/178907619-43bc8495-1450-4943-82b4-063d2507fa84.png)
 
 **Inisialisasi Pemverifikasi:**
+
 ```npm i -g @bundlr-network/testnet-cli```
 
+Tambahkan validator anda ke jaringan. Edit alamat ipkowe Anda:
+ipkowe=IP VPS
+
+testnet-cli join RkinCLBlY4L5GZFv8gCFcrygTyd5Xm91CzKlR6qxhKA -w wallet.json -u "http://ipkowe:80" -s 25000000000000
 
 
 
