@@ -91,7 +91,7 @@ cd ~/validator-rust && docker compose logs --tail=100 -f
 npm i -g @bundlr-network/testnet-cli
 ```
 
-Tambahkan validator anda ke jaringan. Edit alamat ipkowe Anda:
+Tambahkan validator anda ke jaringan. Edit alamat `ipkowe` Anda:
 >ipkowe=IP VPS
 
 ```
