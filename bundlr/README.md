@@ -1,7 +1,5 @@
 ### Join Channel
-
-
-[![image](https://user-images.githubusercontent.com/48665887/178921771-cd0f2c4b-3fe1-4fac-b68e-3edf00bcbf67.png)]([url](https://t.me/detective_gems))
+https://t.me/detective_gems
 
 ### Testnet yang ditunggu-tunggu dari tim Bundlr telah dimulai.
 ![image](https://user-images.githubusercontent.com/48665887/178899422-b914ca03-12c1-4157-868e-2b92b010ade2.png)
