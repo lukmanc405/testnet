@@ -54,5 +54,7 @@ source ~/.bashrc
 nvm install 16
 nvm use 16
 
+sleep 1
+
 # validator repository
 git clone --recurse-submodules https://github.com/Bundlr-Network/validator-rust.git
