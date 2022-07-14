@@ -67,6 +67,6 @@ Instalasi memakan waktu sekitar 10 menit. Oleh karena itu, disarankan untuk memb
 
 Periksa Log:
 
-`cd ~/validator-rust && docker-compose logs --tail=100 -f`
+`cd ~/validator-rust && docker compose logs --tail=100 -f`
 
 
