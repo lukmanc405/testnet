@@ -53,6 +53,8 @@ EOF
 ### Mulai Docker:
 Instalasi memakan waktu sekitar 10 menit. Oleh karena itu, disarankan untuk membuat layar terlebih dahulu untuk mencegah gangguan koneksi.
 **Buat New Screen**
+
+
 `screen -R "bundlr"`
 **Jalankan docker**
 
@@ -60,6 +62,7 @@ Instalasi memakan waktu sekitar 10 menit. Oleh karena itu, disarankan untuk memb
 
 
 Periksa Log:
+
 `cd ~/validator-rust && docker-compose logs --tail=100 -f`
 
 
