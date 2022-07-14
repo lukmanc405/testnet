@@ -8,9 +8,9 @@
 ### Persyaratan Perangkat Keras
 
 - Memory: 8 GB RAM
-- CPU: Quad-Core
+- CPU: 4 Core
 - Disk: 250 GB SSD Storage
-- Bandwidth: 1 Gbps for Download/100 Mbps for Upload
+- Bandwidth: 1 Gbps buat Download/100 Mbps buat Upload
 
 ### Langkah-langkah instalasi:
 Anda dapat setting Bundlr Node Anda dalam hitungan menit menggunakan skrip otomatis di bawah ini.
