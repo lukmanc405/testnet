@@ -68,7 +68,7 @@ Instalasi memakan waktu sekitar 10 menit. Oleh karena itu, disarankan untuk memb
 
 **Buat New Screen**
 ```
-screen -R "bundlr
+screen -R "bundlr"
 ```
 **Jalankan docker**
 
