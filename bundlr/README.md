@@ -69,4 +69,11 @@ Periksa Log:
 
 `cd ~/validator-rust && docker compose logs --tail=100 -f`
 
+![image](https://user-images.githubusercontent.com/48665887/178907619-43bc8495-1450-4943-82b4-063d2507fa84.png)
+
+**Inisialisasi Pemverifikasi:**
+`npm i -g @bundlr-network/testnet-cli`
+
+
+
 
