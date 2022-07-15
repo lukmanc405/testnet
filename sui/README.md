@@ -91,7 +91,7 @@ Cara dapatkan faucet:
 ### Update versi SUI Fullnode
 
 ```
-wget -qO update.sh https://raw.githubusercontent.com/kj89/testnet_manuals/main/sui/tools/update.sh && chmod +x update.sh && ./update.sh
+wget -qO update.sh https://raw.githubusercontent.com/lukmanc405/testnet/main/sui/tools/update.sh && chmod +x update.sh && ./update.sh
 ```
 
 ****Cek kesehatan node****
