@@ -18,6 +18,16 @@ echo -e "\e[1m\e[32m2. Installing dependencies... \e[0m" && sleep 1
 # packages
 sudo wget -qO /usr/local/bin/yq https://github.com/mikefarah/yq/releases/download/v4.23.1/yq_linux_amd64 && chmod +x /usr/local/bin/yq
 sudo apt-get install jq -y
+sudo DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt-get install -y --no-install-recommends \
+    tzdata \
+    git \
+    ca-certificates \
+    curl \
+    build-essential \
+    libssl-dev \
+    pkg-config \
+    libclang-dev \
+    cmake
 
 # install docker
 sudo apt-get install ca-certificates curl gnupg lsb-release -y
