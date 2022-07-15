@@ -55,6 +55,7 @@ wget -O sui-wallet.sh https://raw.githubusercontent.com/lukmanc405/testnet/main/
 kalian bisa menutupnya dengan menggunakan `CTRL+A` lalu `D`
 
 wallet akan jadi dalam waktu 30-60 menit kalian bisa menutup terminal dulu
+
 setelah melewati waktu yang ditentukan , kalian bisa gunakan command 
 
 ```
