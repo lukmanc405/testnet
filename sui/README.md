@@ -59,7 +59,14 @@ wallet akan jadi dalam waktu 30-60 menit kalian bisa menutup terminal dulu
 setelah melewati waktu yang ditentukan , kalian bisa gunakan command 
 
 ```
-wallet
+sui client
 ```
 
-serta `wallet --help` untuk command lainnya
+ubah gateway wallet
+
+```
+sui client switch --gateway https://gateway.devnet.sui.io:443
+```
+
+serta `sui --help` untuk command lainnya
+
