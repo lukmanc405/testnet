@@ -41,7 +41,7 @@ Paste IP kalian disini
 ### Buat wallet SUI
 Karena penginstalan cukup lama kalian bisa gunakan `new screen`
 
-Install `new screen`
+Install `screen`
 
 ```
 apt install screen
