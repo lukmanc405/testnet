@@ -32,6 +32,8 @@ sleep 1
 
 
 # open wallet
-cd sui && sui
+cd sui
 
 echo -e "\e[1m\e[32mSui Wallet Created \e[0m"
+
+echo -e "\e[1m\e[32mSelanjutnya anda perlu mengetik sui \e[0m"
