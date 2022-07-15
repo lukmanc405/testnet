@@ -73,5 +73,11 @@ ubah gateway wallet
 sui client switch --gateway https://gateway.devnet.sui.io:443
 ```
 
+cek address
+
+```
+sui client active-address
+```
+
 serta `sui --help` untuk command lainnya
 
