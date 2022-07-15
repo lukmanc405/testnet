@@ -115,3 +115,12 @@ Sebanyak ini...
 
 >Anda dapat memeriksa alamat wallet Anda dari Explorer.
 >https://bundlr.network/explorer
+
+
+### Untuk stop & hapus node
+
+```
+cd ~/validator-rust && docker-compose down -v
+cd $HOME
+rm -rf ~/validator-rust
+```
