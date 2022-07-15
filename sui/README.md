@@ -81,3 +81,9 @@ sui client active-address
 
 serta `sui --help` untuk command lainnya
 
+Cara dapatkan faucet:
+- copy address anda
+- tempelkan kesini
+
+![image](https://user-images.githubusercontent.com/48665887/179158274-fbec303b-8c4f-4b72-8b90-acd2461d258d.png)
+
