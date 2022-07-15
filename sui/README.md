@@ -1,4 +1,3 @@
-### Halaman ini memberikan guide tentang bagaimana cara deploy ke berbagai macam server project
 
 [👉Join Channel Telegram ![7e4c70c3-4a81-4d90-828e-c5e57908cab4](https://user-images.githubusercontent.com/48665887/179027908-18257283-eca3-42f8-980c-491f4307ee0c.png)](https://t.me/detective_gems)
 
