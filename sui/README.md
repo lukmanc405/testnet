@@ -62,7 +62,7 @@ setelah melewati waktu yang ditentukan , kalian bisa gunakan command
 sui client
 ```
 
-Jika menemukan tulisan seperti ini cukup enter saja
+***Jika menemukan tulisan seperti ini cukup `enter` saja***👇👇👇
 
 ![image](https://user-images.githubusercontent.com/48665887/179157296-39212044-b36d-47f5-9fdf-9fe91a3bcdc3.png)
 
