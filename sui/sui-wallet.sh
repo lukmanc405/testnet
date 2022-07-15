@@ -19,9 +19,19 @@ sleep 1
 echo -e "\e[1m\e[32m1. Updating packages... \e[0m" && sleep 1
 # update
 sudo apt update && sudo apt upgrade -y
-echo $PATH
-# switch gateway
 
+sleep 1
+
+
+
+# confirmation instalation
+echo $PATH
+
+sleep 1
+
+
+
+# open wallet
 cd sui && sui
 
 echo -e "\e[1m\e[32mSui Wallet Created \e[0m"
