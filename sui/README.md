@@ -106,3 +106,18 @@ Masukkan node IP [https://node.sui.zvalid.com/](https://node.sui.zvalid.com/)
 
 Node yang sehat terlihat seperti ini:
 ![image](https://user-images.githubusercontent.com/48665887/179166315-6d4164d6-970d-4e49-a2a1-73925cb7068c.png)
+
+Command lainnya
+
+Check node
+
+```
+docker ps -a
+```
+
+Hapus node
+
+```
+cd $HOME/sui && docker-compose down --volumes
+cd $HOME && rm -rf sui
+```
