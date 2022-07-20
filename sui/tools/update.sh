@@ -1,4 +1,4 @@
-echo -e "\e[1m\e[32mUpdating Sui fullnode... \e[0m" && sleep 1
+echo -e "\e[1m\e[32mUpdating Sui fullnode by lukman nodes... \e[0m" && sleep 1
 cd $HOME && rm -rf sui
 mkdir sui && cd sui
 wget -qO docker-compose.yaml https://raw.githubusercontent.com/MystenLabs/sui/main/docker/fullnode/docker-compose.yaml
