@@ -17,4 +17,4 @@ wget -O obol.sh https://raw.githubusercontent.com/lukmanc405/testnet/main/obol/o
 
 nanti akan terlihat seperti ini 
 
-![image](https://user-images.githubusercontent.com/48665887/180238840-ee6de08f-b854-4743-9a57-455b6752d5b2.png)
+![image](https://user-images.githubusercontent.com/48665887/180239172-6128ce17-906f-48b2-81cb-099aaf05487d.png)
