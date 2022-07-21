@@ -9,5 +9,8 @@
 
 ### Charon Distributed Validator Node
 
-**Step 1. Creating and backing up a private key for charon**
+**Step 1. Buat dan backup up private key untuk charon**
+
+```
 wget -O obol.sh https://raw.githubusercontent.com/lukmanc405/testnet/main/obol/obol.sh && chmod +x obol.sh && ./obol.sh
+```
