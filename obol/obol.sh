@@ -49,6 +49,3 @@ git clone https://github.com/ObolNetwork/charon-distributed-validator-node.git &
 
 echo -e "\e[1m\e[32m6. create your charon ENR private key, this will create a charon-enr-private-key file in the .charon directory... \e[0m" && sleep 1
 cd charon-distributed-validator-node && docker run --rm -v "$(pwd):/opt/charon" ghcr.io/obolnetwork/charon:v0.8.0 create enr
-
-echo -e "\e[1m\e[32mThis your ENR PRIVATE KEY , PLEASE BACKUP !!!: \e[0m" 
-cat ~/charon-distributed-validator-node/.charon/charon-enr-private-key
