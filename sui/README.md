@@ -62,12 +62,10 @@ cek address
 sui client active-address
 ```
 
-cara cek wallet key & keystore wallet
+### Backup 
 
-```
-cat ~/.sui/sui_config/wallet.key
-cat ~/.sui/sui_config/sui.keystore
-```
+`wallet.key , wallet.yaml , keystore `
+Pakai SFTP
 
 serta `sui --help` untuk command lainnya
 
