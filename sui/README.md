@@ -66,7 +66,7 @@ cara cek wallet key & keystore wallet
 
 ```
 cat ~/.sui/sui_config/wallet.key
-cat ~/root/.sui/sui_config/sui.keystore
+cat ~/.sui/sui_config/sui.keystore
 ```
 
 serta `sui --help` untuk command lainnya
