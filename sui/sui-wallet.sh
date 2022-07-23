@@ -9,10 +9,9 @@ echo -e "\e[0m"
 echo "=================================================="  
 
 sleep 2
-# Install Binaries && cargo
-apt install cargo -y
-sudo curl https://sh.rustup.rs/ -sSf | sh -s -- -y
-source $HOME/.cargo/env && cargo install --locked --git https://github.com/MystenLabs/sui.git --branch "devnet" sui
+# download sui binaries
+version=$(wget -qO- https://api.github.com/repos/SecorD0/Sui/releases/latest | jq -r ".tag_name")
+wget -qO- "https://github.com/SecorD0/Sui/releases/download/${version}/sui-linux-amd64-${version}.tar.gz" | sudo tar -C /usr/local/bin/ -xzf -
 
 sleep 1
 
