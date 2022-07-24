@@ -40,7 +40,9 @@ sleep 1
 
 # confirmation instalation
 echo $PATH
+echo -e "y\n" | sui client
 
+echo -e "\e[1m\e[32m3. Wallet created... \e[0m" && sleep 1
 
 sleep 1
 
