@@ -40,7 +40,7 @@ sleep 1
 
 # confirmation instalation
 echo $PATH
-echo -e "y\n" | sui client
+
 
 sleep 1
 
