@@ -6,5 +6,8 @@ wget -qO fullnode-template.yaml https://github.com/MystenLabs/sui/raw/main/crate
 wget -qO genesis.blob https://github.com/MystenLabs/sui-genesis/raw/main/devnet/genesis.blob
 sed -i 's/stable/main/' docker-compose.yaml
 sed -i 's/127.0.0.1/0.0.0.0/' fullnode-template.yaml
+rm -rf $HOME/.sui/db
+version=$(wget -qO- https://api.github.com/repos/SecorD0/Sui/releases/latest | jq -r ".tag_name")
+wget -qO- "https://github.com/SecorD0/Sui/releases/download/${version}/sui-linux-amd64-${version}.tar.gz" | sudo tar -C /usr/local/bin/ -xzf -
 docker-compose down --volumes
 docker-compose up -d
