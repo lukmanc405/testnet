@@ -1,5 +1,4 @@
-#!/bin/bash
-echo -e '\e[45m\e[100m' && 
+echo -e '\e[45m\e[100m'
 echo -e '                                                               '
 echo -e '$$\                $$\                                         '
 echo -e '$$ |               $$ |                                        '
