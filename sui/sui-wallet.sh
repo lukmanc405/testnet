@@ -10,7 +10,7 @@ echo "=================================================="
 
 sleep 2
 
-echo -e "\e[1m\e[32m2. Installing dependencies... \e[0m" && sleep 1
+echo -e "\e[1m\e[32m1. Installing dependencies... \e[0m" && sleep 1
 # packages
 sudo wget -qO /usr/local/bin/yq https://github.com/mikefarah/yq/releases/download/v4.23.1/yq_linux_amd64 && chmod +x /usr/local/bin/yq
 sudo apt-get install jq -y 
@@ -31,7 +31,7 @@ yq -i '.json-rpc-address = "0.0.0.0:9000"' $HOME/.sui/fullnode.yaml
 yq -i ".genesis.genesis-file-location = \"$HOME/.sui/genesis.blob\"" $HOME/.sui/fullnode.yaml
 
 
-echo -e "\e[1m\e[32m1. Updating packages... \e[0m" && sleep 1
+echo -e "\e[1m\e[32m2. Updating packages... \e[0m" && sleep 1
 # update
 sudo apt update && sudo apt upgrade -y
 
