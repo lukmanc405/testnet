@@ -59,6 +59,14 @@ echo -e "\e[1m\e[32mSui FullNode Started \e[0m"
 
 echo "=================================================="
 
+read -p "Do you want to install wallet? (y/n) " RESP
+if [ "$RESP" = "y" ]; then
+  echo -e "\e[1m\e[32m Glad to hear it: \e[0m"
+  wget -O sui-wallet.sh https://raw.githubusercontent.com/lukmanc405/testnet/main/sui/sui-wallet.sh && chmod +x sui-wallet.sh && ./sui-wallet.sh
+else
+   echo -e "\e[1m\e[32m Its okay no problem at all : \e[0m"
+fi
+
 echo -e "\e[1m\e[32mCheck node info: \e[0m" 
 echo -e "\e[1m\e[39m    curl -s -X POST http://127.0.0.1:9000 -H 'Content-Type: application/json' -d '{ \"jsonrpc\":\"2.0\", \"method\":\"rpc.discover\",\"id\":1}' | jq .result.info \n \e[0m" 
 
@@ -67,3 +75,5 @@ echo -e "\e[1m\e[39m    docker logs -f sui-fullnode-1 --tail 50 \n \e[0m"
 
 echo -e "\e[1m\e[32mTo restart: \e[0m" 
 echo -e "\e[1m\e[39m    docker-compose restart \n \e[0m" 
+
+
