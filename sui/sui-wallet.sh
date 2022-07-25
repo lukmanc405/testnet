@@ -12,7 +12,7 @@ sleep 2
 
 echo -e "\e[1m\e[32m1. Checking dependencies... \e[0m" && sleep 1
 # packages
-if [ -e /usr/local/bin/yq ] then
+if jq --version >/dev/null 2>&1; then
     echo -e "\e[1m\e[32m1.1 dependencies already installed \e[0m" && sleep 1
 else
     echo -e "\e[1m\e[32m1.1 Installing dependencies ... \e[0m" && sleep 1
