@@ -26,7 +26,7 @@ then
 
 sleep 1
 
-echo -e "\e[1m\e[32m2. Updating packages... \e[0m" && sleep 1
+echo -e "\e[1m\e[32m3. Updating packages... \e[0m" && sleep 1
 # update
 sudo apt update && sudo apt upgrade -y
 
