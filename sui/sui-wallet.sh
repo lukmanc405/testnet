@@ -17,8 +17,7 @@ sudo apt-get install jq -y
 
 
 echo -e "\e[1m\e[32m2. Checking sui binaries \e[0m" && sleep 1 
-sui --version
-if [ $? -ne 0 ]
+if command sui --version &> /dev/null
 then
     echo -e "\e[1m\e[32m2.1 Installing sui binaries ... \e[0m" && sleep 1
     version=$(wget -qO- https://api.github.com/repos/SecorD0/Sui/releases/latest | jq -r ".tag_name")
