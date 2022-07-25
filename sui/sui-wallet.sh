@@ -18,7 +18,7 @@ else
     echo -e "\e[1m\e[32m1.1 Installing dependencies ... \e[0m" && sleep 1
     sudo wget -qO /usr/local/bin/yq https://github.com/mikefarah/yq/releases/download/v4.23.1/yq_linux_amd64 && chmod +x /usr/local/bin/yq
     sudo apt-get install jq -y 
-
+fi
 
 echo -e "\e[1m\e[32m2. Checking sui binaries \e[0m" && sleep 1
 if sui --version >/dev/null 2>&1; then
