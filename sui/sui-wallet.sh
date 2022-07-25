@@ -18,7 +18,7 @@ sudo apt-get install jq -y
 
 echo -e "\e[1m\e[32m2. Checking sui binaries \e[0m" && sleep 1
 if sui --version >/dev/null 2>&1; then
-    echo -e "\e[1m\e[32m2.1 sui binaries already installed \e[0m" && sleep 1
+    echo -e "\e[1m\e[32m2.1 sui binaries already installed && your wallet not changed \e[0m" && sleep 2
 else
     echo -e "\e[1m\e[32m2.1 Installing sui binaries \e[0m" && sleep 1
     version=$(wget -qO- https://api.github.com/repos/SecorD0/Sui/releases/latest | jq -r ".tag_name")
