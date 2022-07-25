@@ -39,6 +39,5 @@ else
     sleep 1
 
     # open wallet
-    
-   cd sui
+    cd sui
 fi
