@@ -44,5 +44,5 @@ sed -i -e "s%db-path:.*%db-path: \"$HOME/.sui/db\"%; "\
 
 echo -e "\e[1m\e[32m8. Run cointainer... \e[0m" && sleep 1
 docker run -dit --name sui_node --restart always -u 0:0 \
-  --network host -v $HOME/.sui:/root/.sui secord/sui \
+  --network host -v $HOME/.sui:/root/.sui lukman/sui \
   --config-path $HOME/.sui/fullnode.yaml
