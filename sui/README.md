@@ -97,9 +97,3 @@ Check node
 docker ps -a
 ```
 
-Hapus node & shutdown sui node
-
-```
-cd $HOME/sui && docker-compose down --volumes
-cd $HOME && rm -rf sui
-```
