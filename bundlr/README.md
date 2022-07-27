@@ -116,6 +116,25 @@ Sebanyak ini...
 >Anda dapat memeriksa alamat wallet Anda dari Explorer.
 >https://bundlr.network/explorer
 
+### Cek address
+
+```
+cd $HOME/validator-rust && cargo run --bin wallet-tool show-address --wallet wallet.json
+```
+
+### Cek saldo
+
+```
+testnet-cli balance <address>
+```
+
+>ubah <address> jadi address ente
+
+### Cek versi bundlr
+
+```
+npx @bundlr-network/testnet-cli -V
+```
 
 ### Untuk stop & hapus node
 
