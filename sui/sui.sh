@@ -33,8 +33,6 @@ echo -e "\e[1m\e[32m5. Download file genesis.. \e[0m" && sleep 1
 mkdir -p $HOME/.sui
 wget -qO $HOME/.sui/genesis.blob https://github.com/MystenLabs/sui-genesis/raw/main/devnet/genesis.blob
 
-echo -e "\e[1m\e[32m  FULLNODE CREATED \e[0m" && sleep 1
-
 echo -e "\e[1m\e[32m6. Download node config... \e[0m" && sleep 1
 wget -qO $HOME/.sui/fullnode.yaml https://github.com/MystenLabs/sui/raw/main/crates/sui-config/data/fullnode-template.yaml
 
