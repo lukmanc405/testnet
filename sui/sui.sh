@@ -43,5 +43,6 @@ sed -i -e "s%db-path:.*%db-path: \"$HOME/.sui/db\"%; "\
 "s%genesis-file-location:.*%genesis-file-location: \"$HOME/.sui/genesis.blob\"%; " $HOME/.sui/fullnode.yaml
 
 echo -e "\e[1m\e[32m8. Run cointainer... \e[0m" && sleep 1
-docker-compose down
-docker-compose up -d
+docker run -dit --name sui_node --restart always \
+  --network host -v $HOME/.sui:/root/.sui mysten/sui-node:stable \
+  /usr/local/bin/sui-node --config-path $HOME/.sui/fullnode.yaml
