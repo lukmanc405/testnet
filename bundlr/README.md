@@ -128,7 +128,7 @@ cd $HOME/validator-rust && cargo run --bin wallet-tool show-address --wallet wal
 testnet-cli balance <address>
 ```
 
->ubah '<address>' jadi address ente
+>ubah `<address>` jadi address ente
 
 ### Cek versi bundlr
 
