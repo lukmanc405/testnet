@@ -50,4 +50,12 @@ docker run -dit --name sui_node --restart always \
   /usr/local/bin/sui-node --config-path $HOME/.sui/fullnode.yaml
   
   
-echo -e "\e[1m\e[32m.  FULLNODE CREATED \e[0m" && sleep 1
+echo -e "\e[1m\e[32m. ---FULLNODE CREATED--- \e[0m" && sleep 1
+
+read -p "Do you want to install wallet? (y/n) " RESP
+if [ "$RESP" = "y" ]; then
+  echo -e "\e[1m\e[32m Glad to hear it: \e[0m"
+  wget -O sui-wallet.sh https://raw.githubusercontent.com/lukmanc405/testnet/main/sui/sui-wallet.sh && chmod +x sui-wallet.sh && ./sui-wallet.sh
+else
+   echo -e "\e[1m\e[32m Its okay no problem at all : \e[0m"
+fi
