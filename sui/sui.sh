@@ -49,10 +49,6 @@ wget -qO fullnode-template.yaml https://github.com/MystenLabs/sui/raw/main/crate
 wget -qO genesis.blob https://github.com/MystenLabs/sui-genesis/raw/main/devnet/genesis.blob
 mv fullnode-template.yaml fullnode.yaml
 sed -i 's/127.0.0.1/0.0.0.0/' fullnode-template.yaml
-sed -i ".db-path = \"$HOME/.sui/db\"" $HOME/.sui/fullnode.yaml
-sed -i '.metrics-address = "0.0.0.0:9184"' $HOME/.sui/fullnode.yaml
-sed -i '.json-rpc-address = "0.0.0.0:9000"' $HOME/.sui/fullnode.yaml
-sed -i ".genesis.genesis-file-location = \"$HOME/.sui/genesis.blob\"" $HOME/.sui/fullnode.yaml
 docker-compose down --volumes
 
 # start application
