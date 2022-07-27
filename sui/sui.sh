@@ -48,3 +48,6 @@ echo -e "\e[1m\e[32m8. Run cointainer... \e[0m" && sleep 1
 docker run -dit --name sui_node --restart always \
   --network host -v $HOME/.sui:/root/.sui mysten/sui-node:stable \
   /usr/local/bin/sui-node --config-path $HOME/.sui/fullnode.yaml
+  
+  
+echo -e "\e[1m\e[32m.  FULLNODE CREATED \e[0m" && sleep 1
