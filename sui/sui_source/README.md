@@ -44,7 +44,7 @@ Paste IP kalian disini
 setelah melewati waktu yang ditentukan , kalian bisa gunakan command 
 
 ```
-sui client
+echo -e y/n | sui client
 ```
 
 ubah gateway wallet
