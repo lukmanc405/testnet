@@ -14,6 +14,8 @@
 - Ubuntu 20.04
 
 **Install sui full nodes**
+>Instalasi akan memakan waktu 10 menit anda akan membutuhkan screen atau bisa menunggu sampai selesai
+
 ```
 wget -O sui_source.sh https://raw.githubusercontent.com/lukmanc405/testnet/main/sui/sui_source/sui_source.sh && chmod +x sui_source.sh && ./sui_source.sh
 ```
