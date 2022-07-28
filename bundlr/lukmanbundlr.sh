@@ -60,5 +60,5 @@ sleep 1
 git clone --recurse-submodules https://github.com/Bundlr-Network/validator-rust.git
 git pull origin master
 docker-compose build
-docker-compose up
+
 
