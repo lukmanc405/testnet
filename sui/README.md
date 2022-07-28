@@ -79,7 +79,7 @@ Cara dapatkan faucet:
 ### Update versi SUI Fullnode
 
 ```
-wget -qO update.sh https://raw.githubusercontent.com/lukmanc405/testnet/main/sui/tools/update.sh && chmod +x update.sh && ./update.sh
+wget -qO update_docker.sh https://raw.githubusercontent.com/lukmanc405/testnet/main/sui/tools/update_docker.sh && chmod +x update_docker.sh && update_docker.sh
 ```
 
 ****Cek kesehatan node****
