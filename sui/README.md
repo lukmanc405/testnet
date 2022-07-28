@@ -15,7 +15,7 @@
 
 **Install sui full nodes**
 ```
-wget -O sui.sh https://raw.githubusercontent.com/lukmanc405/testnet/main/sui/sui.sh && chmod +x sui.sh && ./sui.sh
+wget -O sui_docker.sh https://raw.githubusercontent.com/lukmanc405/testnet/main/sui/sui_docker.sh && chmod +x sui_docker.sh && ./sui_docker.sh
 ```
 **Cek node status**
 ```
