@@ -41,11 +41,6 @@ Paste IP kalian disini
 ![image](https://user-images.githubusercontent.com/48665887/179150535-4287085d-91a5-4a6c-b6db-cd7346b662c0.png)
 
 ### Buat wallet SUI
-mulai jalankan script nya
-```
-wget -O sui-wallet.sh https://raw.githubusercontent.com/lukmanc405/testnet/main/sui/sui-wallet.sh && chmod +x sui-wallet.sh && ./sui-wallet.sh
-```
-
 setelah melewati waktu yang ditentukan , kalian bisa gunakan command 
 
 ```
