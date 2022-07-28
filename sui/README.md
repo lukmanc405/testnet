@@ -100,9 +100,5 @@ docker ps -a
 Stop node
 
 ```
-docker stop sui_node
-docker container rm sui_node
-rm -rf $HOME/.sui/db
-rm -rf $HOME/.sui
-rm -rf sui.sh
+cd $HOME/sui && docker-compose down --volumes
 ```
