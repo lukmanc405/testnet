@@ -64,7 +64,7 @@ sui client active-address
 
 ### Backup 
 
-`wallet.key , wallet.yaml , keystore `
+`wallet.yaml , keystore `
 Pakai SFTP
 
 serta `sui --help` untuk command lainnya
