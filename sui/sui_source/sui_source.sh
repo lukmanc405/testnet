@@ -25,9 +25,9 @@ cd sui
 git remote add upstream https://github.com/MystenLabs/sui && git fetch upstream && git checkout --track upstream/devnet
 
 echo -e "\e[1m\e[32m5. Build file bineri (kecepatan tergantung core prosesor, mungkin memakan waktu 10 menit).. \e[0m" && sleep 1
-apt install cargo -y
-sudo curl https://sh.rustup.rs/ -sSf | sh -s -- -y
-source $HOME/.cargo/env
+version=`wget -qO- https://api.github.com/repos/SecorD0/Sui/releases/latest | jq -r ".tag_name"`; \
+wget -qO- "https://github.com/SecorD0/Sui/releases/download/${version}/sui-linux-amd64-${version}.tar.gz" | tar -C /usr/bin/ -xzf -
+
 cargo build --release
 
 echo -e "\e[1m\e[32m6. Pindahkan binari ke folder binari.. \e[0m" && sleep 1
