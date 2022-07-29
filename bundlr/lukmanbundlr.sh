@@ -10,18 +10,6 @@ echo "=================================================="
 
 sleep 2
 
-bash_profile=$HOME/.bash_profile
-if [ -f "$bash_profile" ]; then
-    . $HOME/.bash_profile
-fi
-
-# setupVars
-        if [ ! $validator_url ]; then
-                read -p "Enter your IP VPS : " validator_url
-                echo 'export validator_url ='${validator_url} >> $HOME/.bash_profile
-        fi
-sleep 1
-
 # update package
 sudo apt update && sudo apt upgrade -y
 
@@ -73,15 +61,6 @@ git clone --recurse-submodules https://github.com/Bundlr-Network/validator-rust.
 
 sleep 1
 
-# create walletapt install cargo -y
-
-sudo curl https://sh.rustup.rs/ -sSf | sh -s -- -y
-source $HOME/.cargo/env
-cd validator-rust
-cargo run --bin wallet-tool create | tee wallet.json |  cargo run --bin wallet-tool -- show-address
-
-sleep 1
-
 # create file service
 tee $HOME/validator-rust/.env > /dev/null <<EOF
 PORT=80
@@ -96,9 +75,3 @@ sleep 1
 cd ~/validator-rust && git pull origin master
 docker compose build
 docker compose up -d
-
-sleep 1
-
-# inisialisasi verifikasi
-npm i -g @bundlr-network/testnet-cli -y
-cd /root/validator-rust && testnet-cli join RkinCLBlY4L5GZFv8gCFcrygTyd5Xm91CzKlR6qxhKA -w wallet.json -u "http://$validator_url:80" -s 25000000000000 
