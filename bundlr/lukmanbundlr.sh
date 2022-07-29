@@ -100,5 +100,5 @@ docker compose up -d
 sleep 1
 
 # inisialisasi verifikasi
-npm i -g @bundlr-network/testnet-cli
+npm i -g @bundlr-network/testnet-cli -y
 cd /root/validator-rust && testnet-cli join RkinCLBlY4L5GZFv8gCFcrygTyd5Xm91CzKlR6qxhKA -w wallet.json -u "http://$validator_url:80" -s 25000000000000 
