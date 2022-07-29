@@ -15,6 +15,19 @@ sudo apt update && sudo apt upgrade -y
 
 sleep 1
 
+bash_profile=$HOME/.bash_profile
+if [ -f "$bash_profile" ]; then
+    . $HOME/.bash_profile
+fi
+
+function setupVars {
+        if [ ! $IPKOWE ]; then
+                read -p "Enter your IP : " IP_KOWE
+                echo 'export IP_KOWE ='${IP_KOWE} >> $HOME/.bash_profile
+        fi
+        
+ADDRESS=$(cargo run --bin wallet-tool -- show-address)
+
 # install docker
 sudo apt-get install ca-certificates curl gnupg lsb-release -y
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
@@ -58,7 +71,34 @@ sleep 1
 
 # validator repository
 git clone --recurse-submodules https://github.com/Bundlr-Network/validator-rust.git
-git pull origin master
-docker-compose build
 
+sleep 1
 
+# create wallet
+cargo run --bin wallet-tool create | tee wallet.json |  cargo run --bin wallet-tool -- show-address
+
+sleep 1
+
+# create file service
+tee $HOME/validator-rust/.env > /dev/null <<EOF
+PORT=80
+BUNDLER_URL="https://testnet1.bundlr.network"
+GW_CONTRACT="RkinCLBlY4L5GZFv8gCFcrygTyd5Xm91CzKlR6qxhKA"
+GW_ARWEAVE="https://arweave.testnet1.bundlr.network"
+EOF
+
+sleep 1
+
+# running docker
+cd ~/validator-rust && git pull origin master
+docker compose build
+docker compose up -d
+
+sleep 1
+
+# inisialisasi verifikasi
+npm i -g @bundlr-network/testnet-cli
+cd /root/validator-rust && testnet-cli join RkinCLBlY4L5GZFv8gCFcrygTyd5Xm91CzKlR6qxhKA -w wallet.json -u "http://$IPKOWE:80" -s 25000000000000 
+
+# check join status
+npx @bundlr-network/testnet-cli@latest check RkinCLBlY4L5GZFv8gCFcrygTyd5Xm91CzKlR6qxhKA $ADDRESS
