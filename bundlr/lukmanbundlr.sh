@@ -60,18 +60,3 @@ sleep 1
 git clone --recurse-submodules https://github.com/Bundlr-Network/validator-rust.git
 
 sleep 1
-
-# create file service
-tee $HOME/validator-rust/.env > /dev/null <<EOF
-PORT=80
-BUNDLER_URL="https://testnet1.bundlr.network"
-GW_CONTRACT="RkinCLBlY4L5GZFv8gCFcrygTyd5Xm91CzKlR6qxhKA"
-GW_ARWEAVE="https://arweave.testnet1.bundlr.network"
-EOF
-
-sleep 1
-
-# running docker
-cd ~/validator-rust && git pull origin master
-docker compose build
-docker compose up -d
