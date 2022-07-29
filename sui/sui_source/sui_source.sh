@@ -28,11 +28,6 @@ echo -e "\e[1m\e[32m5. Build file bineri (kecepatan tergantung core prosesor, mu
 version=`wget -qO- https://api.github.com/repos/SecorD0/Sui/releases/latest | jq -r ".tag_name"`; \
 wget -qO- "https://github.com/SecorD0/Sui/releases/download/${version}/sui-linux-amd64-${version}.tar.gz" | tar -C /usr/bin/ -xzf -
 
-
-echo -e "\e[1m\e[32m6. Pindahkan binari ke folder binari.. \e[0m" && sleep 1
-mv $HOME/sui/target/release/{sui,sui-node,sui-faucet} /usr/bin/
-cd
-
 echo -e "\e[1m\e[32m7. Download Genesis File.. \e[0m" && sleep 1
 wget -qO $HOME/.sui/genesis.blob https://github.com/MystenLabs/sui-genesis/raw/main/devnet/genesis.blob
 
