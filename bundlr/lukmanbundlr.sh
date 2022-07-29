@@ -25,8 +25,6 @@ function setupVars {
                 read -p "Enter your IP : " IP_KOWE
                 echo 'export IP_KOWE ='${IP_KOWE} >> $HOME/.bash_profile
         fi
-        
-ADDRESS=$(cargo run --bin wallet-tool -- show-address)
 
 # install docker
 sudo apt-get install ca-certificates curl gnupg lsb-release -y
