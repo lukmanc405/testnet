@@ -98,7 +98,7 @@ sleep 1
 
 # inisialisasi verifikasi
 npm i -g @bundlr-network/testnet-cli
-cd /root/validator-rust && testnet-cli join RkinCLBlY4L5GZFv8gCFcrygTyd5Xm91CzKlR6qxhKA -w wallet.json -u "http://$IPKOWE:80" -s 25000000000000 
+cd /root/validator-rust && testnet-cli join RkinCLBlY4L5GZFv8gCFcrygTyd5Xm91CzKlR6qxhKA -w wallet.json -u "http://$IP_KOWE:80" -s 25000000000000 
 
 # check join status
 npx @bundlr-network/testnet-cli@latest check RkinCLBlY4L5GZFv8gCFcrygTyd5Xm91CzKlR6qxhKA $ADDRESS
