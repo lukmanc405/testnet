@@ -10,11 +10,6 @@ echo "=================================================="
 
 sleep 2
 
-# update package
-sudo apt update && sudo apt upgrade -y
-
-sleep 1
-
 bash_profile=$HOME/.bash_profile
 if [ -f "$bash_profile" ]; then
     . $HOME/.bash_profile
@@ -22,10 +17,16 @@ fi
 
 # setupVars
         if [ ! $validator_url ]; then
-                read -p "Enter your IP : " validator_url
+                read -p "Enter your IP VPS : " validator_url
                 echo 'export validator_url ='${validator_url} >> $HOME/.bash_profile
         fi
-ADDRESS=$(cargo run --bin wallet-tool -- show-address)
+sleep 1
+
+# update package
+sudo apt update && sudo apt upgrade -y
+
+sleep 1
+
 # install docker
 sudo apt-get install ca-certificates curl gnupg lsb-release -y
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
@@ -76,6 +77,7 @@ sleep 1
 
 sudo curl https://sh.rustup.rs/ -sSf | sh -s -- -y
 source $HOME/.cargo/env
+cd validator-rust
 cargo run --bin wallet-tool create | tee wallet.json |  cargo run --bin wallet-tool -- show-address
 
 sleep 1
@@ -100,7 +102,3 @@ sleep 1
 # inisialisasi verifikasi
 npm i -g @bundlr-network/testnet-cli
 cd /root/validator-rust && testnet-cli join RkinCLBlY4L5GZFv8gCFcrygTyd5Xm91CzKlR6qxhKA -w wallet.json -u "http://$validator_url:80" -s 25000000000000 
-
-sleep 2
-# check join status
-npx @bundlr-network/testnet-cli@latest check RkinCLBlY4L5GZFv8gCFcrygTyd5Xm91CzKlR6qxhKA $ADDRESS
