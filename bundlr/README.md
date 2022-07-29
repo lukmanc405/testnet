@@ -79,7 +79,9 @@ screen -R "bundlr"
 **Jalankan docker**
 
 ```
-cd ~/validator-rust && docker compose up -d
+cd ~/validator-rust && git pull origin master
+docker compose build
+docker compose up -d
 ```
 
 
@@ -94,7 +96,7 @@ cd ~/validator-rust && docker compose logs --tail=100 -f
 **Inisialisasi Pemverifikasi:**
 
 ```
-npm i -g @bundlr-network/testnet-cli
+npm i -g @bundlr-network/testnet-cli -y
 ```
 
 Tambahkan validator anda ke jaringan. Edit alamat `ipkowe` Anda:
