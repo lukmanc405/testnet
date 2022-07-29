@@ -20,12 +20,12 @@ if [ -f "$bash_profile" ]; then
     . $HOME/.bash_profile
 fi
 
-function setupVars {
-        if [ ! $IPKOWE ]; then
-                read -p "Enter your IP : " IP_KOWE
-                echo 'export IP_KOWE ='${IP_KOWE} >> $HOME/.bash_profile
+# setupVars
+        if [ ! $validator_url ]; then
+                read -p "Enter your IP : " validator_url
+                echo 'export validator_url ='${validator_url} >> $HOME/.bash_profile
         fi
-
+ADDRESS=$(cargo run --bin wallet-tool -- show-address)
 # install docker
 sudo apt-get install ca-certificates curl gnupg lsb-release -y
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
@@ -96,7 +96,7 @@ sleep 1
 
 # inisialisasi verifikasi
 npm i -g @bundlr-network/testnet-cli
-cd /root/validator-rust && testnet-cli join RkinCLBlY4L5GZFv8gCFcrygTyd5Xm91CzKlR6qxhKA -w wallet.json -u "http://$IP_KOWE:80" -s 25000000000000 
+cd /root/validator-rust && testnet-cli join RkinCLBlY4L5GZFv8gCFcrygTyd5Xm91CzKlR6qxhKA -w wallet.json -u "http://$validator_url:80" -s 25000000000000 
 
 # check join status
 npx @bundlr-network/testnet-cli@latest check RkinCLBlY4L5GZFv8gCFcrygTyd5Xm91CzKlR6qxhKA $ADDRESS
