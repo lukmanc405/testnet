@@ -138,6 +138,14 @@ testnet-cli balance <address>
 npx @bundlr-network/testnet-cli -V
 ```
 
+### Update Version node bundlr
+```
+npm install -g npm@latest
+npm audit fix
+npm update -g @bundlr-network/testnet-cli
+npx @bundlr-network/testnet-cli -V
+```
+
 ### Untuk stop & hapus node
 
 ```
