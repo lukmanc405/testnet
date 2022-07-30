@@ -124,6 +124,14 @@ Sebanyak ini...
 cd $HOME/validator-rust && cargo run --bin wallet-tool show-address --wallet wallet.json
 ```
 
+### Cek validator apakah sudah berjalan
+>ganti XXX dengan address
+
+```
+npx @bundlr-network/testnet-cli@latest check  RkinCLBlY4L5GZFv8gCFcrygTyd5Xm91CzKlR6qxhKA XXX
+```
+
+
 ### Cek saldo
 
 ```
