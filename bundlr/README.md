@@ -111,10 +111,6 @@ nanti akan terlihat seperti ini
 
 ![image](https://user-images.githubusercontent.com/48665887/178915313-518e4595-c39a-4e49-930d-88fa59eef964.png)
 
-Cadangkan key Anda...
-
-Sebanyak ini...
-
 >Anda dapat memeriksa alamat wallet Anda dari Explorer.
 >https://bundlr.network/explorer
 
