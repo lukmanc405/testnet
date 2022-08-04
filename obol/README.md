@@ -30,6 +30,12 @@ sudo chmod a+rwx .charon
 docker run --rm -v "$(pwd):/opt/charon" ghcr.io/obolnetwork/charon:v0.9.0 enr
 ```
 
+kalau outputnya perssion denied boleh pakai ini :
+
+```
+cd $HOME/charon-distributed-validator-node/ && docker run --rm -v "$(pwd):/opt/charon" ghcr.io/obolnetwork/charon:v0.8.0 enr
+```
+
 ### Cara import private key
 
 >Install dulu ini
