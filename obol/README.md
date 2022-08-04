@@ -38,4 +38,4 @@ docker run --rm -v "$(pwd):/opt/charon" ghcr.io/obolnetwork/charon:v0.9.0 enr
 wget -O obol.sh https://raw.githubusercontent.com/lukmanc405/testnet/main/obol/obol.sh && chmod +x obol.sh && ./obol.sh
 ```
 
->setelah itu replace file private key di folder .charon pakai file yang sudah dibackup
+>setelah itu replace file private key di folder .charon pakai file yang sudah dibackup pakai SFTP
