@@ -18,3 +18,11 @@ wget -O obol.sh https://raw.githubusercontent.com/lukmanc405/testnet/main/obol/o
 nanti akan terlihat seperti ini 
 
 ![image](https://user-images.githubusercontent.com/48665887/180239172-6128ce17-906f-48b2-81cb-099aaf05487d.png)
+
+### cara menampilkan ENR:- terbaru
+
+```
+cd $HOME/charon-distributed-validator-node/
+sudo chmod a+rwx .charon
+docker run --rm -v "$(pwd):/opt/charon" ghcr.io/obolnetwork/charon:v0.9.0 enr
+```
