@@ -20,6 +20,9 @@ nanti akan terlihat seperti ini
 ![image](https://user-images.githubusercontent.com/48665887/180239172-6128ce17-906f-48b2-81cb-099aaf05487d.png)
 
 ### cara menampilkan ENR:- terbaru
+>setiap kali anda melakukan command dibawah ini jangan kaget kalau ENR berubah-ubah karena dia menyesuaikan timestamp
+>pastikan anda sudah Backup file privatekey di /root/charon-distributed-validator-node/.charon/ ke PC anda (bisa pakai SFTP)
+
 
 ```
 cd $HOME/charon-distributed-validator-node/
