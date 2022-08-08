@@ -106,3 +106,8 @@ rm -rf $HOME/{sui,.sui,sui_source.sh} /usr/bin/{sui,sui-node,sui-faucet} \
 systemctl daemon-reload
 ```
 
+**Kalau perintah sui --version tidak menunjukkan apapun**
+
+```
+grep 'version =' /$HOME/sui/crates/sui/Cargo.toml -m 1
+```
