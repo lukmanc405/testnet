@@ -91,7 +91,7 @@ services:
       CHARON_LOG_LEVEL: info
       CHARON_JAEGER_SERVICE: charon
       CHARON_P2P_EXTERNAL_HOSTNAME: charon
-      CHARON_P2P_BOOTNODES=http://213.133.98.80:3640/enr
+      CHARON_P2P_BOOTNODES : http://213.133.98.80:3640/enr
     ports:
       - 3600:3600/tcp
       - 3610:3610/tcp
