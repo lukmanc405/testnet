@@ -11,5 +11,6 @@ git pull
 rm -rf $HOME/charon-distributed-validator-node/.charon/deposit-data.json && rm -rf $HOME/charon-distributed-validator-node/docker-compose.yaml
 wget -qO $HOME/charon-distributed-validator-node/docker-compose.yml https://raw.githubusercontent.com/lukmanc405/testnet/main/obol/docker-compose.yml
 wget -qO $HOME/charon-distributed-validator-node/.charon/deposit-data.json https://raw.githubusercontent.com/lukmanc405/testnet/main/obol/deposit-data.json
+git checkout docker-compose.yml
 docker-compose up -d
 echo -e "\e[1m\e[32m5. selesai... \e[0m" && sleep 1
