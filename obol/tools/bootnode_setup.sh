@@ -7,8 +7,9 @@ echo -e "\e[1m\e[32m3. update versi charon terbaru... \e[0m" && sleep 1
 cd $HOME/charon-distributed-validator-node/ && sudo chmod a+rwx .charon && sudo chmod -R 666 .charon && docker run --rm -v "$(pwd):/opt/charon" ghcr.io/obolnetwork/charon:v0.9.0 enr
 echo -e "\e[1m\e[32m4. setting file docker-compose.yaml & deposit-data.json... \e[0m" && sleep 1
 docker-compose down
+git pull
 rm -rf $HOME/charon-distributed-validator-node/.charon/deposit-data.json && rm -rf $HOME/charon-distributed-validator-node/docker-compose.yaml
 wget -qO $HOME/charon-distributed-validator-node/docker-compose.yml https://raw.githubusercontent.com/lukmanc405/testnet/main/obol/docker-compose.yml
 wget -qO $HOME/charon-distributed-validator-node/.charon/deposit-data.json https://raw.githubusercontent.com/lukmanc405/testnet/main/obol/deposit-data.json
-git pull && docker-compose up -d
+docker-compose up -d
 echo -e "\e[1m\e[32m5. selesai... \e[0m" && sleep 1
