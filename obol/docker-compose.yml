@@ -81,7 +81,7 @@ services:
     depends_on:
       - lighthouse
     environment:
-      CHARON_BEACON_NODE_ENDPOINTS: http://lighthouse:5052 , https://2CFvBWRj5z9GD04K0cDa4DWbf2H:d5945fb8514db6d90eaf9a3cc1005de1@eth2-beacon-mainnet.infura.io
+      CHARON_BEACON_NODE_ENDPOINTS: http://lighthouse:5052 , https://2CFvBWRj5z9GD04K0cDa4DWbf2H:d5945fb8514db6d90eaf9a3cc1005de1@eth2-beacon-prater.infura.io
       CHARON_JAEGER_ADDRESS: jaeger:6831
       CHARON_VALIDATOR_API_ADDRESS: 0.0.0.0:3600
       CHARON_P2P_TCP_ADDRESS: 0.0.0.0:3610
