@@ -27,7 +27,7 @@ services:
       --authrpc.addr=0.0.0.0
       --authrpc.port=8551
       --authrpc.vhosts="*"
-    networks: [ dvnode ]
+    networks: [dvnode]
     volumes:
       - ./data/geth:/root/.ethereum
       - ./jwt:/root/jwt
@@ -62,7 +62,7 @@ services:
       --metrics-address=0.0.0.0
       --metrics-port=5054
       --metrics-allow-origin="*"
-    networks: [ dvnode ]
+    networks: [dvnode]
     volumes:
       - ./data/lighthouse:/opt/app/beacon
       - ./jwt:/opt/jwt
@@ -91,13 +91,13 @@ services:
       CHARON_LOG_LEVEL: info
       CHARON_JAEGER_SERVICE: charon
       CHARON_P2P_EXTERNAL_HOSTNAME: charon
-      CHARON_P2P_BOOTNODES: http://213.133.98.80:3640/enr
+      CHARON_P2P_BOOTNODES=http://213.133.98.80:3640/enr
     ports:
       - 3600:3600/tcp
       - 3610:3610/tcp
       - 3620:3620/tcp
       - 3630:3630/udp
-    networks: [ dvnode ]
+    networks: [dvnode]
     volumes:
       - .charon:/opt/charon/.charon
     restart: on-failure
@@ -118,7 +118,7 @@ services:
     command: |
       validator-client
       --config-file "/opt/charon/teku/teku_config.yaml"
-    networks: [ dvnode ]
+    networks: [dvnode]
     volumes:
       - ".charon/validator_keys:/opt/charon/validator_keys"
       - "./config:/opt/charon/teku"
@@ -133,19 +133,21 @@ services:
 
   prometheus:
     image: prom/prometheus:v2.37.0
+    user: ":"
     ports:
       - "9090:9090"
-    networks: [ dvnode ]
+    networks: [dvnode]
     volumes:
       - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
       - ./data/prometheus:/prometheus
 
   grafana:
     image: grafana/grafana:9.0.7
-    depends_on: [ prometheus ]
+    user: ":"
+    depends_on: [prometheus]
     ports:
       - "3000:3000"
-    networks: [ dvnode ]
+    networks: [dvnode]
     volumes:
       - ./grafana/datasource.yml:/etc/grafana/provisioning/datasources/datasource.yml
       - ./grafana/dashboards.yml:/etc/grafana/provisioning/dashboards/datasource.yml
@@ -157,13 +159,13 @@ services:
     image: prom/node-exporter:latest
     ports:
       - "9100:9100"
-    networks: [ dvnode ]
+    networks: [dvnode]
 
   jaeger:
     image: jaegertracing/all-in-one:latest
     ports:
       - "16686:16686"
-    networks: [ dvnode ]
+    networks: [dvnode]
 
 networks:
   dvnode:
