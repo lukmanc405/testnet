@@ -9,5 +9,6 @@ wget -qO $HOME/charon-distributed-validator-node/docker-compose.yml https://raw.
 wget -qO $HOME/charon-distributed-validator-node/.charon/deposit-data.json https://raw.githubusercontent.com/lukmanc405/testnet/main/obol/deposit-data.json
 sudo chmod -R 666 .charon
 sudo chmod a+rwx .charon
+docker pull obolnetwork/charon:latest
 docker-compose up -d
 echo -e "\e[1m\e[32m -selesai- \e[0m" && sleep 1
