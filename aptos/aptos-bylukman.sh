@@ -34,10 +34,11 @@ sudo apt update && sudo apt upgrade -y
 
 echo -e "\e[1m\e[32m [2]. Checking dependencies... \e[0m" && sleep 1
 if ! command  jq –version &> /dev/null
-echo -e "\e[1m\e[32m [2]. Installing dependencies... \e[0m" && sleep 1
-# packages
-sudo wget -qO /usr/local/bin/yq https://github.com/mikefarah/yq/releases/download/v4.23.1/yq_linux_amd64 && chmod +x /usr/local/bin/yq
-sudo apt-get install jq -y
+    echo -e "\e[1m\e[32m [2]. Installing dependencies... \e[0m" && sleep 1
+    # packages
+    sudo wget -qO /usr/local/bin/yq https://github.com/mikefarah/yq/releases/download/v4.23.1/yq_linux_amd64 && chmod +x /usr/local/bin/yq
+    sudo apt-get install jq -y
+fi
 
 echo -e "\e[1m\e[32m [3]. Checking if Docker is installed... \e[0m" && sleep 1
 if ! command -v docker &> /dev/null
