@@ -114,5 +114,5 @@ echo -e "\e[1m\e[32m [11].  Compile genesis blob and waypoint ... \e[0m" && slee
 aptos genesis generate-genesis --local-repository-dir ~/testnet --output-dir ~/testnet
 
 echo -e "\e[1m\e[32m  Start running \e[0m" && sleep 1 
-cd ~/$WORKSPACE && docker compose up -d
+cd ~/$WORKSPACE && docker-compose up -d
 
