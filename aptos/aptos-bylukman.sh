@@ -102,4 +102,3 @@ unzip framework.zip
 
 echo -e "\e[1m\e[32m [10].  Compile genesis blob and waypoint ... \e[0m" && sleep 1 
 aptos genesis generate-genesis --local-repository-dir ~/testnet --output-dir ~/testnet
-
