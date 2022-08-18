@@ -60,7 +60,6 @@ then
    sudo chmod +x /usr/bin/docker-compose
 fi
 
-function aptos:client(){
 if ! [ -f /usr/bin/aptos ]
 then
 echo -e "\e[1m\e[32m [5]. Install aptos CLI ... \e[0m" && sleep 1
@@ -69,7 +68,6 @@ sudo unzip -o aptos-cli.zip -d /usr/local/bin
 chmod +x /usr/local/bin/aptos
 rm aptos-cli.zip
 aptos -V
-}
 
 echo -e "\e[1m\e[32m [6]. Creating workspace directory ... \e[0m" && sleep 1
 export WORKSPACE=testnet
