@@ -1,4 +1,5 @@
 #!/bin/bash
+clear
 echo "=================================================="
 echo -e "\033[0;35m"
 echo " | |  | | | | |/ /  \/  |  / \  | \ | |  ";
@@ -9,7 +10,6 @@ echo -e "\e[0m"
 echo "=================================================="  
 
 sleep 2
-
 
 bash_profile=$HOME/.bash_profile
 if [ -f "$bash_profile" ]; then
@@ -27,15 +27,15 @@ fi
         fi
 sleep 1
 
-
 echo -e "\e[1m\e[32m [1]. Updating paket... \e[0m" && sleep 1
 # update
 sudo apt update && sudo apt upgrade -y
+sudo apt install unzip
 
 echo -e "\e[1m\e[32m [2]. Checking dependencies... \e[0m" && sleep 1
 if ! command  jq –version &> /dev/null
 then
-    echo -e "\e[1m\e[32m [2]. Installing dependencies... \e[0m" && sleep 1
+    echo -e "\e[1m\e[32m [2.1] Installing dependencies... \e[0m" && sleep 1
     # packages
     sudo wget -qO /usr/local/bin/yq https://github.com/mikefarah/yq/releases/download/v4.23.1/yq_linux_amd64 && chmod +x /usr/local/bin/yq
     sudo apt-get install jq -y
@@ -60,7 +60,7 @@ then
    sudo chmod +x /usr/bin/docker-compose
 fi
 
-echo -e "\e[1m\e[32m [5]. Checking if docker compose is installed ... \e[0m" && sleep 1
+echo -e "\e[1m\e[32m [5]. Install aptos CLI ... \e[0m" && sleep 1
 wget -qO aptos-cli.zip https://github.com/aptos-labs/aptos-core/releases/download/aptos-cli-0.2.0/aptos-cli-0.2.0-Ubuntu-x86_64.zip
 sudo unzip -o aptos-cli.zip -d /usr/local/bin
 chmod +x /usr/local/bin/aptos
