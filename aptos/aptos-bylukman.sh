@@ -12,10 +12,6 @@ echo "=================================================="
 sleep 2
 
 bash_profile=$HOME/.bash_profile
-if [ -f "$bash_profile" ]; then
-    rm -rf $HOME/.bash_profile
-fi
-
 # setupVars
         if [ ! $NODENAME ]; then
                 read -p "Enter your Node Username : " NODENAME
@@ -61,7 +57,7 @@ then
 fi
 
 echo -e "\e[1m\e[32m [5]. Install aptos CLI ... \e[0m" && sleep 1
-wget -qO aptos-cli.zip https://github.com/aptos-labs/aptos-core/releases/download/aptos-cli-0.2.0/aptos-cli-0.2.0-Ubuntu-x86_64.zip
+wget -qO aptos-cli.zip https://github.com/aptos-labs/aptos-core/releases/download/aptos-cli-v0.2.5/aptos-cli-0.2.5-Ubuntu-x86_64.zip
 sudo unzip -o aptos-cli.zip -d /usr/local/bin
 chmod +x /usr/local/bin/aptos
 rm aptos-cli.zip
