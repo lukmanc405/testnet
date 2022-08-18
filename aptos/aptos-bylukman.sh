@@ -19,11 +19,11 @@ fi
 # setupVars
         if [ ! $NODENAME ]; then
                 read -p "Enter your Node Username : " NODENAME
-                echo 'export NODENAME ='${NODENAME} >> $HOME/.bash_profile
+                echo 'export NODENAME =' ${NODENAME} >> $HOME/.bash_profile
         fi
                 if [ ! $YOUR_IP ]; then
                 read -p "Enter your VPS IP : " YOUR_IP
-                echo 'export YOUR_IP ='${YOUR_IP} >> $HOME/.bash_profile
+                echo 'export YOUR_IP =' ${YOUR_IP} >> $HOME/.bash_profile
         fi
 sleep 1
 
