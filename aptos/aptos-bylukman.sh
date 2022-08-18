@@ -69,6 +69,7 @@ sudo unzip -o aptos-cli.zip -d /usr/local/bin
 chmod +x /usr/local/bin/aptos
 rm aptos-cli.zip
 aptos -V
+fi
 
 echo -e "\e[1m\e[32m [6]. Creating workspace directory ... \e[0m" && sleep 1
 export WORKSPACE=testnet
