@@ -55,6 +55,7 @@ fi
 echo -e "\e[1m\e[32m [4]. Checking if docker compose is installed ... \e[0m" && sleep 1
 if ! command docker compose version &> /dev/null
 then 
+   echo -e "\e[1m\e[32m3.1 Installing docker-compose... \e[0m" && sleep 1
    docker_compose_version=$(wget -qO- https://api.github.com/repos/docker/compose/releases/latest | jq -r ".tag_name")
    sudo wget -O /usr/bin/docker-compose "https://github.com/docker/compose/releases/download/${docker_compose_version}/docker-compose-`uname -s`-`uname -m`"
    sudo chmod +x /usr/bin/docker-compose
