@@ -60,19 +60,25 @@ then
    sudo chmod +x /usr/bin/docker-compose
 fi
 
-echo -e "\e[1m\e[32m [5]. Creating workspace directory ... \e[0m" && sleep 1
+echo -e "\e[1m\e[32m [5]. Checking if docker compose is installed ... \e[0m" && sleep 1
+wget -qO aptos-cli.zip https://github.com/aptos-labs/aptos-core/releases/download/aptos-cli-0.2.0/aptos-cli-0.2.0-Ubuntu-x86_64.zip
+sudo unzip -o aptos-cli.zip -d /usr/local/bin
+chmod +x /usr/local/bin/aptos
+rm aptos-cli.zip
+
+echo -e "\e[1m\e[32m [6]. Creating workspace directory ... \e[0m" && sleep 1
 export WORKSPACE=testnet
 mkdir ~/$WORKSPACE
 cd ~/$WORKSPACE
 
-echo -e "\e[1m\e[32m [6]. Download validator.yaml & docker-compose.yaml ... \e[0m" && sleep 1
+echo -e "\e[1m\e[32m [7]. Download validator.yaml & docker-compose.yaml ... \e[0m" && sleep 1
 wget https://raw.githubusercontent.com/aptos-labs/aptos-core/main/docker/compose/aptos-node/docker-compose.yaml
 wget https://raw.githubusercontent.com/aptos-labs/aptos-core/main/docker/compose/aptos-node/validator.yaml
 
-echo -e "\e[1m\e[32m [7]. Generate key pairs ... \e[0m" && sleep 1
+echo -e "\e[1m\e[32m [8]. Generate key pairs ... \e[0m" && sleep 1
 aptos genesis generate-keys --output-dir ~/$WORKSPACE
 
-echo -e "\e[1m\e[32m [8].  set-validator-configuration ... \e[0m" && sleep 1
+echo -e "\e[1m\e[32m [9].  set-validator-configuration ... \e[0m" && sleep 1
 cd ~/$WORKSPACE
 aptos genesis set-validator-configuration \
     --keys-dir ~/$WORKSPACE --local-repository-dir ~/$WORKSPACE \
@@ -98,9 +104,10 @@ allow_new_validators: true
 EOF
 fi
 
-echo -e "\e[1m\e[32m [9].  Download the Aptos Framework ... \e[0m" && sleep 1
-wget https://github.com/aptos-labs/aptos-core/releases/download/aptos-framework-v0.2.0/framework.zip
-unzip framework.zip
+echo -e "\e[1m\e[32m [10].  Download the Aptos Framework ... \e[0m" && sleep 1
+wget -qO framework.zip https://github.com/aptos-labs/aptos-core/releases/download/aptos-framework-v0.2.0/framework.zip
+unzip -o framework.zip
+rm framework.zip
 
-echo -e "\e[1m\e[32m [10].  Compile genesis blob and waypoint ... \e[0m" && sleep 1 
+echo -e "\e[1m\e[32m [11].  Compile genesis blob and waypoint ... \e[0m" && sleep 1 
 aptos genesis generate-genesis --local-repository-dir ~/testnet --output-dir ~/testnet
