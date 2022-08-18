@@ -11,7 +11,6 @@ echo "=================================================="
 
 sleep 2
 
-source $HOME/.bash_profile
 bash_profile=$HOME/.bash_profile
 if [ -f "$bash_profile" ]; then
     rm -rf $HOME/.bash_profile
