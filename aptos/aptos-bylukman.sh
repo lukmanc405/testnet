@@ -60,11 +60,16 @@ then
    sudo chmod +x /usr/bin/docker-compose
 fi
 
+function aptos:client(){
+if ! [ -f /usr/bin/aptos ]
+then
 echo -e "\e[1m\e[32m [5]. Install aptos CLI ... \e[0m" && sleep 1
 wget -qO aptos-cli.zip https://github.com/aptos-labs/aptos-core/releases/download/aptos-cli-0.2.0/aptos-cli-0.2.0-Ubuntu-x86_64.zip
 sudo unzip -o aptos-cli.zip -d /usr/local/bin
 chmod +x /usr/local/bin/aptos
 rm aptos-cli.zip
+aptos -V
+}
 
 echo -e "\e[1m\e[32m [6]. Creating workspace directory ... \e[0m" && sleep 1
 export WORKSPACE=testnet
@@ -85,9 +90,9 @@ aptos genesis set-validator-configuration \
     --username ${NODENAME} \
     --validator-host ${YOUR_IP}:6180
 
-if ! [ -f "${WORKSPACE}/layout.yaml" ]
+if ! [ -f "$WORKSPACE/layout.yaml" ]
 then
-cat > ${WORKSPACE}/layout.yaml <<EOF
+cat > $WORKSPACE/layout.yaml <<EOF
 ---
 root_key: "F22409A93D1CD12D2FC92B5F8EB84CDCD24C348E32B3E7A720F3D2E288E63394"
 users:
