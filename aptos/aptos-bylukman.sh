@@ -11,6 +11,7 @@ echo "=================================================="
 
 sleep 2
 
+source $HOME/.bash_profile
 bash_profile=$HOME/.bash_profile
 if [ -f "$bash_profile" ]; then
     rm -rf $HOME/.bash_profile
@@ -112,3 +113,7 @@ rm framework.zip
 
 echo -e "\e[1m\e[32m [11].  Compile genesis blob and waypoint ... \e[0m" && sleep 1 
 aptos genesis generate-genesis --local-repository-dir ~/testnet --output-dir ~/testnet
+
+echo -e "\e[1m\e[32m  Start running \e[0m" && sleep 1 
+docker compose up -d
+
