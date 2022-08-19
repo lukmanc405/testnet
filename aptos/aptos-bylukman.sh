@@ -65,6 +65,7 @@ aptos -V
 
 echo -e "\e[1m\e[32m [6]. Creating workspace directory ... \e[0m" && sleep 1
 export WORKSPACE=testnet
+export USERNAME=$NODENAME
 mkdir ~/$WORKSPACE
 cd ~/$WORKSPACE
 
