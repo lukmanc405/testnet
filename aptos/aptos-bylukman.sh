@@ -18,7 +18,7 @@ if [ ! $NODENAME ]; then
 	echo 'export NODENAME='$NODENAME >> $HOME/.bash_profile
 fi
 if [ ! $YOUR_IP ]; then
-        read -p "Enter your VPS IP : " YOUR_IP
+        read -p "Enter your VPS IP / DNS : " YOUR_IP
         echo 'export YOUR_IP='$YOUR_IP >> $HOME/.bash_profile
 fi
 echo "export WORKSPACE=testnet" >> $HOME/.bash_profile
@@ -59,7 +59,7 @@ then
 fi
 
 echo -e "\e[1m\e[32m [5]. Install aptos CLI ... \e[0m" && sleep 1
-wget -qO aptos-cli.zip https://github.com/aptos-labs/aptos-core/releases/download/aptos-cli-v0.2.5/aptos-cli-0.2.5-Ubuntu-x86_64.zip
+wget -qO aptos-cli.zip https://github.com/aptos-labs/aptos-core/releases/download/aptos-cli-v0.3.1/aptos-cli-0.3.1-Ubuntu-x86_64.zip
 sudo unzip -o aptos-cli.zip -d /usr/local/bin
 chmod +x /usr/local/bin/aptos
 rm aptos-cli.zip
@@ -91,10 +91,8 @@ aptos genesis set-validator-configuration \
 if ! [ -f "$WORKSPACE/layout.yaml" ]
 then
 sudo tee layout.yaml > /dev/null <<EOF
----
 root_key: "D04470F43AB6AEAA4EB616B72128881EEF77346F2075FFE68E14BA7DEBD8095E"
-users:
-  - $NODENAME
+users: $NODENAME
 chain_id: 43
 allow_new_validators: false
 epoch_duration_secs: 7200
@@ -111,7 +109,9 @@ EOF
 fi
 
 echo -e "\e[1m\e[32m [10].  Download the Aptos Framework ... \e[0m" && sleep 1
-curl https://raw.githubusercontent.com/aptos-labs/aptos-core/testnet/aptos-move/framework/releases/head.mrb --output framework.mrb
+wget -qO framework.zip https://github.com/aptos-labs/aptos-core/releases/download/aptos-framework-v0.2.0/framework.zip
+unzip -o framework.zip
+rm framework.zip
 
 echo -e "\e[1m\e[32m [11].  Compile genesis blob and waypoint ... \e[0m" && sleep 1 
 aptos genesis generate-genesis --local-repository-dir ~/testnet --output-dir ~/testnet
