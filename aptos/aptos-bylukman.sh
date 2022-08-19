@@ -86,18 +86,21 @@ if ! [ -f "$WORKSPACE/layout.yaml" ]
 then
 sudo tee layout.yaml > /dev/null <<EOF
 ---
-root_key: "F22409A93D1CD12D2FC92B5F8EB84CDCD24C348E32B3E7A720F3D2E288E63394"
+root_key: "D04470F43AB6AEAA4EB616B72128881EEF77346F2075FFE68E14BA7DEBD8095E"
 users:
   - ${NODENAME}
-chain_id: 40
-min_stake: 0
-max_stake: 100000
-min_lockup_duration_secs: 0
-max_lockup_duration_secs: 2592000
-epoch_duration_secs: 86400
-initial_lockup_timestamp: 1656615600
-min_price_per_gas_unit: 1
-allow_new_validators: true
+chain_id: 43
+allow_new_validators: false
+epoch_duration_secs: 7200
+is_test: true
+min_stake: 100000000000000
+min_voting_threshold: 100000000000000
+max_stake: 100000000000000000
+recurring_lockup_duration_secs: 86400
+required_proposer_stake: 100000000000000
+rewards_apy_percentage: 10
+voting_duration_secs: 43200
+voting_power_increase_limit: 20
 EOF
 fi
 
