@@ -80,7 +80,7 @@ aptos genesis generate-keys --output-dir ~/$WORKSPACE
 
 echo -e "\e[1m\e[32m [9].  Set-validator-configuration ... \e[0m" && sleep 1
 cd ~/$WORKSPACE
-mkdir -p $WORKSPACE/keys/
+mkdir -p keys/
 aptos genesis set-validator-configuration \
     --local-repository-dir $WORKSPACE \
     --username $NODENAME \
@@ -111,9 +111,7 @@ EOF
 fi
 
 echo -e "\e[1m\e[32m [10].  Download the Aptos Framework ... \e[0m" && sleep 1
-wget -qO framework.zip https://github.com/aptos-labs/aptos-core/releases/download/aptos-framework-v0.2.0/framework.zip
-unzip -o framework.zip
-rm framework.zip
+curl https://raw.githubusercontent.com/aptos-labs/aptos-core/testnet/aptos-move/framework/releases/head.mrb --output framework.mrb
 
 echo -e "\e[1m\e[32m [11].  Compile genesis blob and waypoint ... \e[0m" && sleep 1 
 aptos genesis generate-genesis --local-repository-dir ~/testnet --output-dir ~/testnet
