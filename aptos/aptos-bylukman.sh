@@ -13,7 +13,7 @@ sleep 2
 
 bash_profile=$HOME/.bash_profile
 # setupVars
-if [ ! $NODENAME ]; then
+if [ ! $USERNAME ]; then
 	read -p "Enter username: " USERNAME
 	echo 'export USERNAME='$USERNAME >> $HOME/.bash_profile
 fi
