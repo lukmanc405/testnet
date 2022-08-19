@@ -79,7 +79,7 @@ echo -e "\e[1m\e[32m [9].  Set-validator-configuration ... \e[0m" && sleep 1
 cd ~/$WORKSPACE
 aptos genesis set-validator-configuration \
     --local-repository-dir ~/$WORKSPACE \
-    --username $NODENAME \
+    --username ${NODENAME} \
     --owner-public-identity-file ~/$WORKSPACE/keys/public-keys.yaml \
     --validator-host ${YOUR_IP}:6180 \
     --stake-amount 100000000000000
