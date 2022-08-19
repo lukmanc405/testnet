@@ -75,12 +75,14 @@ wget https://raw.githubusercontent.com/aptos-labs/aptos-core/main/docker/compose
 echo -e "\e[1m\e[32m [8]. Generate key pairs ... \e[0m" && sleep 1
 aptos genesis generate-keys --output-dir ~/$WORKSPACE
 
-echo -e "\e[1m\e[32m [9].  set-validator-configuration ... \e[0m" && sleep 1
+echo -e "\e[1m\e[32m [9].  Set-validator-configuration ... \e[0m" && sleep 1
 cd ~/$WORKSPACE
 aptos genesis set-validator-configuration \
-    --keys-dir ~/$WORKSPACE --local-repository-dir ~/$WORKSPACE \
-    --username ${NODENAME} \
-    --validator-host ${YOUR_IP}:6180
+    --local-repository-dir ~/$WORKSPACE \
+    --username $NODENAME \
+    --owner-public-identity-file ~/$WORKSPACE/keys/public-keys.yaml \
+    --validator-host ${YOUR_IP}:6180 \
+    --stake-amount 100000000000000
 
 if ! [ -f "$WORKSPACE/layout.yaml" ]
 then
