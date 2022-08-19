@@ -79,7 +79,7 @@ aptos genesis generate-keys --output-dir ~/$WORKSPACE
 
 echo -e "\e[1m\e[32m [9].  Set-validator-configuration ... \e[0m" && sleep 1
 cd ~/$WORKSPACE
-mkdir -p keys/
+mkdir -p $WORKSPACE/keys/
 aptos genesis set-validator-configuration \
     --local-repository-dir $WORKSPACE \
     --username $USERNAME \
