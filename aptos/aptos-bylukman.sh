@@ -15,11 +15,11 @@ bash_profile=$HOME/.bash_profile
 # setupVars
 if [ ! $NODENAME ]; then
 	read -p "Enter node name: " NODENAME
-	echo 'export NODENAME='${NODENAME} >> $HOME/.bash_profile
+	echo 'export NODENAME='$NODENAME >> $HOME/.bash_profile
 fi
 if [ ! $YOUR_IP ]; then
         read -p "Enter your VPS IP : " YOUR_IP
-        echo 'export YOUR_IP='${YOUR_IP} >> $HOME/.bash_profile
+        echo 'export YOUR_IP='$YOUR_IP >> $HOME/.bash_profile
 fi
 sleep 1
 
@@ -80,9 +80,9 @@ cd ~/$WORKSPACE
 mkdir -p $WORKSPACE/keys/
 aptos genesis set-validator-configuration \
     --local-repository-dir $WORKSPACE \
-    --username ${NODENAME} \
+    --username $NODENAME \
     --owner-public-identity-file $WORKSPACE/keys/public-keys.yaml \
-    --validator-host ${YOUR_IP}:6180 \
+    --validator-host $YOUR_IP:6180 \
     --stake-amount 100000000000000
 
 if ! [ -f "$WORKSPACE/layout.yaml" ]
@@ -91,7 +91,7 @@ sudo tee layout.yaml > /dev/null <<EOF
 ---
 root_key: "D04470F43AB6AEAA4EB616B72128881EEF77346F2075FFE68E14BA7DEBD8095E"
 users:
-  - ${NODENAME}
+  - $NODENAME
 chain_id: 43
 allow_new_validators: false
 epoch_duration_secs: 7200
