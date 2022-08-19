@@ -74,12 +74,12 @@ echo -e "\e[1m\e[32m [7]. Download validator.yaml & docker-compose.yaml ... \e[0
 wget https://raw.githubusercontent.com/aptos-labs/aptos-core/main/docker/compose/aptos-node/docker-compose.yaml
 wget https://raw.githubusercontent.com/aptos-labs/aptos-core/main/docker/compose/aptos-node/validator.yaml
 
-echo -e "\e[1m\e[32m [8]. Generate key pairs ... \e[0m" && sleep 1
+echo -e "\e[1m\e[32m [8]. Generate key pairs ... \e[0m" && sleep 1\
+mkdir -p $WORKSPACE/keys/
 aptos genesis generate-keys --output-dir ~/$WORKSPACE/keys
 
 echo -e "\e[1m\e[32m [9].  Set-validator-configuration ... \e[0m" && sleep 1
 cd ~/$WORKSPACE
-mkdir -p $WORKSPACE/keys/
 aptos genesis set-validator-configuration \
     --local-repository-dir $WORKSPACE \
     --username $USERNAME \
