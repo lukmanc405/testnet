@@ -13,14 +13,14 @@ sleep 2
 
 bash_profile=$HOME/.bash_profile
 # setupVars
-        if [ ! $NODENAME ]; then
-                read -p "Enter your Node Username : " NODENAME
-                echo 'export NODENAME =' ${NODENAME} >> $HOME/.bash_profile
-        fi
-                if [ ! $YOUR_IP ]; then
-                read -p "Enter your VPS IP : " YOUR_IP
-                echo 'export YOUR_IP =' ${YOUR_IP} >> $HOME/.bash_profile
-        fi
+if [ ! $NODENAME ]; then
+	read -p "Enter node name: " NODENAME
+	echo 'export NODENAME='${NODENAME} >> $HOME/.bash_profile
+fi
+if [ ! $YOUR_IP ]; then
+        read -p "Enter your VPS IP : " YOUR_IP
+        echo 'export YOUR_IP='${YOUR_IP} >> $HOME/.bash_profile
+fi
 sleep 1
 
 echo -e "\e[1m\e[32m [1]. Updating paket... \e[0m" && sleep 1
