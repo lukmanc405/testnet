@@ -21,6 +21,8 @@ if [ ! $YOUR_IP ]; then
         read -p "Enter your VPS IP : " YOUR_IP
         echo 'export YOUR_IP='$YOUR_IP >> $HOME/.bash_profile
 fi
+echo "export WORKSPACE=testnet" >> $HOME/.bash_profile
+source $HOME/.bash_profile
 sleep 1
 
 echo -e "\e[1m\e[32m [1]. Updating paket... \e[0m" && sleep 1
