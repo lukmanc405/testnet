@@ -14,8 +14,8 @@ sleep 2
 bash_profile=$HOME/.bash_profile
 # setupVars
 if [ ! $NODENAME ]; then
-	read -p "Enter node name: " NODENAME
-	echo 'export NODENAME='$NODENAME >> $HOME/.bash_profile
+	read -p "Enter username: " USERNAME
+	echo 'export USERNAME='$USERNAME >> $HOME/.bash_profile
 fi
 if [ ! $YOUR_IP ]; then
         read -p "Enter your VPS IP / DNS : " YOUR_IP
@@ -67,7 +67,6 @@ aptos -V
 
 echo -e "\e[1m\e[32m [6]. Creating workspace directory ... \e[0m" && sleep 1
 export WORKSPACE=testnet
-export USERNAME=$NODENAME
 mkdir ~/$WORKSPACE
 cd ~/$WORKSPACE
 
@@ -83,7 +82,7 @@ cd ~/$WORKSPACE
 mkdir -p keys/
 aptos genesis set-validator-configuration \
     --local-repository-dir $WORKSPACE \
-    --username $NODENAME \
+    --username $USERNAME \
     --owner-public-identity-file $WORKSPACE/keys/public-keys.yaml \
     --validator-host $YOUR_IP:6180 \
     --stake-amount 100000000000000
@@ -92,7 +91,7 @@ if ! [ -f "$WORKSPACE/layout.yaml" ]
 then
 sudo tee layout.yaml > /dev/null <<EOF
 root_key: "D04470F43AB6AEAA4EB616B72128881EEF77346F2075FFE68E14BA7DEBD8095E"
-users: $NODENAME
+users: $USERNAME
 chain_id: 43
 allow_new_validators: false
 epoch_duration_secs: 7200
