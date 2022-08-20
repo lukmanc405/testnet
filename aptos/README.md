@@ -81,7 +81,7 @@ kalian bisa dapatkan data ini di
 Kalau sudah isi diatas tinggal `validate node`
 jika sudah menyelesaikan semua task nantgi akan seperti ini
 
-![image](https://user-images.githubusercontent.com/48665887/185735997-121cc7c0-4e0c-4982-bfd6-b20b9345afde.png)
+![image](https://user-images.githubusercontent.com/48665887/185736047-725120ad-4e06-4f96-bd0d-5515268047b2.png)
 
 
 
