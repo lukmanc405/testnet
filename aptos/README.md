@@ -64,7 +64,7 @@ isi data :
 NB : untuk bagian ini
 
 kalian bisa dapatkan data ini di 
-`cd ~/$WORKSPACE/$USERNAME/operator.yaml && cat ~/$WORKSPACE/$USERNAME/owner.yaml`
+`cat ~/$WORKSPACE/$USERNAME/operator.yaml && cat ~/$WORKSPACE/$USERNAME/owner.yaml`
 
 ![image](https://user-images.githubusercontent.com/48665887/185727483-44ffed88-22e3-46cf-b329-9663dda88f80.png)
 
