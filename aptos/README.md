@@ -59,7 +59,7 @@ docker logs testnet-validator-1 -f
 ```
 ### Setelah penginstalan
 isi data :
-> https://aptoslabs.com/it3_profiles
+> https://aptoslabs.com/it3
 
 NB : untuk bagian ini
 
