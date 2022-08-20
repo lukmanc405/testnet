@@ -45,6 +45,10 @@ isi data :
 > https://aptoslabs.com/it3_profiles
 
 NB : untuk bagian ini
+
+kalian bisa dapatkan data ini di 
+`cd ~/$WORKSPACE/$USERNAME/operator.yaml && cat ~/$WORKSPACE/$USERNAME/owner.yaml`
+
 ![image](https://user-images.githubusercontent.com/48665887/185727483-44ffed88-22e3-46cf-b329-9663dda88f80.png)
 
 ![image](https://user-images.githubusercontent.com/48665887/185727519-6c34f36c-a25e-4e17-830e-a7a3ffd7b5df.png)
