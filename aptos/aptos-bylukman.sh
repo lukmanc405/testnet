@@ -109,9 +109,7 @@ EOF
 fi
 
 echo -e "\e[1m\e[32m [10].  Download the Aptos Framework ... \e[0m" && sleep 1
-wget -qO framework.zip https://github.com/aptos-labs/aptos-core/releases/download/aptos-framework-v0.2.0/framework.zip
-unzip -o framework.zip
-rm framework.zip
+wget https://github.com/aptos-labs/aptos-core/releases/download/aptos-framework-v0.3.0/framework.mrb
 
 echo -e "\e[1m\e[32m [11].  Compile genesis blob and waypoint ... \e[0m" && sleep 1 
 aptos genesis generate-genesis --local-repository-dir ~/$WORKSPACE --output-dir ~/$WORKSPACE
