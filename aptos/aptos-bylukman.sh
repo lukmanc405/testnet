@@ -81,7 +81,7 @@ aptos genesis generate-keys --output-dir ~/$WORKSPACE/keys
 echo -e "\e[1m\e[32m [9].  Set-validator-configuration ... \e[0m" && sleep 1
 cd ~/$WORKSPACE
 aptos genesis set-validator-configuration \
-    --local-repository-dir $WORKSPACE \
+    --local-repository-dir ~/$WORKSPACE \
     --username $USERNAME \
     --owner-public-identity-file ~/$WORKSPACE/keys/public-keys.yaml \
     --validator-host $YOUR_IP:6180 \
