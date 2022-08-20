@@ -75,7 +75,7 @@ wget https://raw.githubusercontent.com/aptos-labs/aptos-core/main/docker/compose
 wget https://raw.githubusercontent.com/aptos-labs/aptos-core/main/docker/compose/aptos-node/validator.yaml
 
 echo -e "\e[1m\e[32m [8]. Generate key pairs ... \e[0m" && sleep 1\
-mkdir -p $WORKSPACE/keys/
+mkdir ~/$WORKSPACE/keys/
 aptos genesis generate-keys --output-dir ~/$WORKSPACE/keys
 
 echo -e "\e[1m\e[32m [9].  Set-validator-configuration ... \e[0m" && sleep 1
@@ -90,6 +90,7 @@ aptos genesis set-validator-configuration \
 if ! [ -f "$WORKSPACE/layout.yaml" ]
 then
 sudo tee layout.yaml > /dev/null <<EOF
+---
 root_key: "D04470F43AB6AEAA4EB616B72128881EEF77346F2075FFE68E14BA7DEBD8095E"
 users: ["$USERNAME"]
 chain_id: 43
@@ -112,19 +113,8 @@ wget -qO framework.zip https://github.com/aptos-labs/aptos-core/releases/downloa
 unzip -o framework.zip
 rm framework.zip
 
-if ! [ -f genesis.blob ]
-then
-   wget https://devnet.aptoslabs.com/genesis.blob
-else
-   echo "no avaialable"
-fi
-
-if ! [ -f waypoint.txt ]
-then
-   wget https://devnet.aptoslabs.com/waypoint.txt
-else
-   echo "no avaialable"
-fi
+echo -e "\e[1m\e[32m [11].  Compile genesis blob and waypoint ... \e[0m" && sleep 1 
+aptos genesis generate-genesis --local-repository-dir ~/$WORKSPACE --output-dir ~/$WORKSPACE
 
 echo -e "\e[1m\e[32m  Start running \e[0m" && sleep 1 
 cd ~/testnet
