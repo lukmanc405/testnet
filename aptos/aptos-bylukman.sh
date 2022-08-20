@@ -91,7 +91,7 @@ if ! [ -f "$WORKSPACE/layout.yaml" ]
 then
 sudo tee layout.yaml > /dev/null <<EOF
 root_key: "D04470F43AB6AEAA4EB616B72128881EEF77346F2075FFE68E14BA7DEBD8095E"
-users: $USERNAME
+users: ["$USERNAME"]
 chain_id: 43
 allow_new_validators: false
 epoch_duration_secs: 7200
