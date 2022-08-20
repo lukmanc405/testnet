@@ -72,9 +72,10 @@ isi data :
 NB : untuk bagian ini
 
 kalian bisa dapatkan data ini di 
-`cat ~/$WORKSPACE/$USERNAME/operator.yaml` 
-- ubah $WORKSPACE jadi testnet
-- ubah $USERNAME jadi nama username ente
+
+```
+cat ~/testnet/keys/public-keys.yaml
+```
 
 ![image](https://user-images.githubusercontent.com/48665887/185735804-5ca21c90-ea9f-4391-a287-87cd8e77ec72.png)
 
