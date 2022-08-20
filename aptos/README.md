@@ -56,6 +56,8 @@ ufw enable
 
 ```
 curl 127.0.0.1:9101/metrics 2> /dev/null | grep "aptos_state_sync_version{.*\"synced\"}" | awk '{print $2}'
+curl 127.0.0.1:9101/metrics 2> /dev/null | grep "aptos_consensus_proposals_count"
+curl 127.0.0.1:9101/metrics 2> /dev/null | grep "vote_nil_count"
 ```
 
 ### Untuk cek log (Bila perlu)
@@ -70,9 +72,9 @@ isi data :
 NB : untuk bagian ini
 
 kalian bisa dapatkan data ini di 
-`cat ~/$WORKSPACE/$USERNAME/operator.yaml && cat ~/$WORKSPACE/$USERNAME/owner.yaml` 
-> ubah $WORKSPACE jadi testnet
-> ubah $USERNAME jadi nama username ente
+`cat ~/$WORKSPACE/$USERNAME/operator.yaml` 
+- ubah $WORKSPACE jadi testnet
+- ubah $USERNAME jadi nama username ente
 
 ![image](https://user-images.githubusercontent.com/48665887/185735804-5ca21c90-ea9f-4391-a287-87cd8e77ec72.png)
 
