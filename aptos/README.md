@@ -40,8 +40,8 @@ ufw allow http
 ufw allow 6180
 ufw allow 80
 ufw allow 9101
-ufw allow 181
-ufw allow 182
+ufw allow 6181
+ufw allow 6182
 ufw allow 8080
 ufw allow 9103
 ufw enable
