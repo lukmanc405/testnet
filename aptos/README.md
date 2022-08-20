@@ -10,10 +10,10 @@
 
 ### Tutorial Testnet Aptos dengan VPS by lukman (●'◡'●)
 ### System Requirement
-8vCPU
-32GB RAM
-16 Threads
-Ubuntu 20.04
+- 8vCPU
+- 32GB RAM
+- 16 Threads
+- Ubuntu 20.04 LTS
 
 ### Register community aptos
 > https://aptoslabs.com/incentivized-testnet
