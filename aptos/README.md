@@ -79,7 +79,8 @@ kalian bisa dapatkan data ini di
 ![image](https://user-images.githubusercontent.com/48665887/185727519-6c34f36c-a25e-4e17-830e-a7a3ffd7b5df.png)
 
 Kalau sudah isi diatas tinggal `validate node`
-jika sudah menyelesaikan semua task nantgi akan seperti ini
+
+jika sudah menyelesaikan semua task nanti akan seperti ini👇👇
 
 ![image](https://user-images.githubusercontent.com/48665887/185736047-725120ad-4e06-4f96-bd0d-5515268047b2.png)
 
