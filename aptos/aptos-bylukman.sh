@@ -112,8 +112,19 @@ wget -qO framework.zip https://github.com/aptos-labs/aptos-core/releases/downloa
 unzip -o framework.zip
 rm framework.zip
 
-echo -e "\e[1m\e[32m [11].  Compile genesis blob and waypoint ... \e[0m" && sleep 1 
-aptos genesis generate-genesis --local-repository-dir ~/$WORKSPACE --output-dir ~/$WORKSPACE
+if ! [ -f genesis.blob ]
+then
+   wget https://devnet.aptoslabs.com/genesis.blob
+else
+   echo "no avaialable"
+fi
+
+if ! [ -f waypoint.txt ]
+then
+   wget https://devnet.aptoslabs.com/waypoint.txt
+else
+   echo "no avaialable"
+fi
 
 echo -e "\e[1m\e[32m  Start running \e[0m" && sleep 1 
 cd ~/testnet
