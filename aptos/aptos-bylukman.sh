@@ -75,7 +75,6 @@ wget https://raw.githubusercontent.com/aptos-labs/aptos-core/main/docker/compose
 wget https://raw.githubusercontent.com/aptos-labs/aptos-core/main/docker/compose/aptos-node/validator.yaml
 
 echo -e "\e[1m\e[32m [8]. Generate key pairs ... \e[0m" && sleep 1\
-mkdir ~/$WORKSPACE/keys/
 aptos genesis generate-keys --output-dir ~/$WORKSPACE/keys
 
 echo -e "\e[1m\e[32m [9].  Set-validator-configuration ... \e[0m" && sleep 1
