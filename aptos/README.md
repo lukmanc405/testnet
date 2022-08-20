@@ -52,6 +52,12 @@ ufw enable
 
 ![image](https://user-images.githubusercontent.com/48665887/185727035-b0d6e2eb-fe3c-47db-844c-0aa1e43c0a0c.png)
 
+### Cek aptos sync version
+
+```
+curl 127.0.0.1:9101/metrics 2> /dev/null | grep "aptos_state_sync_version{.*\"synced\"}" | awk '{print $2}'
+```
+
 ### Untuk cek log (Bila perlu)
 
 ```
