@@ -83,7 +83,7 @@ cd ~/$WORKSPACE
 aptos genesis set-validator-configuration \
     --local-repository-dir $WORKSPACE \
     --username $USERNAME \
-    --owner-public-identity-file $WORKSPACE/keys/public-keys.yaml \
+    --owner-public-identity-file ~/$WORKSPACE/keys/public-keys.yaml \
     --validator-host $YOUR_IP:6180 \
     --stake-amount 100000000000000
 
