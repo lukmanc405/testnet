@@ -74,7 +74,7 @@ kalian bisa dapatkan data ini di
 > ubah $WORKSPACE jadi testnet
 > ubah $USERNAME jadi nama username ente
 
-![image](https://user-images.githubusercontent.com/48665887/185727483-44ffed88-22e3-46cf-b329-9663dda88f80.png)
+![image](https://user-images.githubusercontent.com/48665887/185735804-5ca21c90-ea9f-4391-a287-87cd8e77ec72.png)
 
 ![image](https://user-images.githubusercontent.com/48665887/185727519-6c34f36c-a25e-4e17-830e-a7a3ffd7b5df.png)
 
