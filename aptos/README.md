@@ -30,6 +30,23 @@ https://youtu.be/-03D_M7vMZ4
 wget -qO aptos-bylukman.sh https://raw.githubusercontent.com/lukmanc405/testnet/main/aptos/aptos-bylukman.sh && chmod +x aptos-bylukman.sh && ./aptos-bylukman.sh
 ```
 
+### aktifkan port yang diperlukan
+
+```
+apt install ufw -y
+ufw allow ssh
+ufw allow https
+ufw allow http
+ufw allow 6180
+ufw allow 80
+ufw allow 9101
+ufw allow 181
+ufw allow 182
+ufw allow 8080
+ufw allow 9103
+ufw enable
+```
+
 ### Cek kesehatan node
 > https://node.aptos.zvalid.com/
 
