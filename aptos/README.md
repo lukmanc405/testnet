@@ -79,7 +79,7 @@ cat ~/testnet/keys/public-keys.yaml
 Atau bisa disini
 
 ```
-source .bash_profile
+source $HOME/.bash_profile
 cat ~/testnet/$USERNAME/operator.yaml
 ```
 
