@@ -48,9 +48,10 @@ ufw enable
 ```
 
 ### Cek kesehatan node
-> https://node.aptos.zvalid.com/
+> https://ait.aptos-node.info/
 
-![image](https://user-images.githubusercontent.com/48665887/185727035-b0d6e2eb-fe3c-47db-844c-0aa1e43c0a0c.png)
+![image](https://user-images.githubusercontent.com/48665887/185779319-805224db-5701-4451-bd27-3c119ea79cf2.png)
+
 
 ### Cek aptos sync version
 
