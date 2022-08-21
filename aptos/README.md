@@ -93,4 +93,6 @@ jika sudah menyelesaikan semua task nanti akan seperti ini👇👇
 
 ```
 cd ~/WORKSPACE && docker-compose down -v
+unset NODENAME
+unset YOUR_IP
 ```
