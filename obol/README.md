@@ -45,3 +45,23 @@ wget -O obol.sh https://raw.githubusercontent.com/lukmanc405/testnet/main/obol/o
 ```
 
 >setelah itu replace file private key di folder .charon pakai file yang sudah dibackup pakai SFTP
+
+### command lainnya
+
+*cek state sync*
+
+```
+docker logs charon-distributed-validator-node-geth-1 -f
+```
+
+*cek beacon*
+
+```
+docker logs charon-distributed-validator-node-teku-1 -f
+```
+
+*cek log charon *
+
+```
+docker logs  charon-distributed-validator-node-charon-1 -f
+```
