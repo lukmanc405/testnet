@@ -60,7 +60,7 @@ docker logs charon-distributed-validator-node-geth-1 -f
 docker logs charon-distributed-validator-node-teku-1 -f
 ```
 
-*cek log charon *
+*cek log charon*
 
 ```
 docker logs  charon-distributed-validator-node-charon-1 -f
