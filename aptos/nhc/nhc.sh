@@ -32,7 +32,7 @@ fi
 function nhc:container(){
 docker stop ${CONFYAML}
 docker rm ${CONFYAML}
-docker run -d --name=${CONFYAML} -p 20121:20121 -v $(pwd)/conf:/nhc -t aptoslabs/node-checker:nightly /usr/local/bin/aptos-node-checker server run --baseline-node-config-paths /nhc/${CONFYAML}.yaml
+docker run -d --name=${CONFYAML} -p 20121:20121 -p 80:80 -v $(pwd)/conf:/nhc -t aptoslabs/node-checker:nightly /usr/local/bin/aptos-node-checker server run --baseline-node-config-paths /nhc/${CONFYAML}.yaml
 }
 
 case "${OPTIONS}" in
