@@ -2,7 +2,7 @@
 node_address:
   url: "lukman-nodes.duckdns.org"
   metrics_port: 9101
-  api_port: 8080
+  api_port: 80
   noise_port: 6180
 configuration_name: lukman-aptos-checker
 configuration_name_pretty: lukman-nodes
