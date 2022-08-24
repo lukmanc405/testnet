@@ -4,7 +4,7 @@
 CONFYAML="lukman-aptos-checker"
 CONFYAMLPRETTY="Lukman Aptos Nodes"
 KINDNODE="validator" #validator or fullnode
-URL="http://lukman-nodes.duckdns.org/"
+URL="http://lukman-nodes.duckdns.org"
 CHAINID=43
 OPTIONS=$1
 
