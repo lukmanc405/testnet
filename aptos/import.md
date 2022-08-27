@@ -45,6 +45,9 @@ aptos -V
 ```
 export WORKSPACE=testnet
 export USERNAME=XXXX
+echo 'export USERNAME='$USERNAME >> $HOME/.bash_profile
+echo "export WORKSPACE=testnet" >> $HOME/.bash_profile
+source $HOME/.bash_profile
 mkdir ~/$WORKSPACE
 cd ~/$WORKSPACE
 ```
