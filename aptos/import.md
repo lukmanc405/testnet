@@ -1,11 +1,11 @@
 
-### update
+### 1. update
 ```
 sudo apt update && sudo apt upgrade -y
 sudo apt install unzip
 ```
 
-### install depencies
+### 2. install depencies
 
 ```
 echo -e "\e[1m\e[32m [2.1] Installing dependencies... \e[0m" && sleep 1
@@ -13,7 +13,7 @@ sudo wget -qO /usr/local/bin/yq https://github.com/mikefarah/yq/releases/downloa
 sudo apt-get install jq -y
 ```
 
-### Installing Docker
+### 3. Installing Docker
 ```
 sudo apt-get install ca-certificates curl gnupg lsb-release -y
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
@@ -22,14 +22,14 @@ sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io -y
 ```
 
-### Installing docker-compose
+### 4. Installing docker-compose
 ```
 docker_compose_version=$(wget -qO- https://api.github.com/repos/docker/compose/releases/latest | jq -r ".tag_name")
 sudo wget -O /usr/bin/docker-compose "https://github.com/docker/compose/releases/download/${docker_compose_version}/docker-compose-`uname -s`-`uname -m`"
 sudo chmod +x /usr/bin/docker-compose
 ```
 
-### Installing aptos CLI
+### 5. Installing aptos CLI
 
 ```
 wget -qO aptos-cli.zip https://github.com/aptos-labs/aptos-core/releases/download/aptos-cli-v0.3.1/aptos-cli-0.3.1-Ubuntu-x86_64.zip
@@ -39,15 +39,17 @@ rm aptos-cli.zip
 aptos -V
 ```
 
-### create var
+### 6. create var
+>change XXXX to your own username
 
 ```
 export WORKSPACE=testnet
+export USERNAME=XXXX
 mkdir ~/$WORKSPACE
 cd ~/$WORKSPACE
 ```
 
-### Download validator.yaml & docker-compose.yaml
+### 7. Download validator.yaml & docker-compose.yaml
 
 ```
 wget https://raw.githubusercontent.com/aptos-labs/aptos-core/main/docker/compose/aptos-node/docker-compose.yaml
@@ -55,12 +57,13 @@ wget https://raw.githubusercontent.com/aptos-labs/aptos-core/main/docker/compose
 ```
 
 
-### Import your keys + $USERNAME folder with SFTP
+### 8. Import your keys + $USERNAME folder with SFTP to folder testnet
 
 
 
 
-### create layout.yaml
+### 9. create layout.yaml
+>dont change $USERNAME,cause you already create var
 
 ```
 sudo tee layout.yaml > /dev/null <<EOF
@@ -82,12 +85,12 @@ voting_power_increase_limit: 20
 EOF
 ```
 
-### Download the Aptos Framework
+### 10. Download the Aptos Framework
 ```
 wget https://github.com/aptos-labs/aptos-core/releases/download/aptos-framework-v0.3.0/framework.mrb
 ```
 
-### Compile genesis blob and waypoint 
+### 11.  Compile genesis blob and waypoint 
 ```
 aptos genesis generate-genesis --local-repository-dir ~/$WORKSPACE --output-dir ~/$WORKSPACE
 ```
