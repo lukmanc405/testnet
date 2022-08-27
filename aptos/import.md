@@ -8,7 +8,6 @@ sudo apt install unzip
 ### 2. install depencies
 
 ```
-echo -e "\e[1m\e[32m [2.1] Installing dependencies... \e[0m" && sleep 1
 sudo wget -qO /usr/local/bin/yq https://github.com/mikefarah/yq/releases/download/v4.23.1/yq_linux_amd64 && chmod +x /usr/local/bin/yq
 sudo apt-get install jq -y
 ```
