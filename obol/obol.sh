@@ -51,4 +51,4 @@ echo -e "\e[1m\e[32m6. create your charon ENR private key, DONT FORGET TO BACKUP
 cd charon-distributed-validator-node
 sudo chmod -R 666 .charon
 sudo chmod a+rwx .charon
-docker run --rm -v "$(pwd):/opt/charon" ghcr.io/obolnetwork/charon:v0.9.0 create enr
+docker run --rm -v "$(pwd):/opt/charon" ghcr.io/obolnetwork/charon:v0.10.0 create enr
