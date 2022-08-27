@@ -23,7 +23,6 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io -y
 
 ### 4. Installing docker-compose
 ```
-docker_compose_version=$(wget -qO- https://api.github.com/repos/docker/compose/releases/latest | jq -r ".tag_name")
 sudo wget -O /usr/bin/docker-compose "https://github.com/docker/compose/releases/download/${docker_compose_version}/docker-compose-`uname -s`-`uname -m`"
 sudo chmod +x /usr/bin/docker-compose
 ```
@@ -33,7 +32,7 @@ sudo chmod +x /usr/bin/docker-compose
 ```
 wget -qO aptos-cli.zip https://github.com/aptos-labs/aptos-core/releases/download/aptos-cli-v0.3.1/aptos-cli-0.3.1-Ubuntu-x86_64.zip
 sudo unzip -o aptos-cli.zip -d /usr/local/bin
-chmod +x /usr/local/bin/aptos
+sudo chmod +x /usr/local/bin/aptos
 rm aptos-cli.zip
 aptos -V
 ```
@@ -100,5 +99,5 @@ aptos genesis generate-genesis --local-repository-dir ~/$WORKSPACE --output-dir 
 
 ```
 cd ~/testnet
-docker-compose up -d
+sudo docker-compose up -d
 ```
