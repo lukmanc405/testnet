@@ -19,7 +19,8 @@ make sure you run in `cd /tmp/nhc/`
 docker run -v /tmp/nhc:/nhc -p 20121:20121 -d -t aptoslabs/node-checker:nightly /usr/local/bin/aptos-node-checker server run --baseline-node-config-paths /nhc/ait3_validator.yaml
 ```
 
-**4. Request NHC**
+**Request NHC**
+Use this request if you already installed
 >change `NHC_URL` with your own NHC MACHINE IP
 
 >change `NODE_URL` with your own NODE MACHINE IP
