@@ -6,14 +6,14 @@ mkdir /tmp/nhc && cd /tmp/nhc && wget https://raw.githubusercontent.com/lukmanc4
 ```
 
 **2. Edit baseline**
->change `_NODE_URL_` WITH your own node IP
+>change `NODE_URL` WITH your own node IP
 
 ```
 nano ait3_validator.yaml
 ```
 
 **3. run docker**
-make sure you run in `_cd /tmp/nhc/_`
+make sure you run in `cd /tmp/nhc/`
 
 ```
 docker run -v /tmp/nhc:/nhc -p 20121:20121 -d -t aptoslabs/node-checker:nightly /usr/local/bin/aptos-node-checker server run --baseline-node-config-paths /nhc/ait3_validator.yaml
