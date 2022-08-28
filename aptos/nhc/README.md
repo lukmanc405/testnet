@@ -20,10 +20,11 @@ docker run -v /tmp/nhc:/nhc -p 20121:20121 -d -t aptoslabs/node-checker:nightly 
 ```
 
 **4. Request NHC**
->change NODE_URL with your own node IP
+>change NHC_URL with your own NHC MACHINE IP
+>change NODE_URL with your own NODE MACHINE IP
 
 ```
-curl 'http://NODE_URL:20121/check_node?node_url=http://lukman-nodes.duckdns.org&baseline_configuration_name=ait3_validator&api_port=80&noise_port=6180&metrics_port=9101' | jq
+curl 'http://NHC_URL:20121/check_node?node_url=http://NODE_URL&baseline_configuration_name=ait3_validator&api_port=80&noise_port=6180&metrics_port=9101' | jq
 ```
 
 >YOU CAN CHECK IN ANY SERVER IP
