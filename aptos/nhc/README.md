@@ -6,7 +6,7 @@ mkdir /tmp/nhc && cd /tmp/nhc && wget https://raw.githubusercontent.com/lukmanc4
 ```
 
 **2. Edit baseline**
-- change `NODE_URL` WITH your own node IP
+- change `API PORT` WITH your own API PORT
 
 ```
 nano ait3_validator.yaml
