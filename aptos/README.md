@@ -100,8 +100,8 @@ jika sudah menyelesaikan semua task nanti akan seperti ini👇👇
 ### cara uninstall aptos 
 
 ```
-cd ~/WORKSPACE && docker-compose down -v
-cd $HOME && rm -rf {"$WORKSPACE,aptos-bylukman.sh"}
+cd $WORKSPACE && docker-compose down -v
+cd $HOME && rm -rf {$WORKSPACE,aptos-bylukman.sh}
 unset NODENAME
 unset YOUR_IP
 ```
