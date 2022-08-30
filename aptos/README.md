@@ -101,6 +101,7 @@ jika sudah menyelesaikan semua task nanti akan seperti ini👇👇
 
 ```
 cd ~/WORKSPACE && docker-compose down -v
+cd $HOME && rm -rf {"$WORKSPACE,aptos-bylukman.sh"}
 unset NODENAME
 unset YOUR_IP
 ```
