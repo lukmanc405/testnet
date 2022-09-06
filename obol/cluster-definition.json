@@ -1,0 +1,46 @@
+{
+ "name": "lukman",
+ "operators": [
+  {
+   "address": "",
+   "enr": "enr:-JG4QN43fOKvZxzXRSkbmWaihFaEoIG6a7OjkcGv8-_Br5yPAFJauJd_dnshGKFdLAiQceZ7_NfqgYqnb_Nl41cSLW2GAYJnTSrWgmlkgnY0gmlwhH8AAAGJc2VjcDI1NmsxoQP46pfEJywsXQwkHTzcT9xWf3vil_Nbbp50pdiAjxT5M4N0Y3CCDhqDdWRwgg4u",
+   "config_signature": "",
+   "enr_signature": ""
+  },
+  {
+   "address": "",
+   "enr": "enr:-JG4QKroxhMFbVrNSl8r-iRBdIL3sejIuInYAOgPiI5Yp39LOC0pt3th91_8qnbFakurWDJT-75BupDMAxjDhMUIOvaGAYJnT5LVgmlkgnY0gmlwhH8AAAGJc2VjcDI1NmsxoQKo8oiW0ul_08F2HgHMRFUpIol3sfrSgD-zECZsU1AhHIN0Y3CCDhqDdWRwgg4u",
+   "config_signature": "",
+   "enr_signature": ""
+  },
+  {
+   "address": "",
+   "enr": "enr:-JG4QJuXmMC6Yvw3pHC1gIcNTOuBMiWaLrOhW2zfAxR2CSNKYuaeznz3tOdjvhasjylVbDING2f6k76UFivh1nY8rCSGAYJnQvcZgmlkgnY0gmlwhH8AAAGJc2VjcDI1NmsxoQJ3XOnS7KYYfRYPOIntvD-K0_Tqrn_2adQaFtvr2XGHioN0Y3CCDhqDdWRwgg4u",
+   "config_signature": "",
+   "enr_signature": ""
+  },
+  {
+   "address": "",
+   "enr": "enr:-JG4QEMbekNSTL9MiAcSZD78Ps_4nwAoucwUw_K1OCvU_EFzXX6LknA2UU0kN8CJZKPBeSVBywZV9shYscYgVYPIgQeGAYJnYmGNgmlkgnY0gmlwhH8AAAGJc2VjcDI1NmsxoQKnZ7t1zdiltpX45pyTdF7UhkObSsRT-iTfAsyeiF3ocIN0Y3CCDhqDdWRwgg4u",
+   "config_signature": "",
+   "enr_signature": ""
+  },
+  {
+   "address": "",
+   "enr": "enr:-JG4QHV2-GRhVvmZfdaOg2sGeg0eLZqA2oS_K72NgDJdpR74fXfIKnMf0ZMH7_ptIzVKHiB6ATGgpOqAMzlneu9xfE2GAYJnR5CagmlkgnY0gmlwhH8AAAGJc2VjcDI1NmsxoQJkC5YeWuClBwB4JdKZeRrDixSrCABrI5QZXaqaT7hhCIN0Y3CCDhqDdWRwgg4u",
+   "config_signature": "",
+   "enr_signature": ""
+  }
+ ],
+ "uuid": "F449CF42-0D90-0334-3445-E73A4800CA07",
+ "version": "v1.2.0",
+ "timestamp": "2022-09-06T12:44:32Z",
+ "num_validators": 1,
+ "threshold": 5,
+ "fee_recipient_address": "0x08310392e2ab4D67975657cE70DD21f0eed40D60",
+ "withdrawal_address": "0x08310392e2ab4D67975657cE70DD21f0eed40D60",
+ "dkg_algorithm": "default",
+ "fork_version": "0x00001020",
+ "config_hash": "0x0b4b299574e5cb2af943a238c7ee6323ab4c17679aa0315a3f57ec0295d5711b",
+ "definition_hash": "0x88eeeb3da4882ac46ffcf91c790715bec3d6ea2651407cd9f0635801eb534122"
+}
