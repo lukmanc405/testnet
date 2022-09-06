@@ -1,0 +1,46 @@
+{
+ "name": "lukman",
+ "operators": [
+  {
+   "address": "",
+   "enr": "enr:-JG4QN43fOKvZxzXRSkbmWaihFaEoIG6a7OjkcGv8-_Br5yPAFJauJd_dnshGKFdLAiQceZ7_NfqgYqnb_Nl41cSLW2GAYJnTSrWgmlkgnY0gmlwhH8AAAGJc2VjcDI1NmsxoQP46pfEJywsXQwkHTzcT9xWf3vil_Nbbp50pdiAjxT5M4N0Y3CCDhqDdWRwgg4u",
+   "config_signature": "",
+   "enr_signature": ""
+  },
+  {
+   "address": "",
+   "enr": "enr:-JG4QKroxhMFbVrNSl8r-iRBdIL3sejIuInYAOgPiI5Yp39LOC0pt3th91_8qnbFakurWDJT-75BupDMAxjDhMUIOvaGAYJnT5LVgmlkgnY0gmlwhH8AAAGJc2VjcDI1NmsxoQKo8oiW0ul_08F2HgHMRFUpIol3sfrSgD-zECZsU1AhHIN0Y3CCDhqDdWRwgg4u",
+   "config_signature": "",
+   "enr_signature": ""
+  },
+  {
+   "address": "",
+   "enr": "enr:-JG4QJuXmMC6Yvw3pHC1gIcNTOuBMiWaLrOhW2zfAxR2CSNKYuaeznz3tOdjvhasjylVbDING2f6k76UFivh1nY8rCSGAYJnQvcZgmlkgnY0gmlwhH8AAAGJc2VjcDI1NmsxoQJ3XOnS7KYYfRYPOIntvD-K0_Tqrn_2adQaFtvr2XGHioN0Y3CCDhqDdWRwgg4u",
+   "config_signature": "",
+   "enr_signature": ""
+  },
+  {
+   "address": "",
+   "enr": "enr:-JG4QJhqVKQ3-_dqSSEy7tMDA3wHZafRDK9FkvJBUiI2f8iXRx0OAagrP1fF28VnU5PcFIm33pXyQ-1mMlGnK71vGjmGAYL5Hr-1gmlkgnY0gmlwhCJaEe-Jc2VjcDI1NmsxoQNVg0DL4O_Aa850c8Y7C15mZ-Q7z8zmE42Eabi7WC1BTYN0Y3CCDhqDdWRwgg4u",
+   "config_signature": "",
+   "enr_signature": ""
+  },
+  {
+   "address": "",
+   "enr": "enr:-Iu4QCGFjwIFffojLL_jKLzIKfeYUfN6SNrUgWnyY3-gBMMqUmMprmDMvZabTZMX3zYWbpc7Ly-VvcMlj-cAca07ZaCAgmlkgnY0gmlwhH8AAAGJc2VjcDI1NmsxoQJkC5YeWuClBwB4JdKZeRrDixSrCABrI5QZXaqaT7hhCIN0Y3CCDhqDdWRwgg4u",
+   "config_signature": "",
+   "enr_signature": ""
+  }
+ ],
+ "uuid": "1C8A7FCB-8BEA-1E9C-658C-9BB58164C67B",
+ "version": "v1.2.0",
+ "timestamp": "2022-09-06T17:47:10Z",
+ "num_validators": 1,
+ "threshold": 5,
+ "fee_recipient_address": "0x08310392e2ab4D67975657cE70DD21f0eed40D60",
+ "withdrawal_address": "0x08310392e2ab4D67975657cE70DD21f0eed40D60",
+ "dkg_algorithm": "default",
+ "fork_version": "0x00001020",
+ "config_hash": "0xa2b5817925afe81ce2d20198e5a7165c335b476ec15419d001659272a59dc9f6",
+ "definition_hash": "0x1d8f7162bb399cf0cdc362cd0baa3d1c53f30f9be60fb16d2d128334f5710504"
+}
