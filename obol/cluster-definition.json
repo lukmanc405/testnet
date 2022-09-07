@@ -21,7 +21,7 @@
   },
   {
    "address": "",
-   "enr": "enr:-JG4QJhqVKQ3-_dqSSEy7tMDA3wHZafRDK9FkvJBUiI2f8iXRx0OAagrP1fF28VnU5PcFIm33pXyQ-1mMlGnK71vGjmGAYL5Hr-1gmlkgnY0gmlwhCJaEe-Jc2VjcDI1NmsxoQNVg0DL4O_Aa850c8Y7C15mZ-Q7z8zmE42Eabi7WC1BTYN0Y3CCDhqDdWRwgg4u",
+   "enr": "enr:-Iu4QPypjcGGx_xEufExeRqBGxrqAzWAMvQaW-2B1KMPJxCwIKZ_bhHnr4-TjTPK_nQA0WN8BXZMyY2eZhLiKkHfTJGAgmlkgnY0gmlwhH8AAAGJc2VjcDI1NmsxoQInSHX_WebM1xo1TR5XXQ9zdul-8vU1dgvvPwTXYoYpbYN0Y3CCDhqDdWRwgg4u",
    "config_signature": "",
    "enr_signature": ""
   },
@@ -38,15 +38,15 @@
    "enr_signature": ""
   }
  ],
- "uuid": "6FBBCEA0-A99E-6B86-E718-9624E549A9EC",
+ "uuid": "DE3DE482-C118-28F1-34A1-7F8B8617BA9B",
  "version": "v1.2.0",
- "timestamp": "2022-09-07T01:58:58Z",
+ "timestamp": "2022-09-07T03:54:38Z",
  "num_validators": 1,
  "threshold": 5,
- "fee_recipient_address": "0x08310392e2ab4D67975657cE70DD21f0eed40D60",
- "withdrawal_address": "0x08310392e2ab4D67975657cE70DD21f0eed40D60",
+ "fee_recipient_address": "0x08310392e2ab4D67975657cE70DD21f0eed40D60 --withdrawal-address=0x08310392e2ab4D67975657cE70DD21f0eed40D60",
+ "withdrawal_address": "0x0000000000000000000000000000000000000000",
  "dkg_algorithm": "default",
  "fork_version": "0x00001020",
- "config_hash": "0xefb91db69498c62ca7ecbccf568e3cda59c4667fe2d80e59f56b9dec9c676fee",
- "definition_hash": "0x4596931c21dc38cfe575d29a8dced594db49b48c86141064d44bd11366a1541a"
+ "config_hash": "0x3c91ab581f421098aa484ba398e5f4fe54788a5e3b5f66e7fa7a331273ed9375",
+ "definition_hash": "0xfaff1c1683f8c4185091c21b05a35e897a642f7a8f20a49b7eb609d32b89ee63"
 }
