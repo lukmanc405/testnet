@@ -3,19 +3,19 @@
  "operators": [
   {
    "address": "",
-   "enr": "enr:-JG4QN43fOKvZxzXRSkbmWaihFaEoIG6a7OjkcGv8-_Br5yPAFJauJd_dnshGKFdLAiQceZ7_NfqgYqnb_Nl41cSLW2GAYJnTSrWgmlkgnY0gmlwhH8AAAGJc2VjcDI1NmsxoQP46pfEJywsXQwkHTzcT9xWf3vil_Nbbp50pdiAjxT5M4N0Y3CCDhqDdWRwgg4u",
+   "enr": "enr:-Iu4QOWGqG5oGsxCzORF77KrfUF9pO5Wtn5q8gs2wpcSb1g5GCWYXChh0IuKdEgjl9C_1tK-5tRMRbhD2zEH1J4PFyaAgmlkgnY0gmlwhH8AAAGJc2VjcDI1NmsxoQP46pfEJywsXQwkHTzcT9xWf3vil_Nbbp50pdiAjxT5M4N0Y3CCDhqDdWRwgg4u",
    "config_signature": "",
    "enr_signature": ""
   },
   {
    "address": "",
-   "enr": "enr:-JG4QKroxhMFbVrNSl8r-iRBdIL3sejIuInYAOgPiI5Yp39LOC0pt3th91_8qnbFakurWDJT-75BupDMAxjDhMUIOvaGAYJnT5LVgmlkgnY0gmlwhH8AAAGJc2VjcDI1NmsxoQKo8oiW0ul_08F2HgHMRFUpIol3sfrSgD-zECZsU1AhHIN0Y3CCDhqDdWRwgg4u",
+   "enr": "enr:-Iu4QCHuiGV0VJ_68R__jZtPiURwvd1Be28v-AQUjHhvtaxSUCxAli5cCYxKGweRGyblUHi4RzTbdrPSi1CfKWjncOKAgmlkgnY0gmlwhH8AAAGJc2VjcDI1NmsxoQKo8oiW0ul_08F2HgHMRFUpIol3sfrSgD-zECZsU1AhHIN0Y3CCDhqDdWRwgg4u",
    "config_signature": "",
    "enr_signature": ""
   },
   {
    "address": "",
-   "enr": "enr:-JG4QJuXmMC6Yvw3pHC1gIcNTOuBMiWaLrOhW2zfAxR2CSNKYuaeznz3tOdjvhasjylVbDING2f6k76UFivh1nY8rCSGAYJnQvcZgmlkgnY0gmlwhH8AAAGJc2VjcDI1NmsxoQJ3XOnS7KYYfRYPOIntvD-K0_Tqrn_2adQaFtvr2XGHioN0Y3CCDhqDdWRwgg4u",
+   "enr": "enr:-Iu4QN2Ye0XwYSejgOCH7Ea3mBZ_q26f_m2IR-SBBjUAbscuF4pznfy9JPuwnWUSpsrC9_26j3m6d7k2P_brTR1PPkGAgmlkgnY0gmlwhH8AAAGJc2VjcDI1NmsxoQJ3XOnS7KYYfRYPOIntvD-K0_Tqrn_2adQaFtvr2XGHioN0Y3CCDhqDdWRwgg4u",
    "config_signature": "",
    "enr_signature": ""
   },
@@ -38,15 +38,15 @@
    "enr_signature": ""
   }
  ],
- "uuid": "DE3DE482-C118-28F1-34A1-7F8B8617BA9B",
+ "uuid": "B4C7E4AE-D0D8-194B-9966-4873DEEAFBE6",
  "version": "v1.2.0",
- "timestamp": "2022-09-07T03:54:38Z",
+ "timestamp": "2022-09-07T05:12:14Z",
  "num_validators": 1,
  "threshold": 5,
- "fee_recipient_address": "0x08310392e2ab4D67975657cE70DD21f0eed40D60 --withdrawal-address=0x08310392e2ab4D67975657cE70DD21f0eed40D60",
- "withdrawal_address": "0x0000000000000000000000000000000000000000",
+ "fee_recipient_address": "0x08310392e2ab4D67975657cE70DD21f0eed40D60",
+ "withdrawal_address": "0x08310392e2ab4D67975657cE70DD21f0eed40D60",
  "dkg_algorithm": "default",
  "fork_version": "0x00001020",
- "config_hash": "0x3c91ab581f421098aa484ba398e5f4fe54788a5e3b5f66e7fa7a331273ed9375",
- "definition_hash": "0xfaff1c1683f8c4185091c21b05a35e897a642f7a8f20a49b7eb609d32b89ee63"
+ "config_hash": "0x33c02f33240543bb24470abb0e0ee553033ef6a239ad5c8ed7bf55ebbefe03b2",
+ "definition_hash": "0xe838fb42925ae9d40bef657302e989f26eb1c75e8ce1922d638f618f651f4837"
 }
