@@ -11,17 +11,17 @@ echo "=================================================="
 sleep 2
 
 # set vars
-echo -e "\e[1m\e[32mGanti node name dibawah ini dengan nama node kamu\e[0m"
+echo -e "\e[1m\e[32mMasukkan node name dibawah ini dengan nama node kamu\e[0m"
 if [ ! $NAMANODE ]; then
 	read -p "Enter node name: " NAMANODE
 	echo 'export NAMANODE='$NAMANODE >> $HOME/.bash_profile
 fi
-echo -e "\e[1m\e[32mGanti ADDRESS_SUBSPACE dibawah ini dengan account address dari akun subspace yang anda buat tadi\e[0m"
+echo -e "\e[1m\e[32mMasukkan wallet address dibawah ini dengan account address dari akun subspace yang anda buat tadi\e[0m"
 if [ ! $ADDRESS_SUBSPACE ]; then
 	read -p "Enter wallet address: " ADDRESS_SUBSPACE
 	echo 'export ADDRESS_SUBSPACE='$ADDRESS_SUBSPACE >> $HOME/.bash_profile
 fi
-echo -e "\e[1m\e[32mGanti UKURAN_PLOT dengan plot size dalam gigabytes atau terabytes, untuk instance 100G atau 2T (tapi sisakan setidaknya 10G dari disk space untuk node)\e[0m"
+echo -e "\e[1m\e[32mMasukkan plot size dalam gigabytes atau terabytes, untuk instance 100G atau 2T (tapi sisakan setidaknya 10G dari disk space untuk node)\e[0m"
 echo -e "\e[1m\e[31mDefault plot size akan diatur menjadi 100 GB maximum (farmers mungkin akan mengubah plot size kurang dari 100 GB, tapi tidak lebih)\e[0m"
 if [ ! $UKURAN_PLOT ]; then
 	read -p "Enter plot size: " UKURAN_PLOT
