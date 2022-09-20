@@ -11,15 +11,15 @@ echo "=================================================="
 sleep 2
 
 # set vars
-echo -e "\e[1m\e[32mGanti NAMANODE dibawah ini dengan nama node kamu\e[0m"
+echo -e "\e[1m\e[32mGanti node name dibawah ini dengan nama node kamu\e[0m"
 if [ ! $NAMANODE ]; then
 	read -p "Enter node name: " NAMANODE
 	echo 'export NAMANODE='$NAMANODE >> $HOME/.bash_profile
 fi
-echo -e "\e[1m\e[32mGanti ADDRESS_POLKADOTJS dibawah ini dengan account address dari Polkadot.js wallet\e[0m"
-if [ ! $ADDRESS_POLKADOTJS ]; then
-	read -p "Enter wallet address: " ADDRESS_POLKADOTJS
-	echo 'export ADDRESS_POLKADOTJS='$ADDRESS_POLKADOTJS >> $HOME/.bash_profile
+echo -e "\e[1m\e[32mGanti ADDRESS_SUBSPACE dibawah ini dengan account address dari akun subspace yang anda buat tadi\e[0m"
+if [ ! $ADDRESS_SUBSPACE ]; then
+	read -p "Enter wallet address: " ADDRESS_SUBSPACE
+	echo 'export ADDRESS_SUBSPACE='$ADDRESS_SUBSPACE >> $HOME/.bash_profile
 fi
 echo -e "\e[1m\e[32mGanti UKURAN_PLOT dengan plot size dalam gigabytes atau terabytes, untuk instance 100G atau 2T (tapi sisakan setidaknya 10G dari disk space untuk node)\e[0m"
 echo -e "\e[1m\e[31mDefault plot size akan diatur menjadi 100 GB maximum (farmers mungkin akan mengubah plot size kurang dari 100 GB, tapi tidak lebih)\e[0m"
@@ -31,7 +31,7 @@ source ~/.bash_profile
 
 echo '================================================='
 echo -e "Your node name: \e[1m\e[32m$NAMANODE\e[0m"
-echo -e "Your wallet name: \e[1m\e[32m$ADDRESS_POLKADOTJS\e[0m"
+echo -e "Your wallet name: \e[1m\e[32m$ADDRESS_SUBSPACE\e[0m"
 echo -e "Your plot size: \e[1m\e[32m$UKURAN_PLOT\e[0m"
 echo -e '================================================='
 sleep 3
@@ -80,7 +80,7 @@ After=network.target
 [Service]
 User=$USER
 Type=simple
-ExecStart=$(which subspace-farmer) farm --reward-address $ADDRESS_POLKADOTJS --plot-size $UKURAN_PLOT
+ExecStart=$(which subspace-farmer) farm --reward-address $ADDRESS_SUBSPACE --plot-size $UKURAN_PLOT
 Restart=on-failure
 LimitNOFILE=65535
 
