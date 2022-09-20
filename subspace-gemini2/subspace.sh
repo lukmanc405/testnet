@@ -24,7 +24,7 @@ fi
 echo -e "\e[1m\e[32mMasukkan plot size dalam gigabytes atau terabytes, untuk instance 100G atau 2T (tapi sisakan setidaknya 10G dari disk space untuk node)\e[0m"
 echo -e "\e[1m\e[31mDefault plot size akan diatur menjadi 100 GB maximum (farmers mungkin akan mengubah plot size kurang dari 100 GB, tapi tidak lebih)\e[0m"
 if [ ! $UKURAN_PLOT ]; then
-	read -p "Enter plot size , max 100GB : " UKURAN_PLOT
+	read -p "Enter plot size , max 100GB(ex. Format 100G) : " UKURAN_PLOT
 	echo 'export UKURAN_PLOT='$UKURAN_PLOT >> $HOME/.bash_profile
 fi
 source ~/.bash_profile
