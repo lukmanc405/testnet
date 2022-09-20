@@ -41,6 +41,14 @@ Type this (automatic instalation)
 ```
 wget -O subspace.sh https://raw.githubusercontent.com/lukmanc405/testnet/main/subspace-gemini2/subspace.sh && chmod +x subspace.sh && ./subspace.sh
 ```
+### For Azure server (only)
+if failed instalation you need additional permission for instalation,the reinstall
+```
+sudo chmod a+rwx /usr/local/bin/
+sudo chmod a+rwx /etc/systemd/system/
+sudo chmod a+rwx /home/
+```
+
 
 ### Check telemetry :
 - Go to [Telemetry Explorer](https://telemetry.subspace.network/#list/0x43d10ffd50990380ffe6c9392145431d630ae67e89dbc9c014cac2a417759101)
