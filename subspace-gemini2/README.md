@@ -7,7 +7,8 @@
 
 - Date: September 20, 2022
 - Time: 15.00 UTC
-- Official Instructions: https://docs.subspace.network/ More info about testnet: https://forum.subspace.network/t/gemini-ii-incentivized-testnet-will-be-live-on-sep-20/675
+- Official Instructions: https://docs.subspace.network/ 
+- More info about testnet: https://forum.subspace.network/t/gemini-ii-incentivized-testnet-will-be-live-on-sep-20/675
 
 #### Official documentation:
 ----
@@ -21,6 +22,7 @@
 | CPU | 4 CPU   |
 | RAM | 8GB RAM |
 | DISK | 160 GB SSD STORAGE |
+| OS | Ubuntu 20.04 LTS|
 
 #### Required ports :
 - TCP port `30333`
@@ -43,3 +45,43 @@ wget -O subspace.sh https://raw.githubusercontent.com/lukmanc405/testnet/main/su
 ### Check telemetry :
 - Go to [Telemetry Explorer](https://telemetry.subspace.network/#list/0x43d10ffd50990380ffe6c9392145431d630ae67e89dbc9c014cac2a417759101)
 - Type your node name in search
+ ![image](https://user-images.githubusercontent.com/48665887/191182236-e9d87fb6-b652-4181-9f48-1bed2a77595e.png)
+
+ ### Check node synchronization
+If output is `false` your node is synchronized
+```
+ curl -s -X POST http://localhost:9933 -H "Content-Type: application/json" --data '{"id":1, "jsonrpc":"2.0", "method": "system_health", "params":[]}' | jq .result.isSyncing
+ ```
+ 
+ ### Update the node (if needed)
+ ```
+ cd $HOME && rm -rf subspace-*
+APP_VERSION=$(curl -s https://api.github.com/repos/subspace/subspace/releases/latest | jq -r ".tag_name" | sed "s/runtime-/""/g")
+wget -O subspace-node https://github.com/subspace/subspace/releases/download/${APP_VERSION}/subspace-node-ubuntu-x86_64-${APP_VERSION}
+wget -O subspace-farmer https://github.com/subspace/subspace/releases/download/${APP_VERSION}/subspace-farmer-ubuntu-x86_64-${APP_VERSION}
+chmod +x subspace-*
+mv subspace-* /usr/local/bin/
+systemctl restart subspaced
+sleep 30
+systemctl restart subspaced-farmer
+ ```
+### Check node logs
+ 
+```
+journalctl -u subspaced -f -o cat
+```
+
+### Check farmer logs 
+ 
+```
+journalctl -u subspaced-farmer -f -o cat
+```
+ 
+### Delete subspace-nodes
+```
+sudo systemctl stop subspaced subspaced-farmer
+sudo systemctl disable subspaced subspaced-farmer
+rm -rf ~/.local/share/subspace*
+rm -rf /etc/systemd/system/subspaced*
+rm -rf /usr/local/bin/subspace*
+```
