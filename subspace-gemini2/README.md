@@ -1,3 +1,14 @@
+<p align="right">
+<html>
+   <body>
+      <a href="https://t.me/detective_gems/">
+         Join Channel Detective Gems<img alt="Detective Gems" src="https://user-images.githubusercontent.com/48665887/191190210-b1c14331-4bd5-45ae-a271-e4f967ad7e45.png"
+         width="20" height="20">
+      </a>
+   </body>
+</html>
+</p>
+          
 <p align="center">
  <img src="https://user-images.githubusercontent.com/48665887/191175627-c435b3ea-e1e2-4d3e-a1ad-ed35f58dac19.png" width="250">
 <p>
