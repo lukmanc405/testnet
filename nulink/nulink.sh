@@ -10,7 +10,6 @@ echo -e "\e[0m"
 echo "=================================================="  
 sleep 2
 
-# set vars
 echo -e "\e[1m\e[32m1. Updating packages... \e[0m" && sleep 1
 # update
 sudo apt update && sudo apt upgrade -y
@@ -41,3 +40,4 @@ cd geth-linux-amd64-1.10.24-972007a5/
 #config
 cd /root
 mkdir nulink
+cd $HOME
