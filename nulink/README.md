@@ -182,8 +182,8 @@ docker logs -f ursula
 
 5. put your operator and node url address
 NOTE :
-operator address = worker address
-NODE URI=https://Your_adress_VPS:9151
+- operator address = worker address
+- NODE URI=https://Your_adress_VPS:9151
 
 example :
 
