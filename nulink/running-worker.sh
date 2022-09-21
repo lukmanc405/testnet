@@ -16,7 +16,7 @@ if [ ! $export NULINK_KEYSTORE_PASSWORD ]; then
 	echo 'export NULINK_KEYSTORE_PASSWORD='$NULINK_KEYSTORE_PASSWORD >> $HOME/.bash_profile
 fi
 
-if [ ! $NULINK_OPERATOR_ETH_PASSWORD ]; then
+if [ ! $export NULINK_OPERATOR_ETH_PASSWORD ]; then
 	read -p "Enter NULINK_OPERATOR_ETH_PASSWORD: (Password used to unlock the keystore file of Worker account) " NULINK_OPERATOR_ETH_PASSWORD
 	echo 'export NULINK_OPERATOR_ETH_PASSWORD='$NULINK_OPERATOR_ETH_PASSWORD >> $HOME/.bash_profile
 fi
