@@ -15,21 +15,25 @@ if [ ! $export NULINK_KEYSTORE_PASSWORD ]; then
 	read -p "Enter NULINK_KEYSTORE_PASSWORD: " NULINK_KEYSTORE_PASSWORD
 	echo 'export NULINK_KEYSTORE_PASSWORD='$NULINK_KEYSTORE_PASSWORD >> $HOME/.bash_profile
 fi
+sleep 1
 
 if [ ! $export NULINK_OPERATOR_ETH_PASSWORD ]; then
 	read -p "Enter NULINK_OPERATOR_ETH_PASSWORD: (Password used to unlock the keystore file of Worker account) " NULINK_OPERATOR_ETH_PASSWORD
 	echo 'export NULINK_OPERATOR_ETH_PASSWORD='$NULINK_OPERATOR_ETH_PASSWORD >> $HOME/.bash_profile
 fi
+sleep 1
 
 if [ ! $export ETH_KEYSTORE_URL ]; then
 	read -p "Enter ETH_KEYSTORE_URL: like this UTC--2022-09-21T11-15-34.11924xxxxxxxxxxxxxxxxxxx " NULINK_KEYSTORE_PASSWORD
 	echo 'export ETH_KEYSTORE_URL='$ETH_KEYSTORE_URL >> $HOME/.bash_profile
 fi
+sleep 1
 
 if [ ! $export OPERATOR_ADDRESS ]; then
 	read -p "Enter OPERATOR_ADDRESS: like this 0x472632guoueqhxxxxxxxxxx " NULINK_KEYSTORE_PASSWORD
 	echo 'export OPERATOR_ADDRESS='$OPERATOR_ADDRESS >> $HOME/.bash_profile
 fi
+sleep 1
 #give permission
 chmod -R 777 /root/nulink
 
