@@ -199,3 +199,11 @@ example :
 #### Congrats well done,you finish it!
 
 ### Dont forget to fill the [form](https://docs.google.com/forms/d/e/1FAIpQLSep0rgPRcMd2kUhz53GYmBoktu-u-8npU2DakmzGpmpCmYZPw/viewform)
+
+#### other command for worker nodes (if needed)
+   
+to delete node
+
+```
+cd $HOME && docker stop ursula && docker rm ursula && rm -rf ~/{geth-linux-amd64-1.10.24-972007a5,geth-linux-amd64-1.10.24-972007a5.tar.gz,nulink,nulink.sh}
+```
