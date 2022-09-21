@@ -44,12 +44,12 @@ docker run -it --rm \
 -v /root/nulink:/home/circleci/.local/share/nulink \
 -e NULINK_KEYSTORE_PASSWORD \
 nulink/nulink nulink ursula init \
---signer keystore:///code/$ETH_KEYSTORE_URL \
+--signer keystore:///code/ETH_KEYSTORE_URL \
 --eth-provider https://data-seed-prebsc-2-s2.binance.org:8545/ \
 --network horus \
 --payment-provider https://data-seed-prebsc-2-s2.binance.org:8545/ \
 --payment-network bsc_testnet \
---operator-address $OPERATOR_ADDRESS \
+--operator-address OPERATOR_ADDRESS \
 --max-gas-price 100
 
 echo -e "\e[1m\e[32m2. start the node \e[0m" && sleep 2
