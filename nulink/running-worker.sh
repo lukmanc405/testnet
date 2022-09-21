@@ -46,9 +46,9 @@ docker run -it --rm \
 -p 9151:9151 \
 -v /root/nulink:/code \
 -v /root/nulink:/home/circleci/.local/share/nulink \
--e NULINK_KEYSTORE_PASSWORD \
+-e $NULINK_KEYSTORE_PASSWORD \
 nulink/nulink nulink ursula init \
---signer keystore:///code/ETH_KEYSTORE_URL \
+--signer keystore:///code/$ETH_KEYSTORE_URL \
 --eth-provider https://data-seed-prebsc-2-s2.binance.org:8545/ \
 --network horus \
 --payment-provider https://data-seed-prebsc-2-s2.binance.org:8545/ \
@@ -64,7 +64,7 @@ docker run --restart on-failure -d \
 -p 9151:9151 \
 -v /root/nulink:/code \
 -v /root/nulink:/home/circleci/.local/share/nulink \
--e NULINK_KEYSTORE_PASSWORD \
--e NULINK_OPERATOR_ETH_PASSWORD \
+-e $NULINK_KEYSTORE_PASSWORD \
+-e $NULINK_OPERATOR_ETH_PASSWORD \
 nulink/nulink nulink ursula run --no-block-until-ready
 
