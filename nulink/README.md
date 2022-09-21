@@ -38,5 +38,5 @@
 
 #### Type this (automatic instalation)
 ```
-wget -O subspace.sh https://raw.githubusercontent.com/lukmanc405/testnet/main/subspace-gemini2/subspace.sh && chmod +x subspace.sh && ./subspace.sh
+wget -O nulink.sh https://raw.githubusercontent.com/lukmanc405/testnet/main/nulink/nulink.sh && chmod +x nulink.sh && ./nulink.sh
 ```
