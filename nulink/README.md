@@ -82,9 +82,7 @@ wget -O nulink.sh https://raw.githubusercontent.com/lukmanc405/testnet/main/nuli
 
 - example it will be like this 
 
-```
-cp /root/geth-linux-amd64-1.10.24-972007a5/keystore/UTC--2022-09-21T11-15-34.119242544Z--7c1xkmkxnskndkdsknd /root/nulink
-```
+![image](https://user-images.githubusercontent.com/48665887/191569610-b3467be5-ef30-49f1-be9d-9effab17d09f.png)
 
 ### set vars
 - NOTE : CHANGE `$YOUR_PASSWORD` to your own password
