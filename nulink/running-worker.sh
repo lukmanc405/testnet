@@ -24,13 +24,13 @@ fi
 sleep 1
 
 if [ ! $ETH_KEYSTORE_URL ]; then
-	read -p "Enter ETH_KEYSTORE_URL: like this UTC--2022-09-21T11-15-34.11924xxxxxxxxxxxxxxxxxxx " NULINK_KEYSTORE_PASSWORD
+	read -p "Enter ETH_KEYSTORE_URL: like this UTC--2022-09-21T11-15-34.11924xxxxxxxxxxxxxxxxxxx " ETH_KEYSTORE_URL
 	echo 'export ETH_KEYSTORE_URL='$ETH_KEYSTORE_URL >> $HOME/.bash_profile
 fi
 sleep 1
 
 if [ ! $OPERATOR_ADDRESS ]; then
-	read -p "Enter OPERATOR_ADDRESS: like this 0x472632guoueqhxxxxxxxxxx " NULINK_KEYSTORE_PASSWORD
+	read -p "Enter OPERATOR_ADDRESS: like this 0x472632guoueqhxxxxxxxxxx " OPERATOR_ADDRESS
 	echo 'export OPERATOR_ADDRESS='$OPERATOR_ADDRESS >> $HOME/.bash_profile
 fi
 sleep 1
