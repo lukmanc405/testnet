@@ -56,7 +56,7 @@ nulink/nulink nulink ursula init \
 --operator-address $OPERATOR_ADDRESS \
 --max-gas-price 100
 
-echo -e "y\n" | PUBLIC_IP
+echo -e "y\n" | $PUBLIC_IP
 
 echo -e "\e[1m\e[32m2. start the node \e[0m" && sleep 2
 docker run --restart on-failure -d \
