@@ -34,6 +34,10 @@ if [ ! $OPERATOR_ADDRESS ]; then
 	echo 'export OPERATOR_ADDRESS='$OPERATOR_ADDRESS >> $HOME/.bash_profile
 fi
 sleep 1
+echo "export PUBLIC_IP=$(curl -s ifconfig.me)" >> $HOME/.bash_profile
+
+source $HOME/.bash_profile
+
 #give permission
 chmod -R 777 /root/nulink
 
@@ -49,8 +53,10 @@ nulink/nulink nulink ursula init \
 --network horus \
 --payment-provider https://data-seed-prebsc-2-s2.binance.org:8545/ \
 --payment-network bsc_testnet \
---operator-address OPERATOR_ADDRESS \
+--operator-address $OPERATOR_ADDRESS \
 --max-gas-price 100
+
+echo -e "y\n" | PUBLIC_IP
 
 echo -e "\e[1m\e[32m2. start the node \e[0m" && sleep 2
 docker run --restart on-failure -d \
