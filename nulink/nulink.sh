@@ -41,3 +41,9 @@ cd geth-linux-amd64-1.10.24-972007a5/
 cd /root
 mkdir nulink
 cd $HOME
+
+sleep 1
+
+#give permission
+chmod -R 777 /root/nulink
+sleep 1
