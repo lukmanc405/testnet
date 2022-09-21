@@ -33,6 +33,7 @@ fi
 #give permission
 chmod -R 777 /root/nulink
 
+echo -e "\e[1m\e[32m1. set docker configuration... \e[0m" && sleep 2
 docker run -it --rm \
 -p 9151:9151 \
 -v /root/nulink:/code \
@@ -47,6 +48,7 @@ nulink/nulink nulink ursula init \
 --operator-address $OPERATOR_ADDRESS \
 --max-gas-price 100
 
+echo -e "\e[1m\e[32m2. start the node \e[0m" && sleep 2
 docker run --restart on-failure -d \
 --name ursula \
 -p 9151:9151 \
