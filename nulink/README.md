@@ -106,6 +106,8 @@ NOTE :
 *Reminder this will create pharse , you need to save that!*
 
 ```
+chmod -R 777 /root/nulink
+
 docker run -it --rm \
 -p 9151:9151 \
 -v /root/nulink:/code \
