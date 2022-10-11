@@ -1,4 +1,3 @@
-  GNU nano 4.8                                                  compose-voluntary-exit.yml
 version: "3.8"
 
 # Docker-compose file to trigger voluntary exits. See README.md for info.
