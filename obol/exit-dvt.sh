@@ -23,5 +23,5 @@ sleep 2
 
 # go back to charon main dir and run docker compose -f compose-voluntary-exit.yml up
 cd ..
-docker compose -f compose-voluntary-exit.yml up
+docker-compose -f compose-voluntary-exit.yml up
 sleep 1
