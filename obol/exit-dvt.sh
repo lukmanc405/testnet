@@ -16,7 +16,7 @@ sleep 3
 # let it sync for a while,
 cd ~/charon-distributed-validator-node
 rm compose-voluntary-exit.yml
-wget -0 compose-voluntary-exit.yml https://raw.githubusercontent.com/lukmanc405/testnet/main/obol/compose-voluntary-exit.yml
+wget -O compose-voluntary-exit.yml https://raw.githubusercontent.com/lukmanc405/testnet/main/obol/compose-voluntary-exit.yml
 cd .charon/ && mkdir exit_keys
 cp validator_keys/keystore-0.* exit_keys/
 sleep 2
