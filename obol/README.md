@@ -60,7 +60,7 @@ docker logs charon-distributed-validator-node-teku-1 -f
 docker logs  charon-distributed-validator-node-charon-1 -f
 ```
 
-*exit DVT*
+### exit DVT
 
 ```
 wget -O exit-dvt.sh https://raw.githubusercontent.com/lukmanc405/testnet/main/obol/exit-dvt.sh && chmod +x exit-dvt.sh && ./exit-dvt.sh
