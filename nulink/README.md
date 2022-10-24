@@ -153,6 +153,13 @@ nulink/nulink nulink ursula run --no-block-until-ready
 docker logs -f ursula
 ```
 
+### update node
+
+```
+wget -O update_node.sh https://raw.githubusercontent.com/lukmanc405/testnet/main/nulink/update_node.sh && chmod +x update_node.sh && ./update_node.sh
+```
+
+
 #### make sure your note pad have these backup
 
 ![image](https://user-images.githubusercontent.com/48665887/191542745-f47d139f-2d6b-4684-bf71-4476ef404e2c.png)
