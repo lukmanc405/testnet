@@ -13,6 +13,8 @@
  <img src="https://user-images.githubusercontent.com/107190154/190568136-14f5a7d8-5b15-46fb-8132-4d38a0779171.gif" width="250">
 <p>
 
+official detail : https://www.nulink.org/blog-posts/nulink-secret-file-sharing-dapp-contest   
+
 ---
 The NuLink Testnet is called the Horus network. It includes four parts: the NuLink Staking Dapp (phase01), the NuLink Worker Node (phase01), the NuLink Agent (phase02) and the NuLink File Sharing Dapp (phase02). The NuLink Staking Dapp and the NuLink Worker Node are used by those who want to provide cryptographic service in the Horus network; while the NuLink Agent and the NuLink File Sharing Dapp are used by those who want to use the privacy-preserving service in the Horus network. The token in the Horus network is NLK(test).
 ---
@@ -21,7 +23,7 @@ Here we will look at the process of phase 2 together. You can still join phase 0
 ---
 
   
-### 1. Download and Install the [NuLink Agent](https://github.com/lukmanc405/testnet/releases/download/nulink-agent/nulink-agent-1.0.zip)
+### 1. Download and Install the [NuLink Agent](https://docs.nulink.org/products/nulink_agent/agent_update)
   
 NuLink Agent is a web browser extension that allows you to manage your NuLink private kay and vault data. It allows you to interact with file sharing or other dapps.
 
