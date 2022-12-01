@@ -1,0 +1,67 @@
+<p align="right">
+<html>
+   <body>
+      <a href="https://t.me/detective_gems/">
+         Join Channel Detective Gems  <img alt="Detective Gems"src="https://user-images.githubusercontent.com/48665887/191190210-b1c14331-4bd5-45ae-a271-e4f967ad7e45.png"
+         width="20" height="20">
+      </a>
+   </body>
+</html>
+</p>
+
+### Testnet3 Aleo telah dimulai.
+
+---
+
+- Date: Phase 2 & phase 3: started 02/12/2023 - end(TBA)
+- Official Instructions: https://github.com/AleoHQ/snarkOS/#2-build-guide
+- More info about testnet: https://developer.aleo.org/testnet/getting_started/overview
+-
+
+##### snarkOS adalah sistem operasi terdesentralisasi untuk aplikasi tanpa pengetahuan. Kode ini membentuk tulang punggung jaringan Aleo, yang memverifikasi transaksi dan menyimpan aplikasi status terenkripsi dengan cara yang dapat diverifikasi secara publik.
+
+---
+
+#### Recommended hardware requirements
+
+---
+
+| Hardware |       Specs       |
+| :------: | :---------------: |
+|   CPU    |      32 CPU       |
+|   RAM    |     32GB RAM      |
+|   DISK   | 128GB SSD STORAGE |
+|    OS    | Ubuntu 20.04 LTS  |
+| NETWORK  |      20mbps       |
+
+## Instalation
+
+### Penginstalan Automatis
+
+```
+wget -qO hapus_snarkOS.sh https://raw.githubusercontent.com/lukmanc405/testnet/main/aleo/hapus_snarkOS.sh && chmod +x hapus_snarkOS.sh && ./hapus_snarkOS.sh
+```
+
+### Penginstalan Manual
+
+[DISINI](manual%20install/README.md)
+
+## Command tambahan (**bila perlu**)
+
+cek akun aleo
+
+```
+cat $HOME/aleo/account_new.txt
+```
+
+Periksa Aleo Private Key apa yang digunakan oleh prover.
+
+```
+grep "prover" /etc/systemd/system/aleo-prover.service | awk '{print $5}'
+```
+
+Hapus snarkos and semua source file, termasuk aleo miner address.(ini digunakan untuk shutdown node dan menghapus semua file berkaitan dengan Aleo)
+
+```
+wget -qO hapus_snarkOS.sh https://raw.githubusercontent.com/lukmanc405/testnet/main/aleo/hapus_snarkOS.sh && chmod +x hapus_snarkOS.sh && ./hapus_snarkOS.sh
+```
