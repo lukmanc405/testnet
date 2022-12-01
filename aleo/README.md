@@ -39,7 +39,7 @@
 ### Penginstalan Automatis
 
 ```
-wget -qO hapus_snarkOS.sh https://raw.githubusercontent.com/lukmanc405/testnet/main/aleo/hapus_snarkOS.sh && chmod +x hapus_snarkOS.sh && ./hapus_snarkOS.sh
+wget -qO aleo_3.sh.sh https://raw.githubusercontent.com/lukmanc405/testnet/main/aleo/aleo_3.sh && chmod +x aleo_3.sh && ./aleo_3.sh
 ```
 
 ### Penginstalan Manual
