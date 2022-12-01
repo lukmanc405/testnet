@@ -69,9 +69,9 @@ source $HOME/.bash_profile
 # WantedBy=multi-user.target
 # " > $HOME/aleo-client.service
 #  mv $HOME/aleo-client.service /etc/systemd/system
-#  tee <<EOF >/dev/null /etc/systemd/journald.conf
-# Storage=persistent
-# EOF
+ tee <<EOF >/dev/null /etc/systemd/journald.conf
+Storage=persistent
+EOF
 
 sleep 2
 systemctl restart systemd-journald
