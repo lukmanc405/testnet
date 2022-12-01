@@ -26,7 +26,7 @@ sleep 2
 echo -e 'Menginstall dependencies...\n' && sleep 1
 sudo apt update && sudo apt upgrade -y
 sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu gcc git jq chrony liblz4-tool -y
-apt . <(wget -qO- https://raw.githubusercontent.com/SecorD0/utils/main/installers/rust.sh < "/dev/null"
+sudo apt . <(wget -qO- https://raw.githubusercontent.com/SecorD0/utils/main/installers/rust.sh
 
 echo -e 'Cloning snarkOS...\n' && sleep 1
 rm -rf $HOME/snarkOS $(which snarkos) $(which snarkos) $HOME/.aleo $HOME/aleo
@@ -35,7 +35,7 @@ git clone https://github.com/AleoHQ/snarkOS.git --depth 1
 cd snarkOS
 
 echo -e 'Menginstall snarkos ...\n' && sleep 1
-bash ./build_ubuntu.sh
+./build_ubuntu.sh
 source $HOME/.bashrc
 source $HOME/.cargo/env
 echo -e 'Membuat Aleo account address ...\n' && sleep 1
