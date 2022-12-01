@@ -55,20 +55,20 @@ cat $HOME/aleo/account_new.txt >>/var/aleo/account_backup.txt
 echo 'export PROVER_PRIVATE_KEY'=$(grep "Private Key" $HOME/aleo/account_new.txt | awk '{print $3}') >> $HOME/.bash_profile
 source $HOME/.bash_profile
 
-# echo -e 'Membuat layanan Aleo Client Node...\n' && sleep 1
-# echo "[Unit]
-# Description=Aleo Client Node
-# After=network-online.target
-# [Service]
-# User=$USER
-# ExecStart=$(which snarkos) start --nodisplay --client ${PROVER_PRIVATE_KEY}
-# Restart=always
-# RestartSec=10
-# LimitNOFILE=10000
-# [Install]
-# WantedBy=multi-user.target
-# " > $HOME/aleo-client.service
-#  mv $HOME/aleo-client.service /etc/systemd/system
+echo -e 'Membuat layanan Aleo Client Node...\n' && sleep 1
+echo "[Unit]
+Description=Aleo Client Node
+After=network-online.target
+[Service]
+User=$USER
+ExecStart=$(which snarkos) start --nodisplay --client ${PROVER_PRIVATE_KEY}
+Restart=always
+RestartSec=10
+LimitNOFILE=10000
+[Install]
+WantedBy=multi-user.target
+" > $HOME/aleo-client.service
+ mv $HOME/aleo-client.service /etc/systemd/system
  tee <<EOF >/dev/null /etc/systemd/journald.conf
 Storage=persistent
 EOF
