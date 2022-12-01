@@ -13,11 +13,11 @@ do
         source $HOME/.cargo/env
         cargo clean
         cargo install --path .
-        # if [[ `service aleo-client status | grep active` =~ "running" ]]; then
-        #   echo "Aleo Node is active"
-        #   systemctl stop aleo-client
-        #   ALEO_IS_MINER=false
-        # fi
+        if [[ `service aleo-client status | grep active` =~ "running" ]]; then
+          echo "Aleo Node is active"
+          systemctl stop aleo-client
+          ALEO_IS_MINER=false
+        fi
         if [[ `service aleo-prover status | grep active` =~ "running" ]]; then
           echo "Aleo Miner aktif"
           systemctl stop aleo-prover
