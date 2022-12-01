@@ -55,6 +55,13 @@ cek akun aleo
 cat $HOME/aleo/account_new.txt
 ```
 
+Stop node client and hanya running prover
+
+```
+systemctl stop aleo-client
+systemctl restart aleo-prover
+```
+
 Periksa Aleo Private Key apa yang digunakan oleh prover.
 
 ```
