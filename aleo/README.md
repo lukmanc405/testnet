@@ -37,6 +37,8 @@
 
 ### Penginstalan Automatis
 
+> penginstalan membutuhkan waktu 10-20 menit
+
 ```
 wget -qO aleo_3.sh https://raw.githubusercontent.com/lukmanc405/testnet/main/aleo/aleo_3.sh && chmod +x aleo_3.sh && ./aleo_3.sh
 ```
