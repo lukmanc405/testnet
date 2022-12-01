@@ -3,7 +3,6 @@
 ```
 sudo apt update && sudo apt upgrade -y
 sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu gcc git jq chrony liblz4-tool -y
-apt . <(wget -qO- https://raw.githubusercontent.com/SecorD0/utils/main/installers/rust.sh < "/dev/null"
 ```
 
 2. Cloning snarkOS
@@ -41,7 +40,29 @@ echo 'export PROVER_PRIVATE_KEY'=$(grep "Private Key" $HOME/aleo/account_new.txt
 source $HOME/.bash_profile
 ```
 
-6. Membuat service untuk Aleo Prover Node
+6.a Membuat layanan Aleo Client Node
+
+```
+echo "[Unit]
+Description=Aleo Client Node
+After=network-online.target
+[Service]
+User=$USER
+ExecStart=$(which snarkos) start --nodisplay --client ${PROVER_PRIVATE_KEY}
+Restart=always
+RestartSec=10
+LimitNOFILE=10000
+[Install]
+WantedBy=multi-user.target
+" > $HOME/aleo-client.service
+ mv $HOME/aleo-client.service /etc/systemd/system
+ tee <<EOF >/dev/null /etc/systemd/journald.conf
+Storage=persistent
+EOF
+systemctl restart systemd-journald
+```
+
+6.b Membuat service untuk Aleo Prover Node
 
 ```
 echo "[Unit]
