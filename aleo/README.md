@@ -16,7 +16,6 @@
 - Date: Phase 2 & phase 3: started 02/12/2023 - end(TBA)
 - Official Instructions: https://github.com/AleoHQ/snarkOS/#2-build-guide
 - More info about testnet: https://developer.aleo.org/testnet/getting_started/overview
--
 
 ##### snarkOS adalah sistem operasi terdesentralisasi untuk aplikasi tanpa pengetahuan. Kode ini membentuk tulang punggung jaringan Aleo, yang memverifikasi transaksi dan menyimpan aplikasi status terenkripsi dengan cara yang dapat diverifikasi secara publik.
 
@@ -39,7 +38,7 @@
 ### Penginstalan Automatis
 
 ```
-wget -qO aleo_3.sh.sh https://raw.githubusercontent.com/lukmanc405/testnet/main/aleo/aleo_3.sh && chmod +x aleo_3.sh && ./aleo_3.sh
+wget -qO aleo_3.sh https://raw.githubusercontent.com/lukmanc405/testnet/main/aleo/aleo_3.sh && chmod +x aleo_3.sh && ./aleo_3.sh
 ```
 
 ### Penginstalan Manual
@@ -63,5 +62,5 @@ grep "prover" /etc/systemd/system/aleo-prover.service | awk '{print $5}'
 Hapus snarkos and semua source file, termasuk aleo miner address.(ini digunakan untuk shutdown node dan menghapus semua file berkaitan dengan Aleo)
 
 ```
-wget -qO hapus_snarkOS.sh https://raw.githubusercontent.com/lukmanc405/testnet/main/aleo/hapus_snarkOS.sh && chmod +x hapus_snarkOS.sh && ./hapus_snarkOS.sh
+wget -qO hapus_snarkOS.sh https://github.com/lukmanc405/testnet/blob/main/aleo/hapus_snarkOS.sh && chmod +x hapus_snarkOS.sh && ./hapus_snarkOS.sh
 ```
