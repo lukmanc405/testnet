@@ -16,6 +16,8 @@
 - Date: Phase 2 & phase 3: started 02/12/2023 - end(TBA)
 - Official Instructions: https://github.com/AleoHQ/snarkOS/#2-build-guide
 - More info about testnet: https://developer.aleo.org/testnet/getting_started/overview
+- Aleo Testnet Leaderboard : https://www.aleo.network/leaderboard
+- Aleo Explorer : https://www.aleo.network/transactions
 
 ##### snarkOS adalah sistem operasi terdesentralisasi untuk aplikasi tanpa pengetahuan. Kode ini membentuk tulang punggung jaringan Aleo, yang memverifikasi transaksi dan menyimpan aplikasi status terenkripsi dengan cara yang dapat diverifikasi secara publik.
 
