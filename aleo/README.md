@@ -57,6 +57,12 @@ cek akun aleo
 cat $HOME/aleo/account_new.txt
 ```
 
+Cek logs
+
+```
+journalctl -u aleo-prover -f -o cat
+```
+
 Stop node client and hanya running prover
 
 ```
