@@ -1,14 +1,4 @@
 #!/bin/bash
-exists()
-{
-  command -v "$1" >/dev/null 2>&1
-}
-if exists curl; then
-        echo ''
-else
-  sudo apt install curl -y < "/dev/null"
-fi
-
 echo -e 'Menghapus semua snarkos files ...\n\n'
 echo '/etc/systemd/system/aleod.service'
 echo '/etc/systemd/system/aleod-miner.service'
