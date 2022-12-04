@@ -79,5 +79,5 @@ grep "prover" /etc/systemd/system/aleo-prover.service | awk '{print $5}'
 Hapus snarkos and semua source file, termasuk aleo miner address.(ini digunakan untuk shutdown node dan menghapus semua file berkaitan dengan Aleo)
 
 ```
-wget -qO hapus_snarkOS.sh https://github.com/lukmanc405/testnet/blob/main/aleo/hapus_snarkOS.sh && chmod +x hapus_snarkOS.sh && ./hapus_snarkOS.sh
+wget -qO hapus_snarkOS.sh https://raw.githubusercontent.com/lukmanc405/testnet/main/aleo/hapus_snarkOS.sh && chmod +x hapus_snarkOS.sh && ./hapus_snarkOS.sh
 ```
