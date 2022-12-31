@@ -97,7 +97,12 @@ Kemudian copy HTTPS & WEBSOCKET kita akan membutuhkannya nanti
 
 ![key](images/Screenshot_15.png)
 
----
+4. Siapkan Goerli ETH Testnet pada Metamask anda
+
+Faucet disini :
+https://goerlifaucet.com/
+
+> Penting anda harus melakukan ini sebelum lanjut step berikutnya, pastikan sudah ada ETH Goerli di akun anda
 
 ## Set Up validator
 
