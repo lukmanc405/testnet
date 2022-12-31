@@ -444,7 +444,7 @@ Poin penting lainnya: Jangan lupa untuk mendapatkan role partisipan testnet di D
 
 ![x](images/Screenshot_41.png)
 
-===============================================================SELESAI===============================================================
+==================================================SELESAI==================================================
 
 Jangan lupa join channel kami :
 https://t.me/detective_gems
