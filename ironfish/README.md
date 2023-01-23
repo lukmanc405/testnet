@@ -20,8 +20,13 @@ lalu gunakan untuk input ASSET_ID **nantinya** seperti ini :
 wget -O crontab.sh https://raw.githubusercontent.com/lukmanc405/testnet/main/ironfish/crontab.sh && chmod +x crontab.sh && wget -O ironfish_auto.sh https://raw.githubusercontent.com/lukmanc405/testnet/main/ironfish/ironfish_auto.sh && ./crontab.sh
 ```
 
-NB : Jika kalian tidak menemukan asset ID yang seperti contoh diatas kalian bisa mint terlebih dahulu caranya cek video saya disini
-https://youtu.be/_cGfblrcSUw
+NB :
+
+- Jika kalian tidak menemukan asset ID yang seperti contoh diatas kalian bisa mint terlebih dahulu caranya cek video saya disini
+  https://youtu.be/_cGfblrcSUw
+
+- Script ini otomatis mengerjakan setiap selasa , jika kalian ingin mengubahnya ubah saja file /etc/cron.d/myjob
+  yang dimana hari TUE = Tuesday ubah jadi hari yang diinginkan semisal (FRI = Friday = Jumat , atau SAT,SUN,MON,THU,WED)
 
 command tambahan (jika diperlukan) :
 stop crontab
