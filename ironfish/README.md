@@ -22,3 +22,10 @@ wget -O crontab.sh https://raw.githubusercontent.com/lukmanc405/testnet/main/iro
 
 NB : Jika kalian tidak menemukan asset ID yang seperti contoh diatas kalian bisa mint terlebih dahulu caranya cek video saya disini
 https://youtu.be/_cGfblrcSUw
+
+command tambahan (jika diperlukan) :
+stop crontab
+
+```
+systemctl disable cron && systemctl stop cron && systemctl status cron
+```
