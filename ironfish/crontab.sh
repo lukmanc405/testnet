@@ -23,7 +23,7 @@ cat > /etc/cron.d/myjob << EOF
 SHELL=/bin/bash 
 PATH=/sbin:/bin:/usr/sbin:/usr/bin 
 MAILTO=root HOME=/  
-0 0 * * */TUE root bash ./ironfish_auto.sh
+0 0 * * TUE root bash ./ironfish_auto.sh
 EOF
 
 touch /root/logfile.log
