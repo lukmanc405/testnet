@@ -17,7 +17,7 @@ lalu gunakan untuk input ASSET_ID **nantinya** seperti ini :
 2. copas auto script ini
 
 ```
-wget -O crontab.sh https://raw.githubusercontent.com/lukmanc405/testnet/blob/main/ironfish/crontab.sh && chmod +x crontab.sh && wget -O ironfish_auto.sh https://raw.githubusercontent.com/lukmanc405/testnet/main/ironfish/ironfish_auto.sh && ./crontab.sh
+wget -O crontab.sh https://raw.githubusercontent.com/lukmanc405/testnet/main/ironfish/crontab.sh && chmod +x crontab.sh && wget -O ironfish_auto.sh https://raw.githubusercontent.com/lukmanc405/testnet/main/ironfish/ironfish_auto.sh && ./crontab.sh
 ```
 
 NB : Jika kalian tidak menemukan asset ID yang seperti contoh diatas kalian bisa mint terlebih dahulu caranya cek video saya disini
