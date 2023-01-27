@@ -1,5 +1,5 @@
-// bash script ironfish_auto.sh
 #!/bin/sh
+source $HOME/.bash_profile
 sleep 1
 echo y | ironfish wallet:mint -a 2 -f $IRONFISH_NODENAME -m $IRONFISH_WALLET -n $IRONFISH_WALLET -o 0.00000001 | tee -a /root/logfile.log
 echo "Wait 5 mins"
