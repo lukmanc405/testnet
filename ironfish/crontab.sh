@@ -20,7 +20,6 @@ source $HOME/.bash_profile
 # crontab and execute
 chmod +x ironfish_auto.sh
 (crontab -l; echo "0 4 * * SAT /root/auto_ironfish.sh";) | crontab
-EOF
 
 touch /root/logfile.log
 source $HOME/.bash_profile
