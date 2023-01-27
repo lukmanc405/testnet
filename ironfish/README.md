@@ -25,12 +25,13 @@ NB :
 - Jika kalian tidak menemukan asset ID yang seperti contoh diatas kalian bisa mint terlebih dahulu caranya cek video saya disini
   https://youtu.be/_cGfblrcSUw
 
-- Script ini otomatis mengerjakan setiap selasa , jika kalian ingin mengubahnya ubah saja file /etc/cron.d/myjob
+- Script ini otomatis mengerjakan setiap sabtu , jika kalian ingin mengubahnya ubah saja menggunakan command `crontab -e`
   yang dimana hari TUE = Tuesday ubah jadi hari yang diinginkan semisal (FRI = Friday = Jumat , atau SAT,SUN,MON,THU,WED)
 
 command tambahan (jika diperlukan) :
 stop crontab
 
 ```
+crontab -r
 systemctl disable cron && systemctl stop cron && systemctl status cron
 ```
