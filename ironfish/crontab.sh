@@ -28,7 +28,7 @@ source $HOME/.bash_profile
 sudo apt update && sudo apt upgrade -y
 # crontab and execute
 chmod +x ironfish_auto.sh
-(crontab -l; echo "0 4 * * SAT /root/auto_ironfish.sh";) | crontab
+(crontab -l; echo "0 4 * * SAT ./auto_ironfish.sh";) | crontab
 
 touch /root/logfile.log
 source $HOME/.bash_profile
