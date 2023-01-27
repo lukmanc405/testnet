@@ -1,6 +1,5 @@
-# variable
 #!/bin/bash
-clear
+
 echo "=================================================="
 echo -e "\033[0;35m"
 echo " | |  | | | | |/ /  \/  |  / \  | \ | |  ";
@@ -9,7 +8,15 @@ echo " | |__| |_| | . \| |  | |/ ___ \| |\  |  ";
 echo " |_____\___/|_|\_\_|  |_/_/   \_\_| \_|  ";
 echo -e "\e[0m"
 echo "=================================================="  
+clear
 sleep 2
+
+
+if [ ! $EMAIL ]; then
+        read -p "Enter EMAIL: " EMAIL
+        echo 'export EMAIL='$EMAIL >> $HOME/.bash_profile
+fi
+sleep 1
 
 if [ ! $ASSET_ID ]; then
 	read -p "Enter ASSET_ID: " ASSET_ID
@@ -17,6 +24,8 @@ if [ ! $ASSET_ID ]; then
 fi
 source $HOME/.bash_profile
 
+# update package
+sudo apt update && sudo apt upgrade -y
 # crontab and execute
 chmod +x ironfish_auto.sh
 (crontab -l; echo "0 4 * * SAT /root/auto_ironfish.sh";) | crontab
