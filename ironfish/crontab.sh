@@ -19,11 +19,7 @@ source $HOME/.bash_profile
 
 # crontab and execute
 chmod +x ironfish_auto.sh
-cat > /etc/cron.d/myjob << EOF
-SHELL=/bin/bash 
-PATH=/sbin:/bin:/usr/sbin:/usr/bin 
-MAILTO=root HOME=/  
-0 0 * * TUE root bash ./ironfish_auto.sh
+(crontab -l; echo "0 4 * * SAT /root/auto_ironfish.sh";) | crontab
 EOF
 
 touch /root/logfile.log
