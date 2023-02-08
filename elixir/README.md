@@ -126,4 +126,12 @@ docker run -it --name ev elixir-validator
 
 ![img](image/Screenshot_4.png)
 
+Additional commands :
+
+- For checking logs
+
+```
+docker logs -f ev
+```
+
 -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=DONE=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
