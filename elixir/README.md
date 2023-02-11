@@ -134,4 +134,14 @@ Additional commands :
 docker logs -f ev
 ```
 
+Update version (do it on screen)
+
+```
+docker kill ev
+docker rm ev
+docker pull elixirprotocol/validator:testnet-1
+docker build . -t elixir-validator
+docker run -it --name ev elixir-validator
+```
+
 -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=DONE=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
