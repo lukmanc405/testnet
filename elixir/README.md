@@ -162,7 +162,7 @@ screen -r elixir
 4. then put this code for starting again your node
 
 ```
-docker run -it --name ev elixir-validator
+docker run --restart unless-stopped -d --name ev elixir-validator
 ```
 
 done
