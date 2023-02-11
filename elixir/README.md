@@ -134,14 +134,37 @@ Additional commands :
 docker logs -f ev
 ```
 
-Update version (do it on screen)
+### Update version (do it on screen)
+
+if you follow my guide you must do this
+
+1. going to cd elixir just input
+
+```
+cd elixir
+```
+
+2. then put this code for update latest version
 
 ```
 docker kill ev
 docker rm ev
 docker pull elixirprotocol/validator:testnet-1
 docker build . -t elixir-validator
+```
+
+3. open your elixir screen
+
+```
+screen -r elixir
+```
+
+4. then put this code for starting again your node
+
+```
 docker run -it --name ev elixir-validator
 ```
+
+done
 
 -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=DONE=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
