@@ -40,10 +40,10 @@ ufw enable
 
 ![img](image/Screenshot_1.png)
 
-NOTE : your privatekey must be with 0x in front
+NOTE :
 
-2. Now go to your VPS , and login into terminal paste **required ports** above
-3. and now lets input code for installing docker
+1. Now go to your VPS , and login into terminal paste **required ports** above
+2. and now lets input code for installing docker
 
 ```
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
