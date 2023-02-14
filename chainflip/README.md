@@ -449,7 +449,32 @@ Poin penting lainnya: Jangan lupa untuk mendapatkan role partisipan testnet di D
 
 ![x](images/Screenshot_41.png)
 
-               ======================================SELESAI======================================
+### Advanced guide :
+
+a. cara export key (simpan key, bisa berguna jika pindah VPS atau mau jeda sementara)
+
+masukkan command ini
+
+```
+chainflip-node key inspect "0x$(cat /etc/chainflip/keys/signing_key_file)"
+```
+
+![img](.images/../images/export.png)
+
+simpan pada **NOTEPAD**
+
+b. command shutdown node
+
+```
+sudo systemctl stop chainflip-node.service && sudo systemctl stop chainflip-engine.service
+```
+
+c. cara import old key ke VPS baru
+
+- kunjungi situs ini untuk panduan migrasi
+  https://docs.chainflip.io/perseverance-validator-documentation/maintenance/migrating-to-a-different-server
+
+======================================SELESAI======================================
 
 Jangan lupa join channel kami :
 https://t.me/detective_gems
