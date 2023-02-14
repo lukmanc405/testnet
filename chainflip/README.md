@@ -466,7 +466,13 @@ simpan pada **NOTEPAD**
 b. command shutdown node
 
 ```
-sudo systemctl stop chainflip-node.service && sudo systemctl stop chainflip-engine.service
+systemctl stop chainflip-node.service && systemctl stop chainflip-engine.service
+systemctl disable chainflip-node.service && systemctl disable chainflip-engine.service
+rm /etc/systemd/system/chainflip-node.service && rm /etc/systemd/system/chainflip-engine.service
+rm /etc/systemd/system/chainflip-node.service && rm /etc/systemd/system/chainflip-engine.service
+rm /usr/lib/systemd/system/chainflip-node.service && rm /usr/lib/systemd/system/chainflip-node.service
+systemctl daemon-reload
+systemctl reset-failed
 ```
 
 c. cara import old key ke VPS baru
