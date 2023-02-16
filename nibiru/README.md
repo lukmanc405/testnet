@@ -17,8 +17,6 @@ Nibiru is a sovereign proof-of-stake blockchain, open-source platform, and membe
 
 Nibiru unifies leveraged derivatives trading, spot trading, staking, and bonded liquidity provision into a seamless user experience, enabling users of over 40 blockchains to trade with leverage using a suite of composable decentralized applications.
 
-#### Manual Instalation
-
 <a id="anchor"></a>
 
 # Nibiru public testnet phase 2 node tutorial
@@ -50,6 +48,8 @@ Nibiru unifies leveraged derivatives trading, spot trading, staking, and bonded 
 - 100GB SSD
 
 ---
+
+## Manual Instalation
 
 ### -Install the basic environment
 
@@ -107,10 +107,12 @@ Display should be v0.15.0
 
 #### Initialize node
 
+**Change XXX with your moniker name**
+
 ```
-moniker=YOUR_MONIKER_NAME
-nibid init $moniker --chain-id=nibiru-testnet-1
-nibid config chain-id nibiru-testnet-1
+moniker=XXX
+nibid init $moniker --chain-id=nibiru-testnet-2
+nibid config chain-id nibiru-testnet-2
 ```
 
 #### Download the Genesis file
@@ -146,7 +148,7 @@ sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" $
 #### State-sync fast synchronization
 
 ```
-SNAP_RPC="https://rpc.nibiru-testnet-1.silentvalidator.com:443" \
+SNAP_RPC="https://rpc.nibiru-testnet-2.silentvalidator.com:443" \
 LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
 BLOCK_HEIGHT=$((LATEST_HEIGHT - 500)); \
 TRUST_HASH=$(curl -s "$SNAP_RPC/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash); \
@@ -252,21 +254,18 @@ nibid query bank balances WALLET_ADDRESS
 `After enough test coins are obtained and the node is synchronized, a validator can be created. Only validators whose pledge amount is in the top 100 are active validators.`
 
 ```
-daemon=nibid
-denom=unibi
-moniker=MONIKER_NAME
-chainid=nibiru-testnet-1
-$daemon tx staking create-validator \
-    --amount=1000000$denom \
-    --pubkey=$($daemon tendermint show-validator) \
-    --moniker=$moniker \
-    --chain-id=$chainid \
-    --commission-rate=0.05 \
-    --commission-max-rate=0.1 \
-    --commission-max-change-rate=0.1 \
-    --min-self-delegation=1000000 \
-    --fees 5000unibi \
-    --from=WALLET_NAME
+nibid tx staking create-validator \
+--amount=10000000unibi \
+--pubkey=$(nibid tendermint show-validator) \
+--moniker="$NODE_MONIKER" \
+--chain-id=nibiru-testnet-2 \
+--commission-rate=0.1 \
+--commission-max-rate=0.2 \
+--commission-max-change-rate=0.05 \
+--min-self-delegation=1 \
+--fees=2000unibi \
+--from=wallet \
+-y
 ```
 
 #### After that, you can go to the block [explorer](https://testnet-1.nibiru.fi/) to check whether your validator is created successfully.
