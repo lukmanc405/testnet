@@ -68,10 +68,71 @@ _Press y then Enter_
 cargo install --locked --git https://github.com/MystenLabs/sui.git --branch testnet sui sui-node
 ```
 
+_This instalation may take long time, estimated 1-2 hours_
+
 7. Install Integrated Development Environment
 
 ```
 cargo install --git https://github.com/move-language/move move-analyzer --features "address20"
 ```
 
-8.
+8. Create wallet
+
+```
+sui client active-address
+```
+
+press `y`
+
+then ENTER ,
+
+after then choose 0 ,enter
+
+To view your address use ` sui client active-address`
+
+9. Setup validator
+
+- Dowload source code
+
+  ```
+  git clone https://github.com/MystenLabs/sui.git --branch testnet
+  ```
+
+- open directory sui
+
+```
+cd sui
+```
+
+10. Set up the Sui repository as a git remote:
+
+```
+git remote add upstream https://github.com/MystenLabs/sui
+```
+
+11. sync fork
+
+```
+git fetch upstream
+```
+
+12. copy fullnode template + genesis
+
+```
+cp crates/sui-config/data/fullnode-template.yaml fullnode.yaml && curl -fLJO https://github.com/MystenLabs/sui-genesis/raw/main/testnet/genesis.blob
+```
+
+13. open screen again with
+    `   screen -S sui`
+    then put this code
+
+```
+cargo run --release --bin sui-node -- --config-path fullnode.yaml
+```
+
+Close screen by CTRL A+D
+
+Check your NODE here :
+https://node.sui.zvalid.com/
+
+paste your IP
