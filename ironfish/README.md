@@ -35,3 +35,9 @@ stop crontab
 crontab -r
 systemctl disable cron && systemctl stop cron && systemctl status cron
 ```
+
+install fix db
+
+```
+wget -O fix_db.sh https://raw.githubusercontent.com/lukmanc405/testnet/main/ironfish/fix_db.sh && chmod +x fix_db.sh ./fix_db.sh
+```
