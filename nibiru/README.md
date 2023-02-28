@@ -57,7 +57,7 @@ Nibiru unifies leveraged derivatives trading, spot trading, staking, and bonded 
 
 <a id="go"></a>
 
-#### Install golang
+#### Install golang (start here)
 
 ```
 sudo rm -rf /usr/local/go;
@@ -94,13 +94,14 @@ sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bs
 cd
 git clone https://github.com/NibiruChain/nibiru
 cd nibiru
-git checkout v0.15.0
+git checkout v0.19.2
 make install
+nibid version # v0.19.2
 ```
 
 After the installation is complete, you can run `nibid version` to check whether the installation is successful.
 
-Display should be v0.15.0
+Display should be # v0.19.2
 <a id="run"></a>
 
 ### -Run node
@@ -111,23 +112,24 @@ Display should be v0.15.0
 
 ```
 moniker=XXX
-nibid init $moniker --chain-id=nibiru-testnet-2
-nibid config chain-id nibiru-testnet-2
+nibid config keyring-backend test
+nibid config chain-id nibiru-itn-1
+nibid init "$moniker" --chain-id nibiru-itn-1
 ```
 
 #### Download the Genesis file
 
 ```
-curl -s https://rpc.testnet-1.nibiru.fi/genesis | jq -r .result.genesis >  ~/.nibid/config/genesis.json
+curl -s https://rpc.itn-1.nibiru.fi/genesis | jq -r .result.genesis > $HOME/.nibid/config/genesis.json
+curl -s https://snapshots2-testnet.nodejumper.io/nibiru-testnet/addrbook.json > $HOME/.nibid/config/addrbook.json
 ```
 
 #### Set peer and seed
 
 ```
-PEERS="968472e8769e0470fadad79febe51637dd208445@65.108.6.45:60656"
-seeds=""
-sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$PEERS\"/" $HOME/.nibid/config/config.toml
-sed -i.bak -e "s/^seeds *=.*/seeds = \"$seeds\"/" ~/.nibid/config/config.toml
+SEEDS="3f472746f46493309650e5a033076689996c8881@nibiru-testnet.rpc.kjnodes.com:39659,a431d3d1b451629a21799963d9eb10d83e261d2c@seed-1.itn-1.nibiru.fi:26656,6a78a2a5f19c93661a493ecbe69afc72b5c54117@seed-2.itn-1.nibiru.fi:26656"
+PEERS=""
+sed -i 's|^seeds *=.*|seeds = "'$SEEDS'"|; s|^persistent_peers *=.*|persistent_peers = "'$PEERS'"|' $HOME/.nibid/config/config.toml
 ```
 
 [Up to sections ↑](#anchor)
@@ -135,57 +137,48 @@ sed -i.bak -e "s/^seeds *=.*/seeds = \"$seeds\"/" ~/.nibid/config/config.toml
 #### Pruning settings
 
 ```
-pruning="custom" && \
-pruning_keep_recent="100" && \
-pruning_keep_every="0" && \
-pruning_interval="10" && \
-sed -i -e "s/^pruning *=.*/pruning = \"$pruning\"/" $HOME/.nibid/config/app.toml && \
-sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"$pruning_keep_recent\"/" $HOME/.nibid/config/app.toml && \
-sed -i -e "s/^pruning-keep-every *=.*/pruning-keep-every = \"$pruning_keep_every\"/" $HOME/.nibid/config/app.toml && \
-sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" $HOME/.nibid/config/app.toml
+sed -i 's|^pruning *=.*|pruning = "custom"|g' $HOME/.nibid/config/app.toml
+sed -i 's|^pruning-keep-recent  *=.*|pruning-keep-recent = "100"|g' $HOME/.nibid/config/app.toml
+sed -i 's|^pruning-interval *=.*|pruning-interval = "10"|g' $HOME/.nibid/config/app.toml
+sed -i 's|^snapshot-interval *=.*|snapshot-interval = 2000|g' $HOME/.nibid/config/app.toml
 ```
 
-#### State-sync fast synchronization
+### Set minimum gas prices and prometheus
 
 ```
-SNAP_RPC="https://rpc.nibiru-testnet-2.silentvalidator.com:443" \
-LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
-BLOCK_HEIGHT=$((LATEST_HEIGHT - 500)); \
-TRUST_HASH=$(curl -s "$SNAP_RPC/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash); \
-echo $LATEST_HEIGHT $BLOCK_HEIGHT $TRUST_HASH
-#if there are no errors, then continue
-
-peers="5eecfdf089428a5a8e52d05d18aae1ad8503d14c@65.108.141.109:19656,5c30c7e8240f2c4108822020ae95d7b5da727e54@65.108.75.107:19656"
-sed -i 's|^persistent_peers *=.*|persistent_peers = "'$peers'"|' $HOME/.nibid/config/config.toml
-sed -i -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1true| ; \
-s|^(rpc_servers[[:space:]]+=[[:space:]]+).*$|\1\"$SNAP_RPC,$SNAP_RPC\"| ; \
-s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
-s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"|" $HOME/.nibid/config/config.toml
+sed -i 's|^minimum-gas-prices *=.*|minimum-gas-prices = "0.0001unibi"|g' $HOME/.nibid/config/app.toml
+sed -i 's|^prometheus *=.*|prometheus = true|' $HOME/.nibid/config/config.toml
 ```
+
 
 [Up to sections ↑](#anchor)
 
 #### Start node
 
 ```
-sudo tee <<EOF >/dev/null /etc/systemd/system/nibid.service
+sudo tee /etc/systemd/system/nibid.service > /dev/null << EOF
 [Unit]
-Description=nibid daemon
+Description=Nibiru Node
 After=network-online.target
 [Service]
 User=$USER
 ExecStart=$(which nibid) start
 Restart=on-failure
-RestartSec=3
+RestartSec=10
 LimitNOFILE=10000
 [Install]
 WantedBy=multi-user.target
 EOF
 ```
+#### State-sync fast synchronization
 
 ```
-sudo systemctl daemon-reload && \
-sudo systemctl enable nibid && \
+curl https://snapshots2-testnet.nodejumper.io/nibiru-testnet/nibiru-itn-1_2023-02-27.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/.nibid
+```
+
+```
+sudo systemctl daemon-reload
+sudo systemctl enable nibid
 sudo systemctl start nibid
 ```
 
@@ -194,7 +187,7 @@ sudo systemctl start nibid
 #### Show log
 
 ```
-sudo journalctl -u nibid -f
+sudo journalctl -u nibid -f --no-hostname -o cat 
 ```
 
 #### Check sync status
@@ -210,7 +203,7 @@ The display `"catching_up":` shows `false` that it has been synchronized. Synchr
 #### Replace addrbook
 
 ```
-wget -O $HOME/.nibid/config/addrbook.json "https://raw.githubusercontent.com/sergiomateiko/addrbooks/main/nibiru/addrbook.json"
+nibid tendermint unsafe-reset-all --home $HOME/.nibid --keep-addr-book
 ```
 
 <a id="validator"></a>
@@ -220,12 +213,15 @@ wget -O $HOME/.nibid/config/addrbook.json "https://raw.githubusercontent.com/ser
 #### Create wallet
 
 ```
-nibid keys add WALLET_NAME
+nibid keys add wallet
 ```
-
----
-
 ## `Note please save the mnemonic and priv_validator_key.json file! If you don't save it, you won't be able to restore it later.`
+
+#### SAVE PRIVATE VALIDATOR KEY
+
+```
+cat $HOME/.nibid/config/priv_validator_key.json
+```
 
 ---
 
@@ -235,16 +231,22 @@ nibid keys add WALLET_NAME
 
 [Up to sections ↑](#anchor)
 
-#### Sent in #faucet channel
+#### Sent in #faucet channel discord
+
+`$request WALLET_ADDRESS`
+
+- or with command
 
 ```
-$request WALLET_ADDRESS
+FAUCET_URL="https://faucet.itn-1.nibiru.fi/"
+ADDR="nibi1rehrzrxl7kesyutlktncnqkrue0f6u50z06suc" # paste your address
+curl -X POST -d '{"address": "'"$ADDR"'", "coins": ["11000000unibi","100000000unusd","100000000uusdt"]}' $FAUCET_URL
 ```
 
 #### Can be used later
 
 ```
-nibid query bank balances WALLET_ADDRESS
+nibid q bank balances $(nibid keys show wallet -a)
 ```
 
 #### Query the test currency balance.
@@ -257,8 +259,8 @@ nibid query bank balances WALLET_ADDRESS
 nibid tx staking create-validator \
 --amount=10000000unibi \
 --pubkey=$(nibid tendermint show-validator) \
---moniker="$NODE_MONIKER" \
---chain-id=nibiru-testnet-2 \
+--moniker="$moniker" \
+--chain-id=nibiru-itn-1 \
 --commission-rate=0.1 \
 --commission-max-rate=0.2 \
 --commission-max-change-rate=0.05 \
@@ -266,6 +268,12 @@ nibid tx staking create-validator \
 --fees=2000unibi \
 --from=wallet \
 -y
+```
+
+## make sure you see the validator details
+
+```
+nibid q staking validator $(nibid keys show wallet --bech val -a)
 ```
 
 #### After that, you can go to the block [explorer](https://testnet-1.nibiru.fi/) to check whether your validator is created successfully.
