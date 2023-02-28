@@ -276,9 +276,9 @@ nibid tx staking create-validator \
 nibid q staking validator $(nibid keys show wallet --bech val -a)
 ```
 
-#### After that, you can go to the block [explorer](https://testnet-1.nibiru.fi/) to check whether your validator is created successfully.
+#### After that, you can go to the validator table [explorer](https://app.nibiru.fi/stake) to check whether your validator is created successfully.
 
-## And [other commands](https://github.com/cosmoswalk/Cosmos_tutorials/blob/main/Useful%20Tools/Other%20commands.md)
+## And [other commands](https://github.com//lukmanc405/testnet/main/utils/usefull_commands.md)
 
 #### More information
 
