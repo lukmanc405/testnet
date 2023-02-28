@@ -19,7 +19,7 @@ Nibiru unifies leveraged derivatives trading, spot trading, staking, and bonded 
 
 <a id="anchor"></a>
 
-# Nibiru public testnet phase 2 node tutorial
+Nibiru Chain #7 | Nibiru Incentivized Testnet #1 node tutorial
 
 [<img align="right" alt="Personal Website" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/globe.svg" />][nibiru-website]
 [<img align="right" alt="Nibiru Discord" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/discord.svg" />][nibiru-discord]
