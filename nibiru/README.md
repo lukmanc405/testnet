@@ -270,15 +270,15 @@ nibid q bank balances $(nibid keys show wallet -a)
 
 ```
 nibid tx staking create-validator \
---amount=10000000unibi \
+--amount=1000000unibi \
 --pubkey=$(nibid tendermint show-validator) \
 --moniker="$moniker" \
 --chain-id=nibiru-itn-1 \
---commission-rate=0.1 \
---commission-max-rate=0.2 \
---commission-max-change-rate=0.05 \
---min-self-delegation=1 \
---fees=2000unibi \
+--commission-rate="0.1" \
+--commission-max-rate="0.10" \
+--commission-max-change-rate="0.01" \
+--min-self-delegation="1000000" \
+--fees=10000unibi \
 --from=wallet \
 -y
 ```
