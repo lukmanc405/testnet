@@ -281,8 +281,8 @@ nibid tx staking create-validator \
 --website="" \
 --chain-id=nibiru-itn-1 \
 --commission-rate=0.1 \
---commission-max-rate=0.20 \
---commission-max-change-rate=0.1 \
+--commission-max-rate="0.10" \
+--commission-max-change-rate="0.01" \
 --min-self-delegation=1 \
 --from=wallet \
 --gas-adjustment=1.4 \
