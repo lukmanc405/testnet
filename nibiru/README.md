@@ -112,7 +112,9 @@ Display should be # v0.19.2
 **Change XXX with your moniker name**
 
 ```
-moniker=XXX
+moniker=lukman-nodes
+echo 'export moniker='$moniker >> $HOME/.bash_profile
+source ~/.bash_profile
 nibid config keyring-backend test
 nibid config chain-id nibiru-itn-1
 nibid init "$moniker" --chain-id nibiru-itn-1
