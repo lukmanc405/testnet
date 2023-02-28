@@ -269,17 +269,23 @@ nibid q bank balances $(nibid keys show wallet -a)
 `After enough test coins are obtained and the node is synchronized, a validator can be created. Only validators whose pledge amount is in the top 100 are active validators.`
 
 ```
+# create validator
 nibid tx staking create-validator \
 --amount=1000000unibi \
 --pubkey=$(nibid tendermint show-validator) \
 --moniker="$moniker" \
+--identity="" \
+--details="" \
+--website="" \
 --chain-id=nibiru-itn-1 \
---commission-rate="0.1" \
---commission-max-rate="0.10" \
---commission-max-change-rate="0.01" \
---min-self-delegation="1000000" \
---fees=10000unibi \
+--commission-rate=0.1 \
+--commission-max-rate=0.20 \
+--commission-max-change-rate=0.1 \
+--min-self-delegation=1 \
 --from=wallet \
+--gas-adjustment=1.4 \
+--gas=auto \
+--gas-prices=0.025unibi \
 -y
 ```
 
