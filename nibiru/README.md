@@ -172,18 +172,6 @@ LimitNOFILE=10000
 WantedBy=multi-user.target
 EOF
 ```
-#### State-sync fast synchronization
-
-```
-sudo systemctl stop nibid
-
-cp $HOME/.nibid/data/priv_validator_state.json $HOME/.nibid/priv_validator_state.json.backup
-
-rm -rf $HOME/.nibid/data 
-curl https://files.itrocket.net/testnet/nibiru/snap_nibiru.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/.nibid
-
-mv $HOME/.nibid/priv_validator_state.json.backup $HOME/.nibid/data/priv_validator_state.json
-```
 
 ```
 sudo systemctl daemon-reload
@@ -206,6 +194,22 @@ curl -s localhost:26657/status | jq .result | jq .sync_info
 ```
 
 The display `"catching_up":` shows `false` that it has been synchronized. Synchronization takes a while, maybe half an hour to an hour. If the synchronization has not started, it is usually because there are not enough peers. You can consider adding a Peer or using someone else's addrbook.
+
+
+#### State-sync fast synchronization
+
+```
+sudo systemctl stop nibid
+
+cp $HOME/.nibid/data/priv_validator_state.json $HOME/.nibid/priv_validator_state.json.backup
+
+rm -rf $HOME/.nibid/data 
+curl https://files.itrocket.net/testnet/nibiru/snap_nibiru.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/.nibid
+
+mv $HOME/.nibid/priv_validator_state.json.backup $HOME/.nibid/data/priv_validator_state.json
+
+sudo systemctl restart nibid && sudo journalctl -u nibid -f
+```
 
 [Up to sections ↑](#anchor)
 
