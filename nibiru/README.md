@@ -278,7 +278,7 @@ nibid q staking validator $(nibid keys show wallet --bech val -a)
 
 #### After that, you can go to the validator table [explorer](https://app.nibiru.fi/stake) to check whether your validator is created successfully.
 
-## And [other commands](https://github.com//lukmanc405/testnet/main/utils/usefull_commands.md)
+## And [other commands](https://github.com/lukmanc405/testnet/blob/main/utils/usefull_commands.md)
 
 #### More information
 
