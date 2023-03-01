@@ -112,7 +112,7 @@ Display should be # v0.19.2
 **Change XXX with your moniker name**
 
 ```
-moniker=lukman-nodes
+moniker=XXX
 echo 'export moniker='$moniker >> $HOME/.bash_profile
 source ~/.bash_profile
 nibid config keyring-backend test
