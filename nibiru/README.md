@@ -124,7 +124,6 @@ nibid init "$moniker" --chain-id nibiru-itn-1
 
 ```
 curl -s https://rpc.itn-1.nibiru.fi/genesis | jq -r .result.genesis > $HOME/.nibid/config/genesis.json
-curl -s https://snapshots2-testnet.nodejumper.io/nibiru-testnet/addrbook.json > $HOME/.nibid/config/addrbook.json
 ```
 
 #### Set peer and seed
