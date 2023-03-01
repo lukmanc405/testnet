@@ -207,9 +207,7 @@ cp $HOME/.nibid/data/priv_validator_state.json $HOME/.nibid/priv_validator_state
 rm -rf $HOME/.nibid/data 
 curl https://files.itrocket.net/testnet/nibiru/snap_nibiru.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/.nibid
 
-mv $HOME/.nibid/priv_validator_state.json.backup $HOME/.nibid/data/priv_validator_state.json
-
-sudo systemctl restart nibid && sudo journalctl -u nibid -f
+mv $HOME/.nibid/priv_validator_state.json.backup $HOME/.nibid/data/priv_validator_state.json && sudo systemctl restart nibid
 ```
 
 [Up to sections ↑](#anchor)
@@ -269,15 +267,17 @@ nibid q bank balances $(nibid keys show wallet -a)
 
 `After enough test coins are obtained and the node is synchronized, a validator can be created. Only validators whose pledge amount is in the top 100 are active validators.`
 
+CHANGE YOUR_KEYBASE , FILL_YOUR_DETAILS ,FILL_YOUR_WEBSITE OR TWITTER
+
 ```
 # create validator
 nibid tx staking create-validator \
 --amount=1000000unibi \
 --pubkey=$(nibid tendermint show-validator) \
 --moniker="$moniker" \
---identity="" \
---details="" \
---website="" \
+--identity="YOUR_KEYBASE" \
+--details="FILL_YOUR_DETAILS" \
+--website="FILL_YOUR_WEBSITE OR TWITTER" \
 --chain-id=nibiru-itn-1 \
 --commission-rate="0.1" \
 --commission-max-rate="0.10" \
