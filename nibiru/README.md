@@ -279,12 +279,12 @@ nibid tx staking create-validator \
 --details="" \
 --website="" \
 --chain-id=nibiru-itn-1 \
---commission-rate=0.1 \
+--commission-rate="0.1" \
 --commission-max-rate="0.10" \
 --commission-max-change-rate="0.01" \
---min-self-delegation=1 \
+--min-self-delegation="1" \
 --from=wallet \
---gas-adjustment=1.4 \
+--gas-adjustment="1.4" \
 --gas=auto \
 --gas-prices=0.025unibi \
 -y
@@ -296,7 +296,7 @@ nibid tx staking create-validator \
 nibid q staking validator $(nibid keys show wallet --bech val -a)
 ```
 
-#### After that, you can go to the validator table [explorer](https://app.nibiru.fi/stake) to check whether your validator is created successfully.
+#### After that, you can go to the validator table [explorer](https://itn-1.nibiru.fi/) to check whether your validator is created successfully.
 
 ## And [other commands](https://github.com/lukmanc405/testnet/blob/main/utils/usefull_commands.md)
 
