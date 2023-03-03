@@ -202,21 +202,18 @@ The display `"catching_up":` shows `false` that it has been synchronized. Synchr
 ```
 sudo systemctl stop nibid
 
-cp $HOME/.nibid/data/priv_validator_state.json $HOME/.nibid/priv_validator_state.json.backup
+cp $HOME/.nibid/data/priv_validator_state.json $HOME/.nibid/priv_validator_state.json.backup 
 
-rm -rf $HOME/.nibid/data 
-curl https://files.itrocket.net/testnet/nibiru/snap_nibiru.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/.nibid
+nibid tendermint unsafe-reset-all --home $HOME/.nibid --keep-addr-book 
+curl https://snapshots2-testnet.nodejumper.io/nibiru-testnet/nibiru-itn-1_2023-03-03.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/.nibid
 
-mv $HOME/.nibid/priv_validator_state.json.backup $HOME/.nibid/data/priv_validator_state.json && sudo systemctl restart nibid
+mv $HOME/.nibid/priv_validator_state.json.backup $HOME/.nibid/data/priv_validator_state.json 
+
+sudo systemctl start nibid
+sudo journalctl -u nibid -f --no-hostname -o cat
 ```
 
 [Up to sections ↑](#anchor)
-
-#### Replace addrbook
-
-```
-nibid tendermint unsafe-reset-all --home $HOME/.nibid --keep-addr-book
-```
 
 <a id="validator"></a>
 
