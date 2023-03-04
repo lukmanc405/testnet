@@ -203,8 +203,6 @@ The display `"catching_up":` shows `false` that it has been synchronized. Synchr
 sudo systemctl stop nibid
 
 cp $HOME/.nibid/data/priv_validator_state.json $HOME/.nibid/priv_validator_state.json.backup
-# Replace addrbook
-nibid tendermint unsafe-reset-all --home $HOME/.nibid --keep-addr-book
 rm -rf $HOME/.nibid/data 
 curl https://files.itrocket.net/testnet/nibiru/snap_nibiru.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/.nibid
 
