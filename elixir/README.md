@@ -134,6 +134,16 @@ Additional commands :
 docker logs -f ev
 ```
 
+### For stopping nodes
+
+```
+cd elixir
+docker kill ev
+docker rm ev
+cd || return
+rm -rf $HOME/elixir /usr/bin/ev
+```
+
 ### Update version (do it on screen)
 
 if you follow my guide you must do this
