@@ -32,9 +32,9 @@ sleep 2
 docker pull nulink/nulink:latest
 
 # Download file settings
-wget https://gethstore.blob.core.windows.net/builds/geth-linux-amd64-1.10.24-972007a5.tar.gz
-tar -xvzf geth-linux-amd64-1.10.24-972007a5.tar.gz
-cd geth-linux-amd64-1.10.24-972007a5/
+wget https://gethstore.blob.core.windows.net/builds/geth-linux-amd64-1.10.23-d901d853.tar.gz
+tar -xvzf geth-linux-amd64-1.10.23-d901d853.tar.gz
+cd geth-linux-amd64-1.10.23-d901d853/
 ./geth account new --keystore ./keystore
 
 #config
