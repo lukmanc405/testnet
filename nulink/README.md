@@ -13,24 +13,23 @@
  <img src="https://user-images.githubusercontent.com/107190154/190568136-14f5a7d8-5b15-46fb-8132-4d38a0779171.gif" width="250">
 <p>
 
-# NuLink Testnet `Horus`
+# NuLink Testnet `Horus 2.0`
 ---
 
-- Date: Phase 1: (September 15 - November 20)
+- Date: Phase 1: Starting December 31, 2023 at 18:00 (UTC+7)
 - Official Instructions: https://docs.nulink.org/products/testnet
-- More info about testnet: https://www.nulink.org/blog-posts/nulink-testnet-announcement
+- More info about testnet: https://www.nulink.org/blog-posts/announcement-for-nulink-testnet-horus-2-0
 
 #### Official documentation:
 ----
-- Official manual: https://docs.nulink.org/products/nulink_worker
+- Official manual: https://docs.nulink.org/products/testnet#get-started
 - Block explorer: N/A
 
 #### Recommended hardware requirements
 | Hardware | Specs    |
 | :---:   | :---: |
-| CPU | 4 CPU   |
-| RAM | 8GB RAM |
-| DISK | 100 GB SSD STORAGE |
+| RAM | 4GB RAM |
+| DISK | 30 GB SSD STORAGE |
 | OS | Ubuntu 20.04 LTS|
 
 #### Required ports :
@@ -51,6 +50,7 @@ wget -O nulink.sh https://raw.githubusercontent.com/lukmanc405/testnet/main/nuli
 ```
 
 - at last creating worker you need to create password then repeat that
+  
 ![image](https://user-images.githubusercontent.com/48665887/191491113-02c63cad-cfe5-4ba9-906e-6d3d2f42e997.png)
 
 - save these information to your pc/notepad
@@ -120,9 +120,11 @@ nulink/nulink nulink ursula init \
 --payment-provider https://data-seed-prebsc-2-s2.binance.org:8545 \
 --payment-network bsc_testnet \
 --operator-address $OPERATOR_ADDRESS \
---max-gas-price 100
+--max-gas-price 10000000000
+
 ```
 like this example :
+
 ![image](https://user-images.githubusercontent.com/48665887/191534476-74654fc0-c5f0-4147-9ed6-ccb09cbe8a2f.png)
 
 
@@ -147,6 +149,7 @@ docker run --restart on-failure -d \
 -e NULINK_OPERATOR_ETH_PASSWORD \
 nulink/nulink nulink ursula run --no-block-until-ready
 ```
+
 #### check node logs
 
 ```
@@ -168,49 +171,42 @@ wget -O update_node.sh https://raw.githubusercontent.com/lukmanc405/testnet/main
 ### Staking & Bond an active worker to gain reward
 ---
 
-1. Go to [NLK faucet](https://test-staking.nulink.org/faucet)
+1. Go to [NLK faucet](https://dashboard.testnet.nulink.org/)
 
-![image](https://user-images.githubusercontent.com/48665887/191538034-ef5afbc5-1a84-42bd-b935-27fbbd44aa27.png)
+![image](img/Screenshot_25.png)
 
-![image](https://user-images.githubusercontent.com/48665887/191538183-cdbe2fcb-a4b1-46d7-ad27-20ce6ecfc71a.png)
+2. Now go to [horus staking](https://dashboard.testnet.nulink.org/) 
 
-
-2. Now go to [horus staking](https://test-staking.nulink.org/) 
-
-![image](https://user-images.githubusercontent.com/48665887/191538429-d7a1165b-28e3-4c7b-8387-d2dcff5a858b.png)
-
+![image](img/Screenshot_18.png)
 3. Press max then confirm 
 
-![image](https://user-images.githubusercontent.com/48665887/191538721-d561e398-98c7-4206-9ae2-9a20f3708c20.png)
+![image](img/Screenshot_20.png)
 
 4. Now bond worker
 
-![image](https://user-images.githubusercontent.com/48665887/191539042-bd95094b-7495-4156-85ab-f9afecec830f.png)
+![image](img/Screenshot_21.png)
 
-5. put your operator and node url address
-NOTE :
-- operator address = worker address
-- NODE URI=https://Your_adress_VPS:9151
+5. put worker address
 
-example :
+![image](img/Screenshot_22.png)
 
-`https://20.166.51.233:9151`
-
-![image](https://user-images.githubusercontent.com/48665887/191540364-8b451563-818d-43ea-916d-c9b63464c764.png)
-
-![image](https://user-images.githubusercontent.com/48665887/191541828-96ab8cbe-91c9-43c0-b24f-e9a6d6bbb54b.png)
-
-![image](https://user-images.githubusercontent.com/48665887/191542082-534a511c-a420-4203-b523-d3813b80cedb.png)
+![image](img/Screenshot_23.png)
 
 
 #### Congrats well done,you finish it!
 
-### Dont forget to fill the [form](https://docs.google.com/forms/d/e/1FAIpQLSep0rgPRcMd2kUhz53GYmBoktu-u-8npU2DakmzGpmpCmYZPw/viewform)
+### Dont forget to fill the [form](https://docs.google.com/forms/d/e/1FAIpQLSdY2eXwQD-tKvJ_Ug-6hgdcWK_wUOZjXeJknw5XWSEO8gzJ2w/viewform)
+
+Form Submission:
+
+- After completing the 7 epochs with a living ratio above 80%, participants must fill out the provided form.
+
+- Participants who do not fill out the form will not be eligible for the raffle draw.
 
 #### other command for worker nodes (if needed)
    
 to delete node
 
 ```
-cd $HOME && docker stop ursula && docker rm ursula && rm -rf ~/{geth-linux-amd64-1.10.24-972007a5,geth-linux-amd64-1.10.24-972007a5.tar.gz,nulink,nulink.sh}
+cd $HOME && docker stop ursula && docker rm ursula && rm -rf ~/{geth-linux-amd64-1.10.23-d901d853,geth-linux-amd64-1.10.23-d901d853.tar.gz,nulink,nulink.sh}
 ```
