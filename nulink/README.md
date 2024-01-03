@@ -190,7 +190,7 @@ wget -O update_node.sh https://raw.githubusercontent.com/lukmanc405/testnet/main
 
 ![image](img/Screenshot_22.png)
 
-![image](img/Screenshot_23.png)
+![image](img/Screenshot_27.png)
 
 
 #### Congrats well done,you finish it!
