@@ -52,7 +52,3 @@ fi
 
 echo -e "\e[1m\e[32m [5]. Clone repo ... \e[0m" && sleep 1
 git clone https://github.com/karnotxyz/madara-cli
-
-echo -e "\e[1m\e[32m [6]. Build repo ... \e[0m" && sleep 2
-cd madara-cli
-cargo build --release

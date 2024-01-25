@@ -8,6 +8,11 @@ wget -qO madara.sh https://raw.githubusercontent.com/lukmanc405/testnet/main/mad
 2. inisialisasi new app chain ,jangan lupa isi saldo availnya
 
 ```
+cd madara-cli
+cargo build --release
+```
+
+```
 ./target/release/madara init
 ```
 
@@ -26,7 +31,7 @@ contoh :
 
 
 
-3. Run your app chain:
+1. Run your app chain:
 
 ```
 ./target/release/madara run
