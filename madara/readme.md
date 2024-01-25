@@ -1,12 +1,15 @@
 ini buat garap clashnode avail x madara
-install madara 
+1. install madara 
 
 ```
 wget -qO madara.sh https://raw.githubusercontent.com/lukmanc405/testnet/main/madara/madara.sh && chmod +x madara.sh && ./madara.sh
 ```
 
-inisialisasi new app chain ,jangan lupa isi saldo availnya
+2. inisialisasi new app chain ,jangan lupa isi saldo availnya
 
+```
+./target/release/madara init
+```
 
 > Enter you app chain name: ISI_NAMA_CHAIN_SESUKA_LU 
 
@@ -21,11 +24,9 @@ contoh :
 - Select DA layer for your app chain: Avail
 
 
-```
-./target/release/madara init
-```
 
-Run your app chain:
+
+3. Run your app chain:
 
 ```
 ./target/release/madara run
