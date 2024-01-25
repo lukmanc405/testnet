@@ -9,17 +9,16 @@ inisialisasi new app chain ,jangan lupa isi saldo availnya
 
 
 > Enter you app chain name: ISI_NAMA_CHAIN_SESUKA_LU 
+
 > Select mode for your app chain: Sovereign
+
 > Select DA layer for your app chain: Avail
 
 contoh :
-```
-> Enter you app chain name: luke
-> Select mode for your app chain: Sovereign
-> Select DA layer for your app chain: Avail
-```
 
-
+- Enter you app chain name: luke
+- Select mode for your app chain: Sovereign
+- Select DA layer for your app chain: Avail
 
 
 ```
