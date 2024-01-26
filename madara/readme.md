@@ -31,8 +31,27 @@ contoh :
 
 
 
-1. Run your app chain:
+3. Run your app chain in screen:
+
+create screen with
+
+```
+screen -R "madara"
+```
+
+then input this one
 
 ```
 ./target/release/madara run
 ```
+
+jarak 2 menit klik `ctrl a+d`
+
+4. ambil uuid disini 
+- copy lalu pakai buat submit pr
+https://www.uuidgenerator.net/
+
+
+submit pr disini
+https://github.com/karnotxyz/avail-campaign-listing
+
