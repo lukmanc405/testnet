@@ -27,11 +27,7 @@ sudo DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt-get install -y --no-install-r
     libclang-dev \
     cmake
 
-echo -e "\e[1m\e[32m [2]. install rust... \e[0m" && sleep 3
-wget -qO- https://raw.githubusercontent.com/SecorD0/utils/main/installers/rust.sh
-
-
-echo -e "\e[1m\e[32m [3]. Checking if Docker is installed... \e[0m" && sleep 1
+echo -e "\e[1m\e[32m [2]. Checking if Docker is installed... \e[0m" && sleep 1
 if ! command -v docker &> /dev/null
 then
     echo -e "\e[1m\e[32m3.1 Installing Docker... \e[0m" && sleep 1
@@ -42,16 +38,7 @@ then
     sudo apt-get install docker-ce docker-ce-cli containerd.io -y
 fi
 
-echo -e "\e[1m\e[32m [3.1]. Checking dependencies... \e[0m" && sleep 1
-if ! command  jq –version &> /dev/null
-then
-    echo -e "\e[1m\e[32m [3.1] Installing dependencies... \e[0m" && sleep 1
-    # packages
-    sudo wget -qO /usr/local/bin/yq https://github.com/mikefarah/yq/releases/download/v4.23.1/yq_linux_amd64 && chmod +x /usr/local/bin/yq
-    sudo apt-get install jq -y
-fi
-
-echo -e "\e[1m\e[32m [4]. Checking if docker compose is installed ... \e[0m" && sleep 1
+echo -e "\e[1m\e[32m [3]. Checking if docker compose is installed ... \e[0m" && sleep 1
 if ! command docker compose version &> /dev/null
 then 
    docker_compose_version=$(wget -qO- https://api.github.com/repos/docker/compose/releases/latest | jq -r ".tag_name")
@@ -59,5 +46,5 @@ then
    sudo chmod +x /usr/bin/docker-compose
 fi
 
-echo -e "\e[1m\e[32m [5]. Clone repo ... \e[0m" && sleep 1
+echo -e "\e[1m\e[32m [4]. Clone repo ... \e[0m" && sleep 1
 git clone https://github.com/karnotxyz/madara-cli

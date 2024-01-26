@@ -5,6 +5,14 @@ ini buat garap clashnode avail x madara
 wget -qO madara.sh https://raw.githubusercontent.com/lukmanc405/testnet/main/madara/madara.sh && chmod +x madara.sh && ./madara.sh
 ```
 
+install cargo 
+
+```
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+source "$HOME/.cargo/env"
+
+```
+
 2. inisialisasi new app chain ,jangan lupa isi saldo availnya
 
 ```
