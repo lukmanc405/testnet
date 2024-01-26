@@ -11,14 +11,16 @@ echo "=================================================="
 
 echo -e "\e[1m\e[32m [1]. Updating paket... \e[0m" && sleep 1
 sudo apt update && sudo apt upgrade -y
-sudo apt install unzip
-apt install git
+sudo apt install unzip -y
+apt install git -y
 
 echo -e "\e[1m\e[32m [1.1]. install depencies... \e[0m" && sleep 1
 sudo apt install build-essential && sudo apt install pkg-config && sudo apt install libssl-dev && sudo apt install clang && sudo apt install protobuf-compiler -s -y
 
-echo -e "\e[1m\e[32m [2]. install rust... \e[0m" && sleep 1
-echo source $HOME/.cargo/env || curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+echo -e "\e[1m\e[32m [2]. install rust... \e[0m" && sleep 3
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+sleep 3
+echo source $HOME/.cargo/env
 
 
 echo -e "\e[1m\e[32m [3]. Checking if Docker is installed... \e[0m" && sleep 1
