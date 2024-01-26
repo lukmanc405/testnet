@@ -20,7 +20,7 @@ sudo apt install build-essential && sudo apt install pkg-config && sudo apt inst
 echo -e "\e[1m\e[32m [2]. install rust... \e[0m" && sleep 3
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 sleep 3
-echo source $HOME/.cargo/env
+source "$HOME/.cargo/env"
 
 
 echo -e "\e[1m\e[32m [3]. Checking if Docker is installed... \e[0m" && sleep 1
@@ -37,7 +37,7 @@ fi
 echo -e "\e[1m\e[32m [3.1]. Checking dependencies... \e[0m" && sleep 1
 if ! command  jq –version &> /dev/null
 then
-    echo -e "\e[1m\e[32m [2.1] Installing dependencies... \e[0m" && sleep 1
+    echo -e "\e[1m\e[32m [3.1] Installing dependencies... \e[0m" && sleep 1
     # packages
     sudo wget -qO /usr/local/bin/yq https://github.com/mikefarah/yq/releases/download/v4.23.1/yq_linux_amd64 && chmod +x /usr/local/bin/yq
     sudo apt-get install jq -y
