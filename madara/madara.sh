@@ -11,16 +11,24 @@ echo "=================================================="
 
 echo -e "\e[1m\e[32m [1]. Updating paket... \e[0m" && sleep 1
 sudo apt update && sudo apt upgrade -y
-sudo apt install unzip -y
-apt install git -y
+sudo apt install curl git -y
 
 echo -e "\e[1m\e[32m [1.1]. install depencies... \e[0m" && sleep 1
-sudo apt install build-essential && sudo apt install pkg-config && sudo apt install libssl-dev && sudo apt install clang && sudo apt install protobuf-compiler -s -y
+sudo wget -qO /usr/local/bin/yq https://github.com/mikefarah/yq/releases/download/v4.23.1/yq_linux_amd64 && chmod +x /usr/local/bin/yq
+sudo apt-get install jq -y
+sudo DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt-get install -y --no-install-recommends \
+    tzdata \
+    git \
+    ca-certificates \
+    curl \
+    build-essential \
+    libssl-dev \
+    pkg-config \
+    libclang-dev \
+    cmake
 
 echo -e "\e[1m\e[32m [2]. install rust... \e[0m" && sleep 3
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-sleep 3
-source "$HOME/.cargo/env"
+wget -qO- https://raw.githubusercontent.com/SecorD0/utils/main/installers/rust.sh
 
 
 echo -e "\e[1m\e[32m [3]. Checking if Docker is installed... \e[0m" && sleep 1
