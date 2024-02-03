@@ -9,23 +9,10 @@ echo " |_____\___/|_|\_\_|  |_/_/   \_\_| \_|  ";
 echo -e "\e[0m"
 echo "=================================================="  
 
-echo -e "\e[1m\e[32m [1]. Updating paket... \e[0m" && sleep 1
-sudo apt update && sudo apt upgrade -y
-sudo apt install curl git -y
-
-echo -e "\e[1m\e[32m [1.1]. install depencies... \e[0m" && sleep 1
-sudo wget -qO /usr/local/bin/yq https://github.com/mikefarah/yq/releases/download/v4.23.1/yq_linux_amd64 && chmod +x /usr/local/bin/yq
-sudo apt-get install jq -y
-sudo DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt-get install -y --no-install-recommends \
-    tzdata \
-    git \
-    ca-certificates \
-    curl \
-    build-essential \
-    libssl-dev \
-    pkg-config \
-    libclang-dev \
-    cmake
+echo -e "\e[1m\e[32m [1]. Updating paket && install depencies... \e[0m" && sleep 1
+sudo apt update && sudo apt full-upgrade -y
+sudo apt list --upgradable
+sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu gcc git jq chrony liblz4-tool -y
 
 echo -e "\e[1m\e[32m [2]. Checking if Docker is installed... \e[0m" && sleep 1
 if ! command -v docker &> /dev/null
