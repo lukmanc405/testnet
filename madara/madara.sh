@@ -13,6 +13,7 @@ echo -e "\e[1m\e[32m [1]. Updating paket && install depencies... \e[0m" && sleep
 sudo apt update && sudo apt full-upgrade -y
 sudo apt list --upgradable
 sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu gcc git jq chrony liblz4-tool -y
+apt-get install protobuf-compiler
 
 echo -e "\e[1m\e[32m [2]. Checking if Docker is installed... \e[0m" && sleep 1
 if ! command -v docker &> /dev/null
