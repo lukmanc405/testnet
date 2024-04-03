@@ -54,4 +54,10 @@ https://lightclient.availproject.org/
 ![image](https://github.com/lukmanc405/testnet/assets/48665887/09d3dafe-5ef0-4229-8686-78b9e08b8bc8)
 
 
+check running pakai :
+
+```
+curl "http://127.0.0.1:7000/v2/status"
+```
+
 DONE
