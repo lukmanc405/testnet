@@ -1,6 +1,6 @@
 The Light Client Lift-off challenge
 
-![gambar 1](https://imgur.com/a/EMM0iWG)
+![image](https://imgur.com/a/EMM0iWG)
 
 Official doc : https://docs.availproject.org/docs/operate-a-node/run-a-light-client/light-client-challenge
 
@@ -38,7 +38,7 @@ curl -sL1 avail.sh | bash
 
 ambil public-key nya disini,sewaktu penginstalan copy publickeynya yang ane tandain 
 
-![pubkey](https://imgur.com/JaPOvNt)
+![image](https://imgur.com/JaPOvNt)
 
 setelah itu keluar screen pakai
 
