@@ -17,8 +17,8 @@ layout:
 {% code fullWidth="false" %}
 ```bash
 # install dependencies, if needed
-sudo apt update && sudo apt upgrade -y
-sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu gcc git jq chrony liblz4-tool -y
+sudo apt update && \
+sudo apt install curl git jq build-essential gcc unzip wget lz4 -y
 ```
 {% endcode %}
 
