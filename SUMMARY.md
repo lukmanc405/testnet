@@ -26,7 +26,9 @@
 * [Avail](testnet/avail.md)
 * [Initia](testnet/initia/README.md)
   * [Install Initia Validator](testnet/initia/install-initia-validator.md)
-  * [Cheat sheet](testnet/initia/cheat-sheet.md)
+  * [Snapshot](testnet/initia/snapshot.md)
+  * [Upgrade Version](testnet/initia/upgrade-version.md)
+  * [Cheat Sheet](testnet/initia/cheat-sheet.md)
 
 ## SUPPORTING
 

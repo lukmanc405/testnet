@@ -119,3 +119,24 @@ sudo systemctl enable initiad
 sudo systemctl restart initiad && sudo journalctl -u initiad -f
 ```
 {% endcode %}
+
+#### Create Validator&#x20;
+
+```bash
+initiad tx mstaking create-validator \
+--amount 1000000uinit \
+--pubkey $(initiad tendermint show-validator) \
+--moniker "$MONIKER" \
+--identity "YOUR_IDENTITY" \
+--details "YOUR_DETAILS" \
+--website "YOUR_WEBSITE" \
+--chain-id initiation-1 \
+--commission-rate 0.05 \
+--commission-max-rate 0.20 \
+--commission-max-change-rate 0.05 \
+--from $WALLET \
+--gas-adjustment 1.4 \
+--gas auto \
+--gas-prices 0.15uinit \
+-y
+```
