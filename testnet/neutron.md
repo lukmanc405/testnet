@@ -10,9 +10,9 @@ First public Neutron testnet.
 
 ### Hardware
 
-- 4 Cores
-- 32 GB RAM
-- 2x512 GB SSD
+* 4 Cores
+* 32 GB RAM
+* 2x512 GB SSD
 
 ### Software Versions
 
@@ -25,13 +25,13 @@ First public Neutron testnet.
 
 ## Tools
 
-- [Neutron Quark Blockchain Explorer](http://explorer.quark.ntrn.info)
-- [Neutron Quark Faucet](http://faucet.quark.ntrn.info)
+* [Neutron Quark Blockchain Explorer](http://explorer.quark.ntrn.info)
+* [Neutron Quark Faucet](http://faucet.quark.ntrn.info)
 
 ## Documentation
 
-1. [IBC relayer configuration](./ibc-relayer/instruction.md)
-2. [Neutron Query Relayer](./icq-relayer/README.md)
+1. [IBC relayer configuration](../neutron/ibc-relayer/instruction.md)
+2. [Neutron Query Relayer](../neutron/icq-relayer/)
 
 ## Automatic Instalation
 
@@ -43,12 +43,11 @@ soon..
 
 ### preparing depencies
 
-sudo apt update && sudo apt upgrade -y
-sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu gcc git jq chrony liblz4-tool -y
+sudo apt update && sudo apt upgrade -y sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu gcc git jq chrony liblz4-tool -y
 
 #### installing go version 1.19
 
-```ver="1.19" && \
+```ver="1.19"
 wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz" && \
 sudo rm -rf /usr/local/go && \
 sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz" && \
@@ -83,7 +82,7 @@ commit: a9e8ba5ebb9230bec97a4f2826d75a4e0e6130d9
 
 ### GenTx generation
 
-**(you should change <moniker-name> with your own node name)**
+**(you should change with your own node name)**
 
 ### Init
 
@@ -93,30 +92,18 @@ neutrond init <moniker-name> --chain-id quark-1
 
 then you will saw like these, this is somelike privatekeys (you must save it to your notepad)
 
-![keyring](img/../images/images1.jpg)
-
-<style type="text/css">
-    img {
-        width: 350px;
-    }
-</style>
+![keyring](../neutron/images/images1.jpg)
 
 ### Generate keys
 
-- To create new keypair - make sure you save the mnemonics!(save to your notepad)
-- You can create keyname as you want , maybe can same with your node name too
+* To create new keypair - make sure you save the mnemonics!(save to your notepad)
+* You can create keyname as you want , maybe can same with your node name too
 
 ```
 neutrond keys add <key-name>
 ```
 
-![mmemonics](img/../images/mmemonic.png)
-
-<style type="text/css">
-    img {
-        width: 550px;
-    }
-</style>
+![mmemonics](../neutron/images/mmemonic.png)
 
 ### Check your key:
 
@@ -142,12 +129,6 @@ neutrond gentx <key-name> 1000000000untrn --output-document=gentx.json \
   --keyring-backend <os | file>
 ```
 
-![create-gentx](img/../images/create-gentx.jpg)
-
-<style type="text/css">
-    img {
-        width: 550px;
-    }
-</style>
+![create-gentx](../neutron/images/create-gentx.jpg)
 
 _you can fill to blank ("") if havent that details_
