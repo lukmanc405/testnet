@@ -116,8 +116,6 @@ initiad keys import $WALLET wallet.backup
 
 #### Tokens <a href="#tokens" id="tokens"></a>
 
-To valoper addressTo wallet addressAmount, uward
-
 Withdraw all rewards
 
 ```bash
@@ -167,8 +165,6 @@ initiad tx bank send $WALLET_ADDRESS <TO_WALLET_ADDRESS> 1000000uinit --gas auto
 ```
 
 #### Validator operations <a href="#validator-operations" id="validator-operations"></a>
-
-MonikerIdentityDetailsAmount, uwardCommission rateCommission max rateCommission max change rate
 
 Create New Validator
 
@@ -255,8 +251,6 @@ initiad q slashing signing-info $(initiad tendermint show-validator)
 
 #### Governance <a href="#governance" id="governance"></a>
 
-TitleDescriptionDeposit, uward
-
 Create New Text Proposal
 
 ```bash
@@ -275,8 +269,6 @@ Proposals List
 ```bash
 initiad query gov proposals 
 ```
-
-Proposal IDProposal optionYesNoNo with vetoAbstain
 
 View proposal
 
