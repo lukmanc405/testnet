@@ -92,12 +92,8 @@ sed -i \
     -e "s/^pruning-interval *=.*/pruning-interval = \"10\"/" \
     "$HOME/.initia/config/app.toml"
 
-# set minimum gas price, enable prometheus and disable indexing
-sed -i \
-    -e "s/^pruning *=.*/pruning = \"custom\"/" \
-    -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"100\"/" \
-    -e "s/^pruning-interval *=.*/pruning-interval = \"10\"/" \
-    "$HOME/.initia/config/app.toml"
+# set minimum gas price
+sed -i -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.15uinit,0.01uusdc\"/" $HOME/.initia/config/app.toml
 ```
 {% endcode %}
 
