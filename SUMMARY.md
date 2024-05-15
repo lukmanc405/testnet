@@ -4,7 +4,7 @@
 
 ## TESTNET
 
-* [Elixir](<README (1).md>)
+* [Elixir V1](<README (1).md>)
 * [Chainflip](testnet/chainflip.md)
 * [Bundlr](testnet/bundlr.md)
 * [Aptos](testnet/aptos/README.md)
