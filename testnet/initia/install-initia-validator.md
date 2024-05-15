@@ -1,6 +1,20 @@
+---
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: false
+  outline:
+    visible: true
+  pagination:
+    visible: true
+---
+
 # Install Initia Validator
 
-{% code fullWidth="true" %}
+{% code fullWidth="false" %}
 ```bash
 # install dependencies, if needed
 sudo apt update && sudo apt upgrade -y
@@ -8,7 +22,7 @@ sudo apt install curl git wget htop tmux build-essential jq make lz4 gcc unzip -
 ```
 {% endcode %}
 
-{% code fullWidth="true" %}
+{% code fullWidth="false" %}
 ```bash
 # install go, if needed
 cd $HOME
@@ -24,7 +38,7 @@ source $HOME/.bash_profile
 ```
 {% endcode %}
 
-{% code fullWidth="true" %}
+{% code fullWidth="false" %}
 ```bash
 # set vars (change "test" to your validator username)
 echo "export WALLET="wallet"" >> $HOME/.bash_profile
@@ -35,7 +49,7 @@ source $HOME/.bash_profile
 ```
 {% endcode %}
 
-{% code fullWidth="true" %}
+{% code fullWidth="false" %}
 ```bash
 # download binary
 cd $HOME
@@ -47,7 +61,7 @@ make install
 ```
 {% endcode %}
 
-{% code fullWidth="true" %}
+{% code fullWidth="false" %}
 ```bash
 # config and init app
 initiad init $MONIKER
@@ -55,14 +69,14 @@ sed -i -e "s|^node *=.*|node = \"tcp://localhost:${INITIA_PORT}657\"|" $HOME/.in
 ```
 {% endcode %}
 
-{% code fullWidth="true" %}
+{% code fullWidth="false" %}
 ```bash
 # download genesis and addrbook
 wget -O $HOME/.initia/config/genesis.json https://initia.s3.ap-southeast-1.amazonaws.com/initiation-1/genesis.json
 ```
 {% endcode %}
 
-{% code fullWidth="true" %}
+{% code fullWidth="false" %}
 ```bash
 # set seeds and peers
 PEERS="aee7083ab11910ba3f1b8126d1b3728f13f54943@initia-testnet-peer.itrocket.net:11656,16a7709332221a8b1c1edeb6533076fd7a445113@5.252.55.156:26656,07632ab562028c3394ee8e78823069bfc8de7b4c@37.27.52.25:19656,1f6633bc18eb06b6c0cab97d72c585a6d7a207bc@65.109.59.22:25756,767fdcfdb0998209834b929c59a2b57d474cc496@207.148.114.112:26656,e8dfba2642dd70e74476dcbcfaf7b249ffcdbfc5@195.26.255.211:15056,093e1b89a498b6a8760ad2188fbda30a05e4f300@35.240.207.217:26656,5f934bd7a9d60919ee67968d72405573b7b14ed0@65.21.202.124:29656,4d4de8fa78e70a34fbb5a35bef15b57cef456a6e@195.26.247.148:26656"
@@ -71,7 +85,7 @@ sed -i -e "s/^seeds *=.*/seeds = \"$SEEDS\"/; s/^persistent_peers *=.*/persisten
 ```
 {% endcode %}
 
-{% code fullWidth="true" %}
+{% code fullWidth="false" %}
 ```bash
 # config pruning
 sed -i -e "s/^pruning *=.*/pruning = \"custom\"/" $HOME/.initia/config/app.toml
@@ -85,7 +99,7 @@ sed -i -e "s/^indexer *=.*/indexer = \"null\"/" $HOME/.initia/config/config.toml
 ```
 {% endcode %}
 
-{% code fullWidth="true" %}
+{% code fullWidth="false" %}
 ```bash
 # create service file
 sudo tee /etc/systemd/system/initiad.service > /dev/null <<EOF
@@ -105,6 +119,7 @@ EOF
 ```
 {% endcode %}
 
+{% code fullWidth="true" %}
 ```bash
 # reset and download snapshot
 sudo systemctl stop initiad
@@ -114,8 +129,9 @@ rm -rf $HOME/.initia/data
 curl -o - -L https://snapshots.polkachu.com/testnet-snapshots/initia/initia_113153.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.initia
 mv $HOME/.initia/priv_validator_state.json.backup $HOME/.initia/data/priv_validator_state.json
 ```
+{% endcode %}
 
-{% code fullWidth="true" %}
+{% code fullWidth="false" %}
 ```bash
 # enable and start service
 sudo systemctl daemon-reload
@@ -126,6 +142,7 @@ sudo systemctl restart initiad && sudo journalctl -u initiad -f
 
 #### Create Wallet
 
+{% code fullWidth="true" %}
 ```bash
 # to create a new wallet, use the following command. don’t forget to save the mnemonic
 initiad keys add $WALLET
@@ -146,6 +163,7 @@ initiad status 2>&1 | jq
 # before creating a validator, you need to fund your wallet and check balance
 initiad query bank balances $WALLET_ADDRESS 
 ```
+{% endcode %}
 
 #### Create Validator&#x20;
 
