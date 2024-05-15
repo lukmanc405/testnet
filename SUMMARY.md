@@ -24,8 +24,11 @@
 * [Ironfish - weekly](testnet/ironfish.md)
 * [Madara](testnet/madara.md)
 * [Avail](testnet/avail.md)
+* [Initia](testnet/initia/README.md)
+  * [Install Initia Validator](testnet/initia/install-initia-validator.md)
+  * [Cheat sheet](testnet/initia/cheat-sheet.md)
 
 ## SUPPORTING
 
-* [Install GO](supporting/utils/README.md)
-  * [Other common commands](supporting/utils/usefull\_commands.md)
+* [Install GO](supporting/utils.md)
+* [Other common commands](supporting/usefull\_commands.md)
