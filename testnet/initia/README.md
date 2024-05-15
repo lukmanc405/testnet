@@ -1,4 +1,10 @@
+---
+layout: landing
+---
+
 # Initia
+
+***
 
 #### Prerequisites <a href="#prerequisites" id="prerequisites"></a>
 
