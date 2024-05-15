@@ -1,11 +1,14 @@
 # Install Initia Validator
 
+{% code fullWidth="true" %}
 ```bash
 # install dependencies, if needed
 sudo apt update && sudo apt upgrade -y
 sudo apt install curl git wget htop tmux build-essential jq make lz4 gcc unzip -y
 ```
+{% endcode %}
 
+{% code fullWidth="true" %}
 ```bash
 # install go, if needed
 cd $HOME
@@ -19,6 +22,7 @@ echo "export PATH=$PATH:/usr/local/go/bin:~/go/bin" >> ~/.bash_profile
 source $HOME/.bash_profile
 [ ! -d ~/go/bin ] && mkdir -p ~/go/bin
 ```
+{% endcode %}
 
 {% code fullWidth="true" %}
 ```bash
