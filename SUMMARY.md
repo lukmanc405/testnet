@@ -1,8 +1,10 @@
 # Table of contents
 
+* [⛓️ Network](README.md)
+
 ## TESTNET
 
-* [Elixir](README.md)
+* [Elixir](<README (1).md>)
 * [Chainflip](testnet/chainflip.md)
 * [Bundlr](testnet/bundlr.md)
 * [Aptos](testnet/aptos/README.md)
