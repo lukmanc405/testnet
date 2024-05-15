@@ -119,18 +119,6 @@ EOF
 ```
 {% endcode %}
 
-{% code fullWidth="true" %}
-```bash
-# reset and download snapshot
-sudo systemctl stop initiad
-cp $HOME/.initia/data/priv_validator_state.json $HOME/.initia/priv_validator_state.json.backup
-rm -rf $HOME/.initia/data
-
-curl -o - -L https://snapshots.polkachu.com/testnet-snapshots/initia/initia_113153.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.initia
-mv $HOME/.initia/priv_validator_state.json.backup $HOME/.initia/data/priv_validator_state.json
-```
-{% endcode %}
-
 {% code fullWidth="false" %}
 ```bash
 # enable and start service
@@ -142,7 +130,7 @@ sudo systemctl restart initiad && sudo journalctl -u initiad -f
 
 #### Create Wallet
 
-{% code fullWidth="true" %}
+{% code fullWidth="false" %}
 ```bash
 # to create a new wallet, use the following command. don’t forget to save the mnemonic
 initiad keys add $WALLET
@@ -165,7 +153,7 @@ initiad query bank balances $WALLET_ADDRESS
 ```
 {% endcode %}
 
-#### Create Validator&#x20;
+#### Create Validator (make sure your node synced before creating validator)
 
 ```bash
 initiad tx mstaking create-validator \
