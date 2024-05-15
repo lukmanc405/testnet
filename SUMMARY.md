@@ -3,10 +3,8 @@
 ## TESTNET
 
 * [Elixir](README.md)
-* [Madara](testnet/madara.md)
 * [Chainflip](testnet/chainflip.md)
 * [Bundlr](testnet/bundlr.md)
-* [Avail](testnet/avail.md)
 * [Aptos](testnet/aptos/README.md)
   * [import](testnet/aptos/import.md)
   * [NHC](testnet/aptos/nhc.md)
@@ -22,6 +20,8 @@
   * [sui\_auto](testnet/sui/sui\_auto.md)
   * [sui\_manual](testnet/sui/sui\_manual.md)
 * [Ironfish - weekly](testnet/ironfish.md)
+* [Madara](testnet/madara.md)
+* [Avail](testnet/avail.md)
 
 ## SUPPORTING
 
