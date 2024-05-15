@@ -1,12 +1,24 @@
 # Snapshot
 
-```bash
-sudo systemctl stop initiad
+## Snapshoot
+
+**Stop the service and reset the data**
+
+```
+sudo systemctl stop initiad.service
 cp $HOME/.initia/data/priv_validator_state.json $HOME/.initia/priv_validator_state.json.backup
 rm -rf $HOME/.initia/data
+```
 
-curl -o - -L https://snapshots.polkachu.com/testnet-snapshots/initia/initia_113153.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.initia
+**Download latest snapshot**
+
+```
+curl -L https://testnet-file.ruangnode.com/snap-testnet/initia-testnet/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.initia
 mv $HOME/.initia/priv_validator_state.json.backup $HOME/.initia/data/priv_validator_state.json
+```
 
-sudo systemctl restart initiad && sudo journalctl -fu initiad -o cat
+**Restart the service and check the log**
+
+```
+sudo systemctl start initiad.service && sudo journalctl -u initiad.service -f --no-hostname -o cat
 ```
