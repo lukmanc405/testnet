@@ -5,7 +5,7 @@ layout:
   description:
     visible: false
   tableOfContents:
-    visible: false
+    visible: true
   outline:
     visible: true
   pagination:
@@ -133,10 +133,10 @@ sudo journalctl -u initiad -f -o cat
 {% code fullWidth="false" %}
 ```bash
 # to create a new wallet, use the following command. don’t forget to save the mnemonic
-initiad keys add $WALLET
+initiad keys add $WALLET_NAME
 
 # to restore exexuting wallet, use the following command
-initiad keys add $WALLET --recover
+initiad keys add $WALLET_NAME --recover
 
 # save wallet and validator addres
 
@@ -144,7 +144,7 @@ initiad keys add $WALLET --recover
 initiad status 2>&1 | jq 
 
 # before creating a validator, you need to fund your wallet and check balance
-initiad query bank balances $WALLET_ADDRESS 
+initiad q bank balances $(initiad keys show wallet -a)
 ```
 {% endcode %}
 

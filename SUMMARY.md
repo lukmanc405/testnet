@@ -27,6 +27,7 @@
 * [Initia](testnet/initia/README.md)
   * [Install Initia Validator](testnet/initia/install-initia-validator.md)
   * [Snapshot](testnet/initia/snapshot.md)
+  * [Oracle](testnet/initia/oracle.md)
   * [Upgrade Version](testnet/initia/upgrade-version.md)
   * [Cheat Sheet](testnet/initia/cheat-sheet.md)
 

@@ -1,9 +1,16 @@
 # Upgrade Version
 
 ```bash
+# Clone project repository
+cd $HOME
+rm -rf initia
+git clone https://github.com/initia-labs/initia
 cd initia
-git pull
-git checkout v0.2.12
+git checkout v0.2.14
+export GOPATH="${HOME}/lib"
 make install
-sudo systemctl start initiad && sudo journalctl -u initiad -f --no-hostname -o cat
+
+mv ${HOME}/lib/bin/* ~/go/bin/
+
+sudo systemctl restart initiad && sudo journalctl -u initiad -f
 ```
