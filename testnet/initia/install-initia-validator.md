@@ -38,13 +38,17 @@ source $HOME/.bash_profile
 ```
 {% endcode %}
 
-<pre class="language-bash" data-full-width="false"><code class="lang-bash"><strong>#install binary
-</strong><strong>git clone https://github.com/initia-labs/initia.git
-</strong>cd initia
+{% code fullWidth="false" %}
+```bash
+git clone https://github.com/initia-labs/initia.git
+cd initia
 git checkout v0.2.12
 make install
-initiad version
-</code></pre>
+
+#jika install make error bisa gunakan perintah ini : 
+sudo apt install build-essential
+```
+{% endcode %}
 
 {% code fullWidth="false" %}
 ```bash
