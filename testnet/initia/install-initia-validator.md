@@ -152,17 +152,19 @@ initiad q bank balances $(initiad keys show wallet -a)
 
 ```bash
 initiad tx mstaking create-validator \
-  --amount=1000000uinit \
-  --pubkey=$(initiad tendermint show-validator) \
-  --moniker=$MONIKER \
-  --chain-id=$CHAIN_ID \
-  --commission-rate=0.05 \
-  --commission-max-rate=0.10 \
-  --commission-max-change-rate=0.01 \
-  --from=$WALLET_NAME \
-  --identity="" \
-  --website="" \
-  --details="We are initians!" \
-  --gas=2000000 --fees=300000uinit \
-  -y
+--amount 1000000uinit \
+--pubkey $(initiad tendermint show-validator) \
+--moniker=$MONIKER \
+--chain-id=$CHAIN_ID \
+--identity "" \
+--details "Independent & experienced validator with high performance and availability services." \
+--website "" \
+--commission-rate 0.05 \
+--commission-max-rate 0.20 \
+--commission-max-change-rate 0.05 \
+--from=$WALLET_NAME \
+--gas-adjustment 1.4 \
+--gas auto \
+--gas-prices 0.15uinit \
+-y
 ```
