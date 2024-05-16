@@ -1,4 +1,4 @@
-# Cheat sheet
+# Cheat Sheet
 
 #### Service operations ⚙️ <a href="#service-operations" id="service-operations"></a>
 
@@ -7,7 +7,7 @@ Very useful for maintaining your nodes
 Check logs
 
 ```bash
-sudo journalctl -u initiad-f
+sudo journalctl -u initiad -f
 ```
 
 Start service
@@ -93,7 +93,7 @@ initiad keys delete $WALLET
 Check Balance
 
 ```bash
-initiad q bank balances $WALLET_ADDRESS 
+initiad q bank balances wallet -a
 ```
 
 Export Key (save to wallet.backup)
