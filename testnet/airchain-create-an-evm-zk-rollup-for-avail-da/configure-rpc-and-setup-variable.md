@@ -30,6 +30,12 @@ Change `127.0.0.1` to `0.0.0.0`  like this image below
 
 ## Setup Variables
 
+We are creating an environment for the system file to function properly.
+
+```bash
+nano ~/.rollup-env
+```
+
 #### There is nothing to change ın the code block here.
 
 ```bash
