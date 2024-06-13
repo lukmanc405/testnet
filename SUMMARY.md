@@ -30,6 +30,10 @@
   * [Oracle](testnet/initia/oracle.md)
   * [Upgrade Version](testnet/initia/upgrade-version.md)
   * [Cheat Sheet](testnet/initia/cheat-sheet.md)
+* [Airchain : Create an EVM ZK Rollup for Avail DA](testnet/airchain-create-an-evm-zk-rollup-for-avail-da/README.md)
+  * [Installation](testnet/airchain-create-an-evm-zk-rollup-for-avail-da/installation.md)
+  * [Configure RPC & Setup Variable](testnet/airchain-create-an-evm-zk-rollup-for-avail-da/configure-rpc-and-setup-variable.md)
+  * [Installation complete, right?](testnet/airchain-create-an-evm-zk-rollup-for-avail-da/installation-complete-right.md)
 
 ## SUPPORTING
 
