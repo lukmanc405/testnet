@@ -22,21 +22,17 @@ sudo apt install curl git jq build-essential gcc unzip wget lz4 -y
 ```
 {% endcode %}
 
-{% code fullWidth="false" %}
-```bash
-# install go, if needed
-cd $HOME
-VER="1.22.2"
-wget "https://golang.org/dl/go$VER.linux-amd64.tar.gz"
-sudo rm -rf /usr/local/go
-sudo tar -C /usr/local -xzf "go$VER.linux-amd64.tar.gz"
-rm "go$VER.linux-amd64.tar.gz"
-[ ! -f ~/.bash_profile ] && touch ~/.bash_profile
-echo "export PATH=$PATH:/usr/local/go/bin:~/go/bin" >> ~/.bash_profile
-source $HOME/.bash_profile
-[ ! -d ~/go/bin ] && mkdir -p ~/go/bin
-```
-{% endcode %}
+<pre class="language-bash" data-full-width="false"><code class="lang-bash"><strong>#install go
+</strong><strong>cd $HOME &#x26;&#x26; \
+</strong>ver="1.22.0" &#x26;&#x26; \
+wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz" &#x26;&#x26; \
+sudo rm -rf /usr/local/go &#x26;&#x26; \
+sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz" &#x26;&#x26; \
+rm "go$ver.linux-amd64.tar.gz" &#x26;&#x26; \
+echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> ~/.bash_profile &#x26;&#x26; \
+source ~/.bash_profile &#x26;&#x26; \
+go version
+</code></pre>
 
 {% code fullWidth="false" %}
 ```bash
