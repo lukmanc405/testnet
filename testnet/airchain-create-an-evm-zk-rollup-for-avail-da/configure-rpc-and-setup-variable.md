@@ -144,9 +144,15 @@ Inside the file `~/.avail/identity/identity.toml`, you will find the Mnemonics o
 
 ### We are now moving on to the track and station section.
 
+```bash
+cd $HOME
+cd tracks
+go mod tidy
+```
+
 _**Change \<Avail-Wallet-Adress> and \<moniker-name>**_
 
-```
+```bash
 go run cmd/main.go init --daRpc "http://127.0.0.1:7000" --daKey "<Avail-Wallet-Adress>" --daType "avail" --moniker "<moniker-name>" --stationRpc "http://127.0.0.1:8545" --stationAPI "http://127.0.0.1:8545" --stationType "evm"
 ```
 
@@ -156,7 +162,7 @@ output will like this
 
 Now we are creating a tracker address. Please replace `<moniker-name>`.
 
-```
+```bash
 go run cmd/main.go keys junction --accountName <moniker-name> --accountPath $HOME/.tracks/junction-accounts/keys
 ```
 
