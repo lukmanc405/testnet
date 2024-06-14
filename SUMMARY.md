@@ -38,4 +38,5 @@
 ## SUPPORTING
 
 * [Install GO](supporting/utils.md)
+* [Multisender](supporting/multisender.md)
 * [Other common commands](supporting/usefull\_commands.md)
