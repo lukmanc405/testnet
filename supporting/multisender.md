@@ -69,6 +69,10 @@ screen -S multisend
 
 ## Running backround (close screen)
 
-CTRL + A ,Then Press D
+CTRL + A ,Then Press D\
+\
+_**Cara balik ke screen lagi pakai**_
 
-proses akan selesai kurleb 3 jam , setelah 3 jam jgn lupa cek saldo avail lalu jalankan lagi
+```bash
+screen -r multisend
+```
