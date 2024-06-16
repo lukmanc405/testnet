@@ -33,11 +33,12 @@ From here on, you can either deploy a contract or manually send transactions; it
 For those experiencing RPC errors during the tracking process, they can try to roll back. Sometimes the issue is resolved with 1 rollback, other times it may require 3 rollback operations. Run the command `go run cmd/main.go rollback` as many times as you want to perform a rollback. Wait for the output after each run.
 
 ```bash
-systemctl stop stationd
-cd tracks
-git pull
-go run cmd/main.go rollback
-sudo systemctl restart stationd
+cd $HOME && \
+systemctl stop stationd && \
+cd tracks && \
+git pull && \
+go run cmd/main.go rollback && \
+sudo systemctl restart stationd && \
 sudo journalctl -u stationd -f --no-hostname -o cat
 ```
 
