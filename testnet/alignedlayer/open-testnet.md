@@ -32,6 +32,12 @@ Download dan install aligned
 curl -L https://raw.githubusercontent.com/yetanotherco/aligned_layer/main/batcher/aligned/install_aligned.sh | bash
 ```
 
+Verify instalation
+
+```bash
+source /root/.bashrc
+```
+
 Download example SP1 proof file
 
 ```bash
