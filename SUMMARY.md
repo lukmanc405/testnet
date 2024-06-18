@@ -34,6 +34,8 @@
   * [Installation](testnet/airchain-create-an-evm-zk-rollup-for-avail-da/installation.md)
   * [Configure RPC & Setup Variable](testnet/airchain-create-an-evm-zk-rollup-for-avail-da/configure-rpc-and-setup-variable.md)
   * [Installation complete, right?](testnet/airchain-create-an-evm-zk-rollup-for-avail-da/installation-complete-right.md)
+* [AlignedLayer](testnet/alignedlayer/README.md)
+  * [Open Testnet](testnet/alignedlayer/open-testnet.md)
 
 ## SUPPORTING
 
