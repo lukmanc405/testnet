@@ -38,7 +38,7 @@ lalu simpan dengan tekan `Ctrl + X`, lalu `Y`, dan `Enter`.
 
 Simpan file tersebut di lokasi yang diinginkan, misalnya di `$HOME/scripts`. bisa pakai command ini &#x20;
 
-```
+```bash
 mkdir -p $HOME/scripts && \
 mv update_stationd.sh $HOME/scripts/update_stationd.sh
 ```
@@ -54,13 +54,19 @@ mv update_stationd.sh $HOME/scripts/update_stationd.sh
     crontab -e
     ```
 
-    Tambahkan entri berikut untuk menjalankan skrip setiap 2 jam sekali:
+    pilih nano , ketik angka 1
+3.  Tambahkan entri berikut di bagian paling bawah , untuk menjalankan skrip setiap 2 jam sekali:
 
-    ```
+    ```bash
     0 */2 * * * /bin/bash $HOME/scripts/update_stationd.sh
     ```
 
     Entri ini berarti skrip akan dijalankan setiap 2 jam pada menit ke-0.
-3. **Simpan dan Keluar**: Simpan file crontab dan keluar dari editor. Jika menggunakan `nano`, tekan `Ctrl + X`, lalu `Y`, dan `Enter`.
+
+Outputnya akan seperti ini :&#x20;
+
+<figure><img src="../.gitbook/assets/image (17).png" alt=""><figcaption></figcaption></figure>
+
+4. **Simpan dan Keluar**: Simpan file crontab dan keluar dari editor. Jika menggunakan `nano`, tekan `Ctrl + X`, lalu `Y`, dan `Enter`.
 
 Dengan langkah-langkah ini, crontab akan menjalankan skrip Anda setiap 2 jam sekali secara otomatis.
