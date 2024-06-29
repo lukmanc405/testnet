@@ -39,7 +39,7 @@ lalu simpan dengan tekan `Ctrl + X`, lalu `Y`, dan `Enter`.
 Simpan file tersebut di lokasi yang diinginkan, misalnya di `$HOME/scripts`. bisa pakai command ini &#x20;
 
 ```
-mv update_stationd.sh /root/scripts
+mv update_stationd.sh $HOME/scripts/update_stationd.sh
 ```
 
 1.  **Buat Skrip Dapat Dieksekusi**: Ubah izin file skrip agar dapat dieksekusi:
