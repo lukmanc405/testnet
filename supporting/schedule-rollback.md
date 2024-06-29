@@ -39,6 +39,7 @@ lalu simpan dengan tekan `Ctrl + X`, lalu `Y`, dan `Enter`.
 Simpan file tersebut di lokasi yang diinginkan, misalnya di `$HOME/scripts`. bisa pakai command ini &#x20;
 
 ```
+mkdir -p $HOME/scripts && \
 mv update_stationd.sh $HOME/scripts/update_stationd.sh
 ```
 
