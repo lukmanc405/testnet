@@ -25,13 +25,33 @@ Untuk menjalankan kode tersebut setiap 2 jam sekali menggunakan crontab, Anda pe
 
 ```sh
 #!/bin/bash
-cd $HOME && \
-systemctl stop stationd && \
-cd tracks && \
-git pull && \
-go run cmd/main.go rollback && \
-sudo systemctl restart stationd && \
+
+# Function to introduce a 5-second delay
+delay() {
+  sleep 5
+}
+
+# Execute commands with delays
+cd "$HOME"
+delay
+
+systemctl stop stationd
+delay
+
+cd tracks
+delay
+
+git pull
+delay
+
+go run cmd/main.go rollback
+delay
+
+sudo systemctl restart stationd
+delay
+
 sudo journalctl -u stationd -f --no-hostname -o cat
+
 ```
 
 lalu simpan dengan tekan `Ctrl + X`, lalu `Y`, dan `Enter`.
