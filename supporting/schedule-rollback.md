@@ -61,7 +61,11 @@ mv update_stationd.sh $HOME/scripts/update_stationd.sh
     0 */2 * * * /bin/bash $HOME/scripts/update_stationd.sh
     ```
 
-    Entri ini berarti skrip akan dijalankan setiap 2 jam pada menit ke-0.
+    Entri ini berarti skrip akan dijalankan setiap 2 jam pada menit ke-0. Jika ingin merubah untuk menjalankan setiap 30 menit gunakan ini&#x20;
+
+```bash
+*/30 * * * * /bin/bash $HOME/scripts/update_stationd.sh
+```
 
 Outputnya akan seperti ini :&#x20;
 
