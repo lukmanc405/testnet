@@ -6,7 +6,7 @@
 
 * [ELIXIR](testnet/elixir/README.md)
   * [ELIXIR V3 (NEWEST)](testnet/elixir/elixir-v3-newest.md)
-  * [ELIXIR V1](testnet/elixir/elixir.md)
+  * [ELIXIR V1](<README (1).md>)
 * [Chainflip](testnet/chainflip.md)
 * [Bundlr](testnet/bundlr.md)
 * [Aptos](testnet/aptos/README.md)

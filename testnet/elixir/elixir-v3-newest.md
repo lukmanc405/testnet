@@ -93,19 +93,19 @@ Confirm the transaction and wait for it to complete on-chain.
 
 1\) Pull the Docker image:
 
-```
+```bash
 docker pull elixirprotocol/validator:v3
 ```
 
 2\) Run the validator:
 
-```
+```bash
 docker run -d --env-file /root/elixir/validator.env --name elixir --restart unless-stopped elixirprotocol/validator:v3
 ```
 
 3\) Check if Docker image was created:
 
-```
+```bash
 docker ps
 ```
 
@@ -117,7 +117,7 @@ You should see such info:
 
 To check logs run:
 
-```
+```bash
 docker logs <CONTAINER_ID>
 ```
 
@@ -131,28 +131,28 @@ Should look like this:
 
 Running A Validator On Apple/ARM Silicon
 
-```
+```bash
 docker run -d --env-file /root/elixir/validator.env --name elixir --platform linux/amd64 elixirprotocol/validator:v3
 ```
 
 Exposing Health Checks and Metrics
 
-```
+```bash
 docker run -d --env-file /root/elixir/validator.env --name elixir -p 17690:17690 elixirprotocol/validator:v3
 ```
 
 ## Upgrading your validator <a href="#id-313e" id="id-313e"></a>
 
-```
+```bash
 docker kill elixir && \
 docker rm elixir && \
 docker pull elixirprotocol/validator:v3 && \
 docker run -d --env-file /root/elixir/validator.env --name elixir --restart unless-stopped elixirprotocol/validator:v3
 ```
 
-## **Delete Node** <a href="#c584" id="c584"></a>
+## **Delete Node (If campaigns already over)** <a href="#c584" id="c584"></a>
 
-```
+```bash
 docker kill elixir && \
 docker rm elixir && \
 cd && \
