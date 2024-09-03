@@ -1,4 +1,4 @@
-# Elixir
+# ELIXIR V1
 
 **Recommended hardware requirements**
 
@@ -26,7 +26,7 @@ ufw enable
 
 1. Create new metamask/tokenpocket better using tokenpocket for take your private key save your private key to notepad like this
 
-![img](elixir/image/Screenshot\_1.png)
+![img](../../elixir/image/Screenshot\_1.png)
 
 NOTE :
 
@@ -63,7 +63,7 @@ EOF
 
 example :
 
-![img](elixir/image/Screenshot\_2.png)
+![img](../../elixir/image/Screenshot\_2.png)
 
 6. Install & configure screen
 
@@ -87,7 +87,7 @@ _wait few moment till showing new screen_
 docker build . -f Dockerfile -t elixir-validator
 ```
 
-![img](elixir/image/photo\_2023-02-07\_11-23-28.jpg)
+![img](../../elixir/image/photo\_2023-02-07\_11-23-28.jpg)
 
 8. Start Validator
 
@@ -95,7 +95,7 @@ docker build . -f Dockerfile -t elixir-validator
 docker run -it --name ev elixir-validator
 ```
 
-![img](elixir/image/photo\_2023-02-07\_11-24-11.jpg)
+![img](../../elixir/image/photo\_2023-02-07\_11-24-11.jpg)
 
 9. you can get exit screen by press `CTRL+A D`
 10. You need register your nodes wallet to discord channel
@@ -103,13 +103,13 @@ docker run -it --name ev elixir-validator
 * join discord elixir https://discord.gg/FP7kduD5Da
 * verify ,then go to #whitelist channel
 
-![img](elixir/image/Screenshot\_3.png)
+![img](../../elixir/image/Screenshot\_3.png)
 
 * connect twitter , follow and retweet this https://twitter.com/ElixirProtocol/status/1621621362401103872?s=20\&t=OFaA\_Kx4qk\_3vObZYq1ysw
 * connect wallet ,and then submit wallet ,check wallet
 * if finished then showing like this
 
-![img](elixir/image/Screenshot\_4.png)
+![img](../../elixir/image/Screenshot\_4.png)
 
 Additional commands :
 
