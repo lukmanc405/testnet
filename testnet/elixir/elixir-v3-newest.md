@@ -1,4 +1,4 @@
-# ELIXIR V3 (NEWEST)
+# Elixir v3 (NEWEST)
 
 **Recommended hardware requirements**
 
@@ -94,13 +94,13 @@ Confirm the transaction and wait for it to complete on-chain.
 1\) Pull the Docker image:
 
 ```bash
-docker pull elixirprotocol/validator:v3
+docker pull elixirprotocol/validator:v3 --platform linux/amd64
 ```
 
 2\) Run the validator:
 
 ```bash
-docker run -d --env-file /root/elixir/validator.env --name elixir --restart unless-stopped elixirprotocol/validator:v3
+docker run --env-file /root/elixir/validator.env --platform linux/amd64 -p 17690:17690 --restart unless-stopped elixirprotocol/validator:v3
 ```
 
 3\) Check if Docker image was created:
@@ -144,17 +144,15 @@ docker run -d --env-file /root/elixir/validator.env --name elixir -p 17690:17690
 ## Upgrading your validator <a href="#id-313e" id="id-313e"></a>
 
 ```bash
-docker kill elixir && \
-docker rm elixir && \
-docker pull elixirprotocol/validator:v3 && \
-docker run -d --env-file /root/elixir/validator.env --name elixir --restart unless-stopped elixirprotocol/validator:v3
+docker ps | grep elixirprotocol | awk '{print $1}' | xargs docker stop && \
+docker pull elixirprotocol/validator:v3 --platform linux/amd64 && \
+docker run --env-file /root/elixir/validator.env --platform linux/amd64 -p 17690:17690 --restart unless-stopped elixirprotocol/validator:v3
 ```
 
 ## **Delete Node (If campaigns already over)** <a href="#c584" id="c584"></a>
 
 ```bash
-docker kill elixir && \
-docker rm elixir && \
+docker ps | grep elixirprotocol | awk '{print $1}' | xargs docker stop && \
 cd && \
 rm –rf elixir && \
 docker system prune -a && \
