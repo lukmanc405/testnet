@@ -77,7 +77,7 @@ nano validator.env
 ## **Enroll validator** <a href="#id-424a" id="id-424a"></a>
 
 1\) Go to [faucet](https://testnet-3.elixir.xyz/) and mint MOCK tokens on the Ethereum Sepolia test network.\
-_Note, that You can mint tokens to any wallet, such as EXECUTOR\_BENEFICIARY from above. It will require some_ [_Sepolia ETH_](https://www.alchemy.com/faucets/ethereum-sepolia) _for gas fee._
+&#xNAN;_&#x4E;ote, that You can mint tokens to any wallet, such as EXECUTOR\_BENEFICIARY from above. It will require some_ [_Sepolia ETH_](https://www.alchemy.com/faucets/ethereum-sepolia) _for gas fee._
 
 2\) Approve received MOCK tokens and stake them.
 

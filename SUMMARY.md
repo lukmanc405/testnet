@@ -4,6 +4,7 @@
 
 ## TESTNET
 
+* [Gensyn-ai](testnet/gensyn-ai.md)
 * [Elixir](testnet/elixir/README.md)
   * [Elixir v3 (NEWEST)](testnet/elixir/elixir-v3-newest.md)
   * [Elixir v1](<README (1).md>)
@@ -21,8 +22,8 @@
 * [Obol](testnet/obol.md)
 * [Subspace gemini-2](testnet/subspace-gemini2.md)
 * [Sui](testnet/sui/README.md)
-  * [sui\_auto](testnet/sui/sui\_auto.md)
-  * [sui\_manual](testnet/sui/sui\_manual.md)
+  * [sui\_auto](testnet/sui/sui_auto.md)
+  * [sui\_manual](testnet/sui/sui_manual.md)
 * [Ironfish - weekly](testnet/ironfish.md)
 * [Madara](testnet/madara.md)
 * [Avail](testnet/avail.md)
@@ -44,4 +45,4 @@
 * [Schedule Rollback](supporting/schedule-rollback.md)
 * [Install GO](supporting/utils.md)
 * [Multisender](supporting/multisender.md)
-* [Other common commands](supporting/usefull\_commands.md)
+* [Other common commands](supporting/usefull_commands.md)

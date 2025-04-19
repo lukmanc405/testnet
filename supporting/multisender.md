@@ -71,7 +71,7 @@ screen -S multisend
 
 CTRL + A ,Then Press D\
 \
-_**Cara balik ke screen lagi pakai**_
+&#xNAN;_**Cara balik ke screen lagi pakai**_
 
 ```bash
 screen -r multisend
