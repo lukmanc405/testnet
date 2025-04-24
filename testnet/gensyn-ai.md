@@ -16,153 +16,41 @@ OR
     > recommend GPUs with >=24GB vRAM.
 * **Note**: You can run the node without a GPU using CPU-only mode.
 
-### 1) Install Dependencies
+Create Ngrok account on here :\
+\
+[https://dashboard.ngrok.com/get-started/setup/linux](https://dashboard.ngrok.com/get-started/setup/linux)\
+\
+copy your token
 
-
-
-**1. Update System Packages**
-
-```bash
-sudo apt-get update && sudo apt-get upgrade -y
-```
-
-**2. Install General Utilities and Tools**
+### 1) Install Node
 
 ```bash
-sudo apt install -y \
-  curl git wget nano tmux htop nvme-cli lz4 jq \
-  make gcc clang build-essential autoconf automake \
-  pkg-config libssl-dev libleveldb-dev libgbm1 \
-  bsdmainutils ncdu unzip tar
-```
-
-**3. Install Python**
-
-```bash
-sudo apt-get install -y \
-  python3 python3-pip python3-venv python3-dev build-essential
-  
-```
-
-**4. Install Node && Yarn**
-
-```bash
-sudo apt-get update && curl -fsSL https://deb.nodesource.com/setup_22.x | sudo -E bash - && sudo apt-get install -y nodejs && node -v && sudo npm install -g yarn
-```
-
-5. **Install Docker**
-
-```bash
-# Remove old Docker-related packages if they exist
-for pkg in docker.io docker-doc docker-compose podman-docker containerd runc; do
-  sudo apt-get remove -y $pkg
-done
-
-# Update package list and install dependencies
-sudo apt-get update
-sudo apt-get install -y ca-certificates curl gnupg
-
-# Set up the Docker GPG key
-sudo install -m 0755 -d /etc/apt/keyrings
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | \
-  sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
-sudo chmod a+r /etc/apt/keyrings/docker.gpg
-
-# Add the Docker APT repository
-echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] \
-https://download.docker.com/linux/ubuntu $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
-  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-
-# Update package list and install Docker components
-sudo apt-get update
-sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+curl -o install_gensyn.sh curl -o install_gensyn.sh https://raw.githubusercontent.com/lukmanc405/testnet/refs/heads/main/gensyn/install_gensyn.sh && chmod +x install_gensyn.sh && ./install_gensyn.sh
 ```
 
 ***
 
-### 2) Get HuggingFace Access token
-
-
-
-**1- Create account in** [**HuggingFace**](https://huggingface.co/)
-
-**2- Create an Access Token with `Write` permissions** [**here**](https://huggingface.co/settings/tokens) **and save it**
-
 ***
 
-### 3) Clone the Repository
-
-
-
-```bash
-git clone https://github.com/gensyn-ai/rl-swarm/
-cd rl-swarm
-```
-
-***
-
-### 4) Run the swarm
-
-Install screen&#x20;
-
-```bash
-apt install screen -y
-```
-
-Open a screen to run it in background
-
-```
-screen -S swarm
-```
-
-Install swarm
-
-```bash
-python3 -m venv .venv
-source .venv/bin/activate
-./run_rl_swarm.sh
-```
-
-Press `Y`
-
-`If found this proble`./run\_rl\_swarm.sh
-
-> > Would you like to connect to the Testnet? \[Y/n] y
-> >
-> > Please login to create an Ethereum Server Wallet> > \
-> > /root/.bashrc: line 6: PS1: unbound variable> > \
-> > Shutting down trainer...> > \
-> > Terminated> > \
-> > (.venv) root@jane-Z790M-AORUS-ELITE-AX:\~/ai/rl-swarm# ./run\_rl\_swarm.sh> > \
-> > Would you like to connect to the Testnet? \[Y/n] y> > \
-> > Please login to create an Ethereum Server Wallet> > \
-> > /root/.bashrc: line 6: PS1: unbound variable> > \
-> > Shutting down trainer...> > \
-> > Terminated
-
-Solution :
-
-```bash
-sed -i '1i # ~/.bashrc: executed by bash(1) for non-login shells.\n\n# If not running interactively, don'\''t do anything\ncase $- in\n    *i*) ;;\n    *) return;;\nesac\n' ~/.bashrc
-```
-
-***
-
-### 5) Login
+### 2) Login
 
 
 
 **1- You have to receive `Waiting for userData.json to be created...` in log**![](../.gitbook/assets/image.png)
 
-**2-  Forward port to Ngrok**
+**2-  Back to /root**
 
-* **Sign up ngrok**
+![](<../.gitbook/assets/image (18).png>)
 
-**4- Login with your email**
+**Find this link and click or copy then paste to your browser**
+
+**3- Login with your email**
 
 * After login, your terminal starts installation.
 
-<sup>**5-**</sup>**&#x20;Optional**<sup>**:**</sup>**&#x20;**_**Push models to huggingface**_
+
+
+<sup>**4-**</sup>**&#x20;Optional**<sup>**:**</sup>**&#x20;**_**Push models to huggingface**_
 
 * _Enter your `HuggingFace` access token you've created when it prompted_
 * _This will need `2GB` upload bandwidth for each model you train, you can pass it by entering_&#x20;
@@ -275,7 +163,7 @@ If you need to upload files from your `local machine` to the `server`.
 
 In SFTP, the put command uploads files from your local machine to the server.
 
-```
+```bash
 put swarm.pem /home/ubuntu/rl-swarm/swarm.pem
 ```
 
