@@ -4,10 +4,14 @@
 set -e
 
 # Step 1: Install Dependencies
-echo "Installing dependencies..."
-curl -o gensyn_depencies.sh https://raw.githubusercontent.com/lukmanc405/testnet/refs/heads/main/gensyn/gensyn_depencies.sh
-chmod +x gensyn_depencies.sh
-./gensyn_depencies.sh
+# Update system and install core dependencies
+ sudo apt update -y
+ sudo apt install -y python3 python3-venv python3-pip curl wget screen git lsof nano unzip iproute2 build-essential libgbm1 pkg-config libssl-dev libleveldb-dev tar clang bsdmainutils ncdu
+ 
+ # Install Node.js (v22.x) and Yarn
+ curl -fsSL https://deb.nodesource.com/setup_22.x | sudo -E bash -
+ sudo apt install -y nodejs
+ sudo npm install -g yarn
 
 # Step 2: Check and Delete rl-swarm Folder if it Exists (Already Included)
 if [ -d "$HOME/rl-swarm" ]; then
