@@ -1,4 +1,3 @@
-
 #!/bin/bash
 
 # Exit on any error
@@ -10,28 +9,38 @@ curl -o gensyn_depencies.sh https://raw.githubusercontent.com/lukmanc405/testnet
 chmod +x gensyn_depencies.sh
 ./gensyn_depencies.sh
 
-# Step 2: Clone the Repository
+# Step 2: Check and Delete rl-swarm Folder if it Exists (Already Included)
+if [ -d "$HOME/rl-swarm" ]; then
+  echo "Warning: Existing rl-swarm folder found at $HOME/rl-swarm."
+  echo "This folder will be deleted to ensure a clean setup."
+  echo "Ensure you have backed up swarm.pem if needed!"
+  read -p "Press Enter to continue with deletion, or Ctrl+C to cancel..."
+  rm -rf "$HOME/rl-swarm"
+  echo "rl-swarm folder deleted."
+fi
+
+# Step 3: Clone the Repository
 echo "Cloning the RL-Swarm repository..."
 cd $HOME
 git clone https://github.com/gensyn-ai/rl-swarm/
-cd /root/rl-swarm
+cd rl-swarm
 
-# Step 3: Fix .bashrc to Prevent PS1 Error
+# Step 4: Fix .bashrc to Prevent PS1 Error
 echo "Fixing .bashrc to prevent PS1 unbound variable error..."
 sed -i '1i # ~/.bashrc: executed by bash(1) for non-login shells.\n\n# If not running interactively, don'\''t do anything\ncase $- in\n    *i*) ;;\n    *) return;;\nesac\n' ~/.bashrc
 
-# Step 4: Install Screen
+# Step 5: Install Screen
 echo "Installing screen..."
 apt install screen -y
 
-# Step 5: Install Ngrok and JQ
+# Step 6: Install Ngrok and JQ
 echo "Installing ngrok and jq..."
 curl -s https://ngrok-agent.s3.amazonaws.com/ngrok.asc | sudo tee /etc/apt/trusted.gpg.d/ngrok.asc >/dev/null
 echo "deb https://ngrok-agent.s3.amazonaws.com buster main" | sudo tee /etc/apt/sources.list.d/ngrok.list
 sudo apt update -y
 sudo apt install -y ngrok jq
 
-# Step 6: Prompt for Ngrok Authtoken
+# Step 7: Prompt for Ngrok Authtoken
 echo "Enter your ngrok authtoken (from https://dashboard.ngrok.com/get-started/your-authtoken)."
 echo "Sign up at https://ngrok.com if you don't have one. Copy the token exactly, including any dashes:"
 read -r NGROK_AUTHTOKEN
@@ -49,16 +58,16 @@ ngrok config add-authtoken "$NGROK_AUTHTOKEN" || {
   exit 1
 }
 
-# Step 7: Run the Swarm in a Screen Session
+# Step 8: Run the Swarm in a Screen Session
 echo "Setting up and running the RL-Swarm node..."
 # Create a screen session for the swarm
 screen -dmS swarm bash -c "cd $HOME/rl-swarm && python3 -m venv .venv && source .venv/bin/activate && echo 'Y\nN' | ./run_rl_swarm.sh"
 
-# Step 8: Start Ngrok in a Screen Session
+# Step 9: Start Ngrok in a Screen Session
 echo "Starting ngrok to forward port 3000..."
 screen -dmS ngrok bash -c "ngrok http 3000"
 
-# Step 9: Fetch the Ngrok Public URL
+# Step 10: Fetch the Ngrok Public URL
 echo "Fetching ngrok public URL (this may take a few seconds)..."
 # Wait for ngrok to start (up to 30 seconds)
 for i in {1..30}; do
@@ -73,7 +82,7 @@ for i in {1..30}; do
   fi
 done
 
-# Step 10: Display Instructions
+# Step 11: Display Instructions
 echo "Installation complete!"
 echo "RL-Swarm node is running in screen session 'swarm'. Check logs with: screen -r swarm"
 echo "Ngrok is running in screen session 'ngrok'. Check logs with: screen -r ngrok"
