@@ -4,6 +4,7 @@
 
 ## TESTNET
 
+* [Infinity](testnet/infinity.md)
 * [Gensyn-ai](testnet/gensyn-ai.md)
 * [Elixir](testnet/elixir/README.md)
   * [Elixir v3 (NEWEST)](testnet/elixir/elixir-v3-newest.md)
