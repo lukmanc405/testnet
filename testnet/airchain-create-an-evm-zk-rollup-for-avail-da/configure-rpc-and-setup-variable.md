@@ -26,7 +26,7 @@ nano ~/.evmosd/config/app.toml
 
 Change `127.0.0.1` to `0.0.0.0`  like this image below
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
 ## Setup Variables
 
@@ -84,7 +84,7 @@ sudo systemctl start rolld
 sudo journalctl -u rolld -f --no-hostname -o cat
 ```
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 This command will give us a private key, which we should store securely. (save to your notepad)
 
@@ -103,7 +103,7 @@ cd availup
 
 #### Close with Ctrl+c, press Enter
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 ```bash
 # You can copy and paste the entire block with just one command.
