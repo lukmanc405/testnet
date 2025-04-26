@@ -22,14 +22,20 @@ curl -fsSL https://deb.nodesource.com/setup_22.x | sudo -E bash -
 sudo apt install -y nodejs
 sudo npm install -g yarn
 
-# Step 2: Check and Delete rl-swarm Folder if Exists
+# Step 2: Check and Handle rl-swarm Folder if Exists
 echo -e "\e[1m\e[32m2. Checking for existing rl-swarm folder...\e[0m" && sleep 1
 if [ -d "$HOME/rl-swarm" ]; then
-  echo -e "\e[1m\e[33m   Warning: Existing rl-swarm folder found. Deleting for clean setup...\e[0m"
-  echo -e "\e[1m\e[33m   Ensure you have backed up swarm.pem if needed!\e[0m"
-  read -p "   Press Enter to continue with deletion, or Ctrl+C to cancel..."
-  rm -rf "$HOME/rl-swarm"
-  echo -e "\e[1m\e[32m   rl-swarm folder deleted.\e[0m"
+  echo -e "\e[1m\e[33m   Warning: Existing rl-swarm folder found at $HOME/rl-swarm.\e[0m"
+  echo -e "\e[1m\e[33m   This may contain important data like swarm.pem. Ensure you have backed it up if needed!\e[0m"
+  read -p $'\e[1m\e[37m   Do you want to delete the rl-swarm folder for a clean setup? (y/n): \e[0m' DELETE_RESP
+  if [ "$DELETE_RESP" = "y" ] || [ "$DELETE_RESP" = "Y" ]; then
+    rm -rf "$HOME/rl-swarm"
+    echo -e "\e[1m\e[32m   rl-swarm folder deleted.\e[0m"
+  else
+    echo -e "\e[1m\e[32m   Keeping existing rl-swarm folder. Proceeding with current setup...\e[0m"
+  fi
+else
+  echo -e "\e[1m\e[32m   No existing rl-swarm folder found. Proceeding...\e[0m"
 fi
 
 # Step 3: Clone the Repository
