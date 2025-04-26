@@ -8,7 +8,6 @@ echo " |_____\___/|_|\_\_|  |_/_/   \_\_| \_|  ";
 echo -e "\e[0m"
 echo "=================================================="  
 # Exit on any error
-set -e
 
 # Step 1: Install Dependencies
 # Update system and install core dependencies
