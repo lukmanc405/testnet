@@ -1,5 +1,6 @@
 #!/bin/bash
 clear
+
 echo "=================================================="
 echo -e "\033[0;35m"
 echo " | |  | | | | |/ /  \/  |  / \  | \ | |  ";
@@ -78,9 +79,15 @@ ngrok config add-authtoken "$NGROK_AUTHTOKEN" || {
 }
 echo -e "\e[1m\e[32m   Ngrok configured successfully.\e[0m"
 
+sed -i -E 's/(startup_timeout: *float *= *)[0-9.]+/\1120/' $(python3 -c "import hivemind.p2p.p2p_daemon as m; print(m.__file__)")
+
+sleep 2
+
 # Step 8: Run the Swarm in a Screen Session
 echo -e "\e[1m\e[32m8. Starting RL-Swarm node...\e[0m" && sleep 1
-screen -dmS swarm bash -c "cd $HOME/rl-swarm && python3 -m venv .venv && source .venv/bin/activate && echo 'Y\nN' | ./run_rl_swarm.sh"
+screen -dmS swarm bash -c "cd $HOME/rl-swarm && chmod +x run_rl_swarm.sh && python3 -m venv .venv && source .venv/bin/activate && echo 'Y\nN' | ./run_rl_swarm.sh"
+
+sleep 3
 
 # Step 9: Start Ngrok in a Screen Session
 echo -e "\e[1m\e[32m9. Starting ngrok to forward port 3000...\e[0m" && sleep 1
