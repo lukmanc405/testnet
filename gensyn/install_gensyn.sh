@@ -83,6 +83,8 @@ sleep 2
 
 # Step 8: Run the Swarm in a Screen Session
 echo -e "\e[1m\e[32m8. Starting RL-Swarm node...\e[0m" && sleep 1
+# The following command answers 'Y' to the first question and 'N' to the second question
+# 'N' is for "Would you like to push models you train in the RL swarm to the Hugging Face Hub? [y/N]"
 screen -dmS swarm bash -c "cd $HOME/rl-swarm && chmod +x run_rl_swarm.sh && python3 -m venv .venv && source .venv/bin/activate && echo 'Y\nN' | ./run_rl_swarm.sh"
 
 sleep 3
