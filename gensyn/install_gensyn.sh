@@ -81,15 +81,7 @@ sed -i -E 's/(startup_timeout: *float *= *)[0-9.]+/\1120/' $(python3 -c "import 
 
 sleep 2
 
-# Step 8: Run the Swarm in a Screen Session
-echo -e "\e[1m\e[32m8. Starting RL-Swarm node...\e[0m" && sleep 1
-# The following command answers 'Y' to the first question and 'N' to the second question
-# 'N' is for "Would you like to push models you train in the RL swarm to the Hugging Face Hub? [y/N]"
-screen -dmS swarm bash -c "cd $HOME/rl-swarm && chmod +x run_rl_swarm.sh && python3 -m venv .venv && source .venv/bin/activate && echo 'Y\nN' | ./run_rl_swarm.sh"
-
-sleep 3
-
-# Step 9: Start Ngrok in a Screen Session
+# Step 8: Start Ngrok in a Screen Session
 echo -e "\e[1m\e[32m9. Starting ngrok to forward port 3000...\e[0m" && sleep 1
 screen -dmS ngrok bash -c "ngrok http 3000"
 
@@ -107,6 +99,14 @@ for i in {1..30}; do
   fi
 done
 
+
+# Step 9: Run the Swarm in a Screen Session
+echo -e "\e[1m\e[32m8. Starting RL-Swarm node...\e[0m" && sleep 1
+# The following command answers 'Y' to the first question and 'N' to the second question
+# 'N' is for "Would you like to push models you train in the RL swarm to the Hugging Face Hub? [y/N]"
+screen -dmS swarm bash -c "cd $HOME/rl-swarm && python3 -m venv .venv && echo 'Y\nN' | ./run_rl_swarm.sh"
+
+sleep 3
 # Step 11: Display Instructions
 echo -e "\e[1m\e[32m11. Installation complete!\e[0m" && sleep 1
 echo -e "\e[1m\e[32m   RL-Swarm node is running in screen session 'swarm'. Check logs with: screen -r swarm\e[0m"
