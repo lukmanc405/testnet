@@ -85,7 +85,7 @@ sleep 2
 echo -e "\e[1m\e[32m9. Starting ngrok to forward port 3000...\e[0m" && sleep 1
 screen -dmS ngrok bash -c "ngrok http 3000"
 
-# Step 10: Fetch the Ngrok Public URL
+# Step 9: Fetch the Ngrok Public URL
 echo -e "\e[1m\e[32m10. Fetching ngrok public URL...\e[0m" && sleep 1
 for i in {1..30}; do
   sleep 1
@@ -99,23 +99,8 @@ for i in {1..30}; do
   fi
 done
 
-
-# Step 9: Run the Swarm in a Screen Session
-echo -e "\e[1m\e[32m8. Starting RL-Swarm node...\e[0m" && sleep 1
-# The following command answers 'Y' to the first question and 'N' to the second question
-# 'N' is for "Would you like to push models you train in the RL swarm to the Hugging Face Hub? [y/N]"
-screen -dmS swarm bash -c "cd $HOME/rl-swarm && python3 -m venv .venv && echo 'Y\nN' | ./run_rl_swarm.sh"
-
 sleep 3
 # Step 11: Display Instructions
 echo -e "\e[1m\e[32m11. Installation complete!\e[0m" && sleep 1
-echo -e "\e[1m\e[32m   RL-Swarm node is running in screen session 'swarm'. Check logs with: screen -r swarm\e[0m"
 echo -e "\e[1m\e[32m   Ngrok is running in screen session 'ngrok'. Check logs with: screen -r ngrok\e[0m"
 echo -e "\e[1m\e[32m   Ngrok public URL: $NGROK_URL\e[0m"
-echo -e "\e[1m\e[32m   Ensure port 3000 is open if on a VPS (check firewall or cloud provider rules).\e[0m"
-echo -e "\e[1m\e[32m   After seeing 'Waiting for userData.json to be created...' in the logs, the node should be running.\e[0m"
-echo -e "\e[1m\e[32m   Back up swarm.pem (if generated) from $HOME/rl-swarm/swarm.pem to your local machine.\e[0m"
-echo -e "\e[1m\e[32m   To check for swarm.pem, run: ls $HOME/rl-swarm/swarm.pem\e[0m"
-echo -e "\e[1m\e[32m   If found, back up with: cp $HOME/rl-swarm/swarm.pem ~/swarm.pem.bak && scp root@your-vps-ip:~/swarm.pem.bak .\e[0m"
-
-echo -e "\e[1m\e[32m---RL-SWARM NODE SETUP COMPLETE---\e[0m"
