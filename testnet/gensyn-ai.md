@@ -43,8 +43,18 @@ screen -S swarm
 Input this code into your terminal
 
 ```
-cd $HOME/rl-swarm && python3 -m venv .venv && echo 'Y' | ./run_rl_swarm.sh
+cd $HOME/rl-swarm && python3 -m venv .venv && ./run_rl_swarm.sh
 ```
+
+
+
+**Select your model**
+
+<kbd>**for type rtx 3080,3090 and below recommended choose math A 0.5 or 1.5**</kbd>
+
+<kbd>**for type 4090 and above you can choose Math A 7**</kbd>
+
+
 
 **1- You have to receive `Waiting for userData.json to be created...` in log**![](../.gitbook/assets/image.png)
 
