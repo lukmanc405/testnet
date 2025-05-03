@@ -34,11 +34,21 @@ curl -o install_gensyn.sh curl -o install_gensyn.sh https://raw.githubuserconten
 
 ### 2) Login
 
+Create screen with named swarm
 
+```
+screen -S swarm
+```
+
+Input this code into your terminal
+
+```
+cd $HOME/rl-swarm && python3 -m venv .venv && echo 'Y' | ./run_rl_swarm.sh
+```
 
 **1- You have to receive `Waiting for userData.json to be created...` in log**![](../.gitbook/assets/image.png)
 
-**2-  Back to /root**
+**2-  Back to /root ,with ctrl A+D**
 
 ![](<../.gitbook/assets/image (18).png>)
 
