@@ -82,7 +82,7 @@ sed -i -E 's/(startup_timeout: *float *= *)[0-9.]+/\1120/' $(python3 -c "import 
 sleep 2
 
 # Step 8: Start Ngrok in a Screen Session
-echo -e "\e[1m\e[32m9. Starting ngrok to forward port 3000...\e[0m" && sleep 1
+echo -e "\e[1m\e[32m9. Starting ngrok to forward port 3000 ...\e[0m" && sleep 1
 screen -dmS ngrok bash -c "ngrok http 3000"
 
 # Step 9: Fetch the Ngrok Public URL
