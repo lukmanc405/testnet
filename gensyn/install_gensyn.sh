@@ -10,7 +10,7 @@ echo -e "\e[0m"
 echo "=================================================="
 sleep 2
 
-# Step 1: Install Dependencies
+# Step 1: Install Dependencies..
 echo -e "\e[1m\e[32m1. Updating system & installing dependencies...\e[0m" && sleep 1
 sudo apt update -y
 sudo apt install -y python3 python3-venv python3-pip curl wget screen git lsof nano unzip iproute2 build-essential libgbm1 pkg-config libssl-dev libleveldb-dev tar clang bsdmainutils ncdu
