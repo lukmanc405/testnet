@@ -10,97 +10,102 @@ echo -e "\e[0m"
 echo "=================================================="
 sleep 2
 
-# Step 1: Install Dependencies..
-echo -e "\e[1m\e[32m1. Updating system & installing dependencies...\e[0m" && sleep 1
-sudo apt update -y
-sudo apt install -y python3 python3-venv python3-pip curl wget screen git lsof nano unzip iproute2 build-essential libgbm1 pkg-config libssl-dev libleveldb-dev tar clang bsdmainutils ncdu
+# Colors for output
+GREEN="\033[1;32m"
+YELLOW="\033[1;33m"
+RESET="\033[0m"
 
-# Install Node.js (v22.x) and Yarn
-echo -e "\e[1m\e[32m   Installing Node.js and Yarn...\e[0m" && sleep 1
-curl -fsSL https://deb.nodesource.com/setup_22.x | sudo -E bash -
-sudo apt install -y nodejs
-sudo npm install -g yarn
+echo -e "${GREEN}Starting Gensyn RL-Swarm Setup...${RESET}"
 
-# Step 2: Check and Handle rl-swarm Folder if Exists
-echo -e "\e[1m\e[32m2. Checking for existing rl-swarm folder...\e[0m" && sleep 1
-if [ -d "$HOME/rl-swarm" ]; then
-  echo -e "\e[1m\e[33m   Warning: Existing rl-swarm folder found at $HOME/rl-swarm.\e[0m"
-  echo -e "\e[1m\e[33m   This may contain important data like swarm.pem. Ensure you have backed it up if needed!\e[0m"
-  read -p $'\e[1m\e[37m   Do you want to delete the rl-swarm folder for a clean setup? (y/n): \e[0m' DELETE_RESP
-  if [ "$DELETE_RESP" = "y" ] || [ "$DELETE_RESP" = "Y" ]; then
-    rm -rf "$HOME/rl-swarm"
-    echo -e "\e[1m\e[32m   rl-swarm folder deleted.\e[0m"
-  else
-    echo -e "\e[1m\e[32m   Keeping existing rl-swarm folder. Proceeding with current setup...\e[0m"
-  fi
-else
-  echo -e "\e[1m\e[32m   No existing rl-swarm folder found. Proceeding...\e[0m"
-fi
-
-# Step 3: Clone the Repository
-echo -e "\e[1m\e[32m3. Cloning RL-Swarm repository...\e[0m" && sleep 1
-cd $HOME
-git clone https://github.com/gensyn-ai/rl-swarm/
-cd rl-swarm
-
-# Step 4: Fix .bashrc
-echo -e "\e[1m\e[32m4. Fixing .bashrc for PS1 error...\e[0m" && sleep 1
-sed -i '1i # ~/.bashrc: executed by bash(1) for non-login shells.\n\n# If not running interactively, don'\''t do anything\ncase $- in\n    *i*) ;;\n    *) return;;\nesac\n' ~/.bashrc
-
-# Step 5: Install Screen
-echo -e "\e[1m\e[32m5. Installing screen...\e[0m" && sleep 1
-sudo apt install screen -y
-
-# Step 6: Install Ngrok and JQ
-echo -e "\e[1m\e[32m6. Installing ngrok and jq...\e[0m" && sleep 1
-curl -s https://ngrok-agent.s3.amazonaws.com/ngrok.asc | sudo tee /etc/apt/trusted.gpg.d/ngrok.asc >/dev/null
-echo "deb https://ngrok-agent.s3.amazonaws.com buster main" | sudo tee /etc/apt/sources.list.d/ngrok.list
-sudo apt update -y
-sudo apt install -y ngrok jq
-
-# Step 7: Prompt for Ngrok Authtoken
-echo -e "\e[1m\e[32m7. Configuring ngrok...\e[0m" && sleep 1
-echo -e "\e[1m\e[33m   Enter your ngrok authtoken (from https://dashboard.ngrok.com/get-started/your-authtoken):\e[0m"
-read -r NGROK_AUTHTOKEN
-
-# Validate authtoken input
-if [ -z "$NGROK_AUTHTOKEN" ]; then
-  echo -e "\e[1m\e[31m   Error: Ngrok authtoken cannot be empty!\e[0m"
-  echo -e "\e[1m\e[31m   Get your authtoken from https://dashboard.ngrok.com/get-started/your-authtoken and rerun the script.\e[0m"
-  exit 1
-fi
-
-# Configure ngrok
-ngrok config add-authtoken "$NGROK_AUTHTOKEN" || {
-  echo -e "\e[1m\e[31m   Error: Failed to configure ngrok. Verify your authtoken and try again.\e[0m"
-  exit 1
+# Function to check if a package is installed
+check_package() {
+    if dpkg -l | grep -q "$1"; then
+        return 0
+    else
+        return 1
+    fi
 }
-echo -e "\e[1m\e[32m   Ngrok configured successfully.\e[0m"
 
-sed -i -E 's/(startup_timeout: *float *= *)[0-9.]+/\1120/' $(python3 -c "import hivemind.p2p.p2p_daemon as m; print(m.__file__)")
+# Function to check if dependencies are up-to-date
+check_apt_updated() {
+    echo -e "${YELLOW}Checking if dependencies are up-to-date...${RESET}"
+    # Check if apt lists are newer than 1 day (86400 seconds)
+    if [ -n "$(find /var/lib/apt/lists -maxdepth 1 -type f -mtime -1)" ]; then
+        echo -e "${GREEN}Dependencies are up-to-date, skipping update.${RESET}"
+        return 0
+    else
+        echo -e "${YELLOW}Dependencies need updating...${RESET}"
+        return 1
+    fi
+}
 
-sleep 2
+# Update system and install dependencies if needed
+if ! check_apt_updated; then
+    echo -e "${YELLOW}Updating system and installing dependencies...${RESET}"
+    sudo apt update && sudo apt install -y python3 python3-venv python3-pip curl wget screen git lsof
+else
+    echo -e "${GREEN}Dependencies already up-to-date.${RESET}"
+fi
 
-# Step 8: Start Ngrok in a Screen Session
-echo -e "\e[1m\e[32m9. Starting ngrok to forward port 3000 ...\e[0m" && sleep 1
-screen -dmS ngrok bash -c "ngrok http 3000"
+# Check and install Node.js 20
+if ! command -v node > /dev/null 2>&1; then
+    echo -e "${YELLOW}Installing Node.js 20...${RESET}"
+    curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+    sudo apt update && sudo apt install -y nodejs
+else
+    echo -e "${GREEN}Node.js is already installed: $(node -v)${RESET}"
+fi
 
-# Step 9: Fetch the Ngrok Public URL
-echo -e "\e[1m\e[32m10. Fetching ngrok public URL...\e[0m" && sleep 1
-for i in {1..30}; do
-  sleep 1
-  NGROK_URL=$(curl -s http://localhost:4040/api/tunnels | jq -r '.tunnels[0].public_url')
-  if [ -n "$NGROK_URL" ] && [ "$NGROK_URL" != "null" ]; then
-    break
-  fi
-  if [ $i -eq 30 ]; then
-    echo -e "\e[1m\e[33m   Warning: Could not fetch ngrok URL. Check the ngrok session with: screen -r ngrok\e[0m"
-    NGROK_URL="Not available (check manually)"
-  fi
-done
+# Check and install Yarn
+if ! command -v yarn > /dev/null 2>&1; then
+    echo -e "${YELLOW}Installing Yarn...${RESET}"
+    curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+    echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list > /dev/null
+    sudo apt update && sudo apt install -y yarn
+else
+    echo -e "${GREEN}Yarn is already installed: $(yarn --version)${RESET}"
+fi
 
-sleep 3
-# Step 11: Display Instructions
-echo -e "\e[1m\e[32m11. Installation complete!\e[0m" && sleep 1
-echo -e "\e[1m\e[32m   Ngrok is running in screen session 'ngrok'. Check logs with: screen -r ngrok\e[0m"
-echo -e "\e[1m\e[32m   Ngrok public URL: $NGROK_URL\e[0m"
+# Ask user if they want to install ngrok
+echo -e "${YELLOW}Would you like to install ngrok? (y/n)${RESET}"
+read -p "Enter your choice: " install_ngrok
+if [[ "$install_ngrok" == "y" || "$install_ngrok" == "Y" ]]; then
+    if ! command -v ngrok > /dev/null 2>&1; then
+        echo -e "${YELLOW}Installing ngrok...${RESET}"
+        curl -s https://ngrok-agent.s3.amazonaws.com/ngrok.asc | sudo tee /etc/apt/trusted.gpg.d/ngrok.asc >/dev/null
+        echo "deb https://ngrok-agent.s3.amazonaws.com buster main" | sudo tee /etc/apt/sources.list.d/ngrok.list
+        sudo apt update && sudo apt install -y ngrok
+        echo -e "${GREEN}ngrok installed successfully.${RESET}"
+    else
+        echo -e "${GREEN}ngrok is already installed: $(ngrok --version)${RESET}"
+    fi
+else
+    echo -e "${YELLOW}Skipping ngrok installation.${RESET}"
+fi
+
+# Clone the repo
+if [ ! -d "rl-swarm" ]; then
+    echo -e "${YELLOW}Cloning Gensyn RL-Swarm repository...${RESET}"
+    git clone https://github.com/gensyn-ai/rl-swarm.git
+else
+    echo -e "${GREEN}rl-swarm repository already exists.${RESET}"
+fi
+
+# Navigate to rl-swarm directory
+cd rl-swarm || exit
+
+# Start screen session and run the rest inside it
+echo -e "${YELLOW}Setting up virtual environment and starting Gensyn RL-Swarm...${RESET}"
+screen -S gensyn -dm bash -c '
+    python3 -m venv .venv
+    source .venv/bin/activate
+    cd modal-login
+    yarn install
+    yarn upgrade
+    yarn add next@latest
+    yarn add viem@latest
+    cd ..
+    ./run_rl_swarm.sh
+'
+
+echo -e "${GREEN}✅ Setup complete.${RESET}"
