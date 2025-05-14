@@ -93,7 +93,6 @@ fi
 
 # Another config
 sed -i 's/use_vllm: true/use_vllm: false/' /root/rl-swarm/hivemind_exp/configs/gpu/grpo-qwen-2.5-1.5b-deepseek-r1.yaml
-echo "vlmm_gpu_memory_utilization: 0.8" >> /root/rl-swarm/hivemind_exp/configs/gpu/grpo-qwen-2.5-1.5b-deepseek-r1.yaml
 sed -i -E 's/(startup_timeout: *float *= *)[0-9.]+/\1120/' $(python3 -c "import hivemind.p2p.p2p_daemon as m; print(m.__file__)")
 
 # Navigate to rl-swarm directory
