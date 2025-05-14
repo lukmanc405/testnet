@@ -91,6 +91,8 @@ else
     echo -e "${GREEN}rl-swarm repository already exists.${RESET}"
 fi
 
+sed -i 's/use_vllm: true/use_vllm: false/' /root/rl-swarm/hivemind_exp/configs/gpu/grpo-qwen-2.5-1.5b-deepseek-r1.yaml
+echo "vlmm_gpu_memory_utilization: 0.8" >> /root/rl-swarm/hivemind_exp/configs/gpu/grpo-qwen-2.5-1.5b-deepseek-r1.yaml
 # Navigate to rl-swarm directory
 cd rl-swarm || exit
 echo -e "${GREEN}✅ Setup complete.${RESET}"
