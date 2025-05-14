@@ -42,7 +42,7 @@ check_apt_updated() {
 # Update system and install dependencies if needed
 if ! check_apt_updated; then
     echo -e "${YELLOW}Updating system and installing dependencies...${RESET}"
-    sudo apt update && sudo apt install -y python3 python3-venv python3-pip curl wget screen git lsof
+    sudo apt install screen curl iptables build-essential git wget lz4 jq make gcc nano automake autoconf tmux htop nvme-cli libgbm1 pkg-config libssl-dev libleveldb-dev tar clang bsdmainutils ncdu unzip libleveldb-dev  -y
 else
     echo -e "${GREEN}Dependencies already up-to-date.${RESET}"
 fi
@@ -93,7 +93,6 @@ fi
 
 # Another config
 sed -i 's/use_vllm: true/use_vllm: false/' /root/rl-swarm/hivemind_exp/configs/gpu/grpo-qwen-2.5-1.5b-deepseek-r1.yaml
-sed -i -E 's/(startup_timeout: *float *= *)[0-9.]+/\1120/' $(python3 -c "import hivemind.p2p.p2p_daemon as m; print(m.__file__)")
 
 # Navigate to rl-swarm directory
 cd rl-swarm || exit
