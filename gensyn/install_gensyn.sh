@@ -93,19 +93,4 @@ fi
 
 # Navigate to rl-swarm directory
 cd rl-swarm || exit
-
-# Start screen session and run the rest inside it
-echo -e "${YELLOW}Setting up virtual environment and starting Gensyn RL-Swarm...${RESET}"
-screen -S gensyn -dm bash -c '
-    python3 -m venv .venv
-    source .venv/bin/activate
-    cd modal-login
-    yarn install
-    yarn upgrade
-    yarn add next@latest
-    yarn add viem@latest
-    cd ..
-    ./run_rl_swarm.sh
-'
-
 echo -e "${GREEN}✅ Setup complete.${RESET}"
