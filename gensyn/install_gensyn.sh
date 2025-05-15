@@ -150,35 +150,6 @@ else
     git clone https://github.com/gensyn-ai/rl-swarm.git /root/rl-swarm || { echo -e "${RED}Failed to clone repository.${RESET}"; exit 1; }
 fi
 
-# Check if /root/rl-swarm/swarm.pem exists
-if [ -f "/root/rl-swarm/swarm.pem" ]; then
-    echo -e "${YELLOW}Existing swarm.pem file detected at /root/rl-swarm/swarm.pem.${RESET}"
-    echo -e "${YELLOW}Do you want to (1) keep the existing swarm.pem or (2) generate a new one?${RESET}"
-    read -p "Enter your choice (1/2): " swarm_pem_choice
-    case $swarm_pem_choice in
-        1)
-            echo -e "${GREEN}Keeping existing swarm.pem file.${RESET}"
-            ;;
-        2)
-            echo -e "${YELLOW}Generating new swarm.pem file...${RESET}"
-            rm -f /root/rl-swarm/swarm.pem
-            ssh-keygen -t rsa -b 4096 -f /root/rl-swarm/swarm.pem -N "" || { echo -e "${RED}Failed to generate swarm.pem.${RESET}"; exit 1; }
-            echo -e "${GREEN}New swarm.pem file generated successfully.${RESET}"
-            ;;
-        *)
-            echo -e "${RED}Invalid choice. Keeping existing swarm.pem file.${RESET}"
-            ;;
-    esac
-else
-    echo -e "${YELLOW}Generating new swarm.pem file...${RESET}"
-    ssh-keygen -t rsa -b 4096 -f /root/rl-swarm/swarm.pem -N "" || { echo -e "${RED}Failed to generate swarm.pem.${RESET}"; exit 1; }
-    echo -e "${GREEN}swarm.pem file generated successfully.${RESET}"
-fi
-
-# Modify configuration
-echo -e "${YELLOW}Configuring RL-Swarm settings...${RESET}"
-sed -i 's/use_vllm: true/use_vllm: false/' /root/rl-swarm/hivemind_exp/configs/gpu/grpo-qwen-2.5-1.5b-deepseek-r1.yaml || { echo -e "${RED}Failed to modify configuration file.${RESET}"; exit 1; }
-
 # Navigate to rl-swarm directory
 cd /root/rl-swarm || { echo -e "${RED}Failed to navigate to /root/rl-swarm directory.${RESET}"; exit 1; }
 
