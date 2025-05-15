@@ -13,36 +13,64 @@ sleep 2
 # Colors for output
 GREEN="\033[1;32m"
 YELLOW="\033[1;33m"
+RED="\033[1;31m"
 RESET="\033[0m"
 
 echo -e "${GREEN}Starting Gensyn RL-Swarm Setup...${RESET}"
 
 # Function to check if a package is installed
 check_package() {
-    if dpkg -l | grep -q "$1"; then
-        return 0
-    else
-        return 1
-    fi
+    dpkg -l | grep -q "$1" && return 0 || return 1
 }
 
-# Function to check if dependencies are up-to-date
+# Function to check if apt lists are up-to-date
 check_apt_updated() {
-    echo -e "${YELLOW}Checking if dependencies are up-to-date...${RESET}"
-    # Check if apt lists are newer than 1 day (86400 seconds)
+    echo -e "${YELLOW}Checking if apt lists are up-to-date...${RESET}"
     if [ -n "$(find /var/lib/apt/lists -maxdepth 1 -type f -mtime -1)" ]; then
-        echo -e "${GREEN}Dependencies are up-to-date, skipping update.${RESET}"
+        echo -e "${GREEN}Apt lists are up-to-date, skipping update.${RESET}"
         return 0
     else
-        echo -e "${YELLOW}Dependencies need updating...${RESET}"
+        echo -e "${YELLOW}Apt lists need updating...${RESET}"
         return 1
     fi
 }
 
-# Update system and install dependencies if needed
+# Function to install dependencies with retry mechanism
+install_dependencies() {
+    local packages=(
+        screen curl iptables build-essential git wget lz4 jq make gcc nano
+        automake autoconf tmux htop nvme-cli libgbm1 pkg-config libssl-dev
+        libleveldb-dev tar clang bsdmainutils ncdu unzip
+    )
+    echo -e "${YELLOW}Installing dependencies...${RESET}"
+    
+    # Retry apt update up to 3 times
+    for attempt in {1..3}; do
+        if sudo apt update; then
+            break
+        else
+            echo -e "${RED}Apt update failed (attempt $attempt/3). Retrying...${RESET}"
+            sleep 2
+        fi
+        [[ $attempt -eq 3 ]] && { echo -e "${RED}Failed to update apt after 3 attempts.${RESET}"; exit 1; }
+    done
+
+    # Install each package individually to catch errors
+    for pkg in "${packages[@]}"; do
+        if check_package "$pkg"; then
+            echo -e "${GREEN}$pkg is already installed.${RESET}"
+        else
+            echo -e "${YELLOW}Installing $pkg...${RESET}"
+            if ! sudo apt install -y "$pkg"; then
+                echo -e "${RED}Failed to install $pkg. Continuing with other packages...${RESET}"
+            fi
+        fi
+    done
+}
+
+# Update system and install dependencies
 if ! check_apt_updated; then
-    echo -e "${YELLOW}Updating system and installing dependencies...${RESET}"
-    sudo apt install screen curl iptables build-essential git wget lz4 jq make gcc nano automake autoconf tmux htop nvme-cli libgbm1 pkg-config libssl-dev libleveldb-dev tar clang bsdmainutils ncdu unzip libleveldb-dev  -y
+    install_dependencies
 else
     echo -e "${GREEN}Dependencies already up-to-date.${RESET}"
 fi
@@ -50,8 +78,8 @@ fi
 # Check and install Node.js 20
 if ! command -v node > /dev/null 2>&1; then
     echo -e "${YELLOW}Installing Node.js 20...${RESET}"
-    curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
-    sudo apt update && sudo apt install -y nodejs
+    curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash - || { echo -e "${RED}Failed to set up Node.js repository.${RESET}"; exit 1; }
+    sudo apt update && sudo apt install -y nodejs || { echo -e "${RED}Failed to install Node.js.${RESET}"; exit 1; }
 else
     echo -e "${GREEN}Node.js is already installed: $(node -v)${RESET}"
 fi
@@ -59,41 +87,99 @@ fi
 # Check and install Yarn
 if ! command -v yarn > /dev/null 2>&1; then
     echo -e "${YELLOW}Installing Yarn...${RESET}"
-    curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
-    echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list > /dev/null
-    sudo apt update && sudo apt install -y yarn
+    curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo gpg --dearmor -o /usr/share/keyrings/yarnkey.gpg
+    echo "deb [signed-by=/usr/share/keyrings/yarnkey.gpg] https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+    sudo apt update && sudo apt install -y yarn || { echo -e "${RED}Failed to install Yarn.${RESET}"; exit 1; }
 else
     echo -e "${GREEN}Yarn is already installed: $(yarn --version)${RESET}"
 fi
 
-# Ask user if they want to install ngrok
-echo -e "${YELLOW}Would you like to install ngrok? (y/n)${RESET}"
+# Check and install ngrok
+echo -e "${YELLOW}Would you like to install or configure ngrok? (y/n)${RESET}"
 read -p "Enter your choice: " install_ngrok
 if [[ "$install_ngrok" == "y" || "$install_ngrok" == "Y" ]]; then
     if ! command -v ngrok > /dev/null 2>&1; then
         echo -e "${YELLOW}Installing ngrok...${RESET}"
         curl -s https://ngrok-agent.s3.amazonaws.com/ngrok.asc | sudo tee /etc/apt/trusted.gpg.d/ngrok.asc >/dev/null
         echo "deb https://ngrok-agent.s3.amazonaws.com buster main" | sudo tee /etc/apt/sources.list.d/ngrok.list
-        sudo apt update && sudo apt install -y ngrok
+        sudo apt update && sudo apt install -y ngrok || { echo -e "${RED}Failed to install ngrok.${RESET}"; exit 1; }
         echo -e "${GREEN}ngrok installed successfully.${RESET}"
     else
         echo -e "${GREEN}ngrok is already installed: $(ngrok --version)${RESET}"
     fi
+    # Ask for ngrok auth token
+    echo -e "${YELLOW}Please enter your ngrok auth token:${RESET}"
+    read -p "Ngrok auth token: " ngrok_token
+    if [ -n "$ngrok_token" ]; then
+        echo -e "${YELLOW}Configuring ngrok with provided auth token...${RESET}"
+        ngrok config add-authtoken "$ngrok_token" || { echo -e "${RED}Failed to configure ngrok auth token.${RESET}"; exit 1; }
+        echo -e "${GREEN}ngrok auth token configured successfully.${RESET}"
+    else
+        echo -e "${RED}No auth token provided. ngrok will not work without a valid token.${RESET}"
+    fi
 else
-    echo -e "${YELLOW}Skipping ngrok installation.${RESET}"
+    echo -e "${YELLOW}Skipping ngrok installation/configuration.${RESET}"
 fi
 
-# Clone the repo
-if [ ! -d "rl-swarm" ]; then
+# Check if /root/rl-swarm folder exists
+if [ -d "/root/rl-swarm" ]; then
+    echo -e "${YELLOW}Existing /root/rl-swarm directory detected.${RESET}"
+    echo -e "${YELLOW}Do you want to (1) use the existing directory, (2) delete and re-clone, or (3) exit?${RESET}"
+    read -p "Enter your choice (1/2/3): " swarm_dir_choice
+    case $swarm_dir_choice in
+        1)
+            echo -e "${GREEN}Using existing /root/rl-swarm directory.${RESET}"
+            ;;
+        2)
+            echo -e "${YELLOW}Deleting existing /root/rl-swarm directory and re-cloning...${RESET}"
+            sudo rm -rf /root/rl-swarm
+            echo -e "${YELLOW}Cloning Gensyn RL-Swarm repository...${RESET}"
+            git clone https://github.com/gensyn-ai/rl-swarm.git /root/rl-swarm || { echo -e "${RED}Failed to clone repository.${RESET}"; exit 1; }
+            ;;
+        3)
+            echo -e "${RED}Exiting setup as per user request.${RESET}"
+            exit 0
+            ;;
+        *)
+            echo -e "${RED}Invalid choice. Exiting.${RESET}"
+            exit 1
+            ;;
+    esac
+else
     echo -e "${YELLOW}Cloning Gensyn RL-Swarm repository...${RESET}"
-    git clone https://github.com/gensyn-ai/rl-swarm.git
-else
-    echo -e "${GREEN}rl-swarm repository already exists.${RESET}"
+    git clone https://github.com/gensyn-ai/rl-swarm.git /root/rl-swarm || { echo -e "${RED}Failed to clone repository.${RESET}"; exit 1; }
 fi
 
-# Another config
-sed -i 's/use_vllm: true/use_vllm: false/' /root/rl-swarm/hivemind_exp/configs/gpu/grpo-qwen-2.5-1.5b-deepseek-r1.yaml
+# Check if /root/rl-swarm/swarm.pem exists
+if [ -f "/root/rl-swarm/swarm.pem" ]; then
+    echo -e "${YELLOW}Existing swarm.pem file detected at /root/rl-swarm/swarm.pem.${RESET}"
+    echo -e "${YELLOW}Do you want to (1) keep the existing swarm.pem or (2) generate a new one?${RESET}"
+    read -p "Enter your choice (1/2): " swarm_pem_choice
+    case $swarm_pem_choice in
+        1)
+            echo -e "${GREEN}Keeping existing swarm.pem file.${RESET}"
+            ;;
+        2)
+            echo -e "${YELLOW}Generating new swarm.pem file...${RESET}"
+            rm -f /root/rl-swarm/swarm.pem
+            ssh-keygen -t rsa -b 4096 -f /root/rl-swarm/swarm.pem -N "" || { echo -e "${RED}Failed to generate swarm.pem.${RESET}"; exit 1; }
+            echo -e "${GREEN}New swarm.pem file generated successfully.${RESET}"
+            ;;
+        *)
+            echo -e "${RED}Invalid choice. Keeping existing swarm.pem file.${RESET}"
+            ;;
+    esac
+else
+    echo -e "${YELLOW}Generating new swarm.pem file...${RESET}"
+    ssh-keygen -t rsa -b 4096 -f /root/rl-swarm/swarm.pem -N "" || { echo -e "${RED}Failed to generate swarm.pem.${RESET}"; exit 1; }
+    echo -e "${GREEN}swarm.pem file generated successfully.${RESET}"
+fi
+
+# Modify configuration
+echo -e "${YELLOW}Configuring RL-Swarm settings...${RESET}"
+sed -i 's/use_vllm: true/use_vllm: false/' /root/rl-swarm/hivemind_exp/configs/gpu/grpo-qwen-2.5-1.5b-deepseek-r1.yaml || { echo -e "${RED}Failed to modify configuration file.${RESET}"; exit 1; }
 
 # Navigate to rl-swarm directory
-cd rl-swarm || exit
+cd /root/rl-swarm || { echo -e "${RED}Failed to navigate to /root/rl-swarm directory.${RESET}"; exit 1; }
+
 echo -e "${GREEN}✅ Setup complete.${RESET}"
