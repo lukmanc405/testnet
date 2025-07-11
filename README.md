@@ -6,7 +6,7 @@
 {% endtab %}
 
 {% tab title="Mainnet" %}
-SOON...
+[https://docs.detectivegems.com/\~/revisions/e7U0javKXbIga01ewAUA/mainnet](https://docs.detectivegems.com/~/revisions/e7U0javKXbIga01ewAUA/mainnet)
 {% endtab %}
 {% endtabs %}
 

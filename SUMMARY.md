@@ -47,3 +47,7 @@
 * [Install GO](supporting/utils.md)
 * [Multisender](supporting/multisender.md)
 * [Other common commands](supporting/usefull_commands.md)
+
+## MAINNET
+
+* [Axone](mainnet/axone.md)
