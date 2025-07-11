@@ -1,17 +1,3 @@
----
-layout:
-  title:
-    visible: true
-  description:
-    visible: false
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
----
-
 # Installation complete, right?
 
 You have completed the installation process. However, currently, you are not earning points. We recommend importing the mnemonics of your Tracker wallet into the Leap wallet and connecting to [https://points.airchains.io/](https://points.airchains.io/). You can view your station and points on the dashboard. Since we haven't made any transactions yet, you will see 100 points pending. The reason for this is that you need to extract a pod to earn points. You can think of a pod as a package consisting of 25 transactions. Each set of 25 transactions will generate 1 pod, and you will earn 5 points from these transactions. The initial 100 points from the installation will become active after the first pod.

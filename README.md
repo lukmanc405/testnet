@@ -2,7 +2,7 @@
 
 {% tabs %}
 {% tab title="Testnet" %}
-[Here..](./#testnet)
+[Here..](broken-reference)
 {% endtab %}
 
 {% tab title="Mainnet" %}

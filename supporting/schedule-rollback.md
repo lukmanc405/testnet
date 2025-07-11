@@ -1,17 +1,3 @@
----
-layout:
-  title:
-    visible: true
-  description:
-    visible: false
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
----
-
 # Schedule Rollback
 
 Untuk menjalankan kode tersebut setiap 2 jam sekali menggunakan crontab, Anda perlu membuat skrip shell yang berisi perintah-perintah tersebut dan kemudian menambahkan entri crontab untuk menjalankan skrip tersebut. Berikut adalah langkah-langkahnya:

@@ -21,7 +21,6 @@
   * [oracle](testnet/nibiru/oracle.md)
 * [Nulink](testnet/nulink.md)
 * [Obol](testnet/obol.md)
-* [Subspace gemini-2](testnet/subspace-gemini2.md)
 * [Sui](testnet/sui/README.md)
   * [sui\_auto](testnet/sui/sui_auto.md)
   * [sui\_manual](testnet/sui/sui_manual.md)

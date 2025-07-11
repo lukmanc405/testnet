@@ -1,17 +1,3 @@
----
-layout:
-  title:
-    visible: true
-  description:
-    visible: false
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
----
-
 # Open Testnet
 
 Docs : [https://mirror.xyz/0x7794D1c55568270A81D8Bf39e1bcE96BEaC10901/F99hEjkxcsWNefjnaEhoxCOPgHn0I7oJG3fflRjQUGU](https://mirror.xyz/0x7794D1c55568270A81D8Bf39e1bcE96BEaC10901/F99hEjkxcsWNefjnaEhoxCOPgHn0I7oJG3fflRjQUGU)
