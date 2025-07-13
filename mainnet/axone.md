@@ -42,14 +42,14 @@ axoned version
 ### Set node configuration <a href="#set-node-configuration" id="set-node-configuration"></a>
 
 ```
-axoned init MyNode --chain-id axone-1
+axoned init NODENAME --chain-id axone-1
 ```
 
 ### Downloading genesis and addressbook <a href="#downloading-genesis-and-addressbook" id="downloading-genesis-and-addressbook"></a>
 
 ```
-curl -Ls https://snapshots.nodesync.top/Mainnet/Axone/genesis.json > $HOME/.axoned/config/genesis.json
-curl -Ls https://snapshots.nodesync.top/Mainnet/Axone/addrbook.json > $HOME/.axoned/config/addrbook.json
+curl -Ls https:///snapshot.axone.detectivegems.com/axone/genesis.json > $HOME/.axoned/config/genesis.json
+curl -Ls https://snapshot.axone.detectivegems.com/axone/addrbook.json > $HOME/.axoned/config/addrbook.json
 ```
 
 ```
@@ -73,7 +73,7 @@ sed -i -e "s%:1317%:17617%; s%:8080%:17680%; s%:9090%:17690%; s%:9091%:17691%; s
 sed -i -e "s%:26658%:17658%; s%:26657%:17657%; s%:6060%:17660%; s%:26656%:17656%; s%:26660%:17661%" $HOME/.axoned/config/config.toml
 
 # Download latest chain data snapshot
-curl https://snapshots.nodesync.top/Mainnet/Axone/axone-latest.tar.lz4 | lz4 -dc - | tar -xf - -C "$HOME/.axoned"
+curl -L https://snapshot.axone.detectivegems.com/axone/axone-latest.tar.lz4 | lz4 -dc - | tar -xf - -C "$HOME/.axoned"
 ```
 
 ### Creating service file <a href="#creating-service-file" id="creating-service-file"></a>
@@ -83,12 +83,14 @@ sudo tee /etc/systemd/system/axoned.service > /dev/null <<EOF
 [Unit]
 Description=axone Validator
 After=network-online.target
+
 [Service]
 User=root
 ExecStart=$(which axoned) start
 Restart=always
 RestartSec=3
 LimitNOFILE=65535
+
 [Install]
 WantedBy=multi-user.target
 EOF
