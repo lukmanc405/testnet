@@ -48,7 +48,7 @@ axoned init NODENAME --chain-id axone-1
 ### Downloading genesis and addressbook <a href="#downloading-genesis-and-addressbook" id="downloading-genesis-and-addressbook"></a>
 
 ```
-curl -Ls https:///snapshot.axone.detectivegems.com/axone/genesis.json > $HOME/.axoned/config/genesis.json
+curl -Ls https://snapshot.axone.detectivegems.com/axone/genesis.json > $HOME/.axoned/config/genesis.json
 curl -Ls https://snapshot.axone.detectivegems.com/axone/addrbook.json > $HOME/.axoned/config/addrbook.json
 ```
 
