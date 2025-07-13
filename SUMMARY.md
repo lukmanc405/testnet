@@ -49,4 +49,5 @@
 
 ## MAINNET
 
-* [Axone](mainnet/axone.md)
+* [Axone](mainnet/axone/README.md)
+  * [API and sync](mainnet/axone/api-and-sync.md)
