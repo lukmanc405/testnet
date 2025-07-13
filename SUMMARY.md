@@ -51,3 +51,4 @@
 
 * [Axone](mainnet/axone/README.md)
   * [API and sync](mainnet/axone/api-and-sync.md)
+  * [Cheatsheet](mainnet/axone/cheatsheet.md)
