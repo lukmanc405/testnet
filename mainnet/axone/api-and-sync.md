@@ -5,7 +5,7 @@
 Explorer:
 
 ```
-https://explorer.detectivegems.com/Axone-Mainnet
+https://explorer.detectivegems.com/axone
 ```
 
 API:
